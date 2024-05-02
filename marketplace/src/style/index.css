@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+@font-face {
+  font-family: nunito;
+  src: url("../../public/fonts/Nunito-Italic-VariableFont_wght.ttf");
+}
+body {
+  font-family: nunito;
+  color: #22303C;
+  margin: 0;
+  padding: 0;
+}
+body .container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.formback {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+.formback .formcontainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  width: 50%;
+  min-width: 350px;
+  margin: auto;
+  background-color: #22303C;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.formback .formcontainer h1 {
+  color: #838B92;
+}
+.formback .formcontainer form {
+  width: -moz-max-content;
+  width: max-content;
+}
+.formback .formcontainer form input {
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  min-width: 300px;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+}
+.formback .formcontainer button {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+}
+.formback .formcontainer a {
+  color: #838B92;
+}/*# sourceMappingURL=index.css.map */

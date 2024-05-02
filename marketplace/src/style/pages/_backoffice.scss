@@ -1,0 +1,36 @@
+.bocontainer{
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    .pplban{
+        position: inherit;
+        display: block;
+        width: 100%;
+        height: 40vh;
+        background-color: $color08;
+    }
+    .secondban{
+        position: inherit;
+        display: flex;
+        width: 100%;
+        .column01{
+            position: inherit;
+            width: 20%;
+            min-height: 60vh;
+            background-color: $color09;
+            .block01{
+                position: relative;
+                display: block;
+                width: 100%;
+                button{
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+$color01 : #FAD095;
+$color02 : #FABF96;
+$color03 : #FADC96;
+$color04 : #FAAD96;
+$color05 : #FAE896; 
+$color06 : #FAECD9;
+
+$mydark : #22303C;
+$darker : #23293D;
+$mylight : #838B92;
+$color07 : #4C5B68;
+$color08 : #838B92;
+$color09 : #8AA5BD;
+$color10 : #82B8E7;
+
+// defaultvalue
+$defaultvalue : 0.3rem;
+$defaultradius : 5px;
+$defaultshadow : 0 0 15px rgba(0, 0, 0, 0.6);
+$defaultdarkbg : radial-gradient(circle at center, $mydark, $darker);
+
+@font-face {
+    font-family: nunito;
+    src: url('../../public/fonts/Nunito-Italic-VariableFont_wght.ttf');
+}
+body{
+    // background-color: $color06;
+    font-family: nunito;
+    color: $mydark;
+    margin: 0;
+    padding: 0;
+    
+    h1{
+        margin: 0;
+        padding: 0;
+    }
+
+    .container{
+        display: block;
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background: $color06;
+        margin: 0;
+        padding: 0;
+    }
+}

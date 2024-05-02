@@ -1,0 +1,47 @@
+.formback{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .formcontainer{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        max-width: 450px;
+        width: 50%;
+        min-width: 350px;
+        margin: auto;
+        background: $defaultdarkbg;
+        align-items: center;
+        justify-content: center;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: $defaultvalue;
+        border-radius: $defaultradius;
+        box-shadow: $defaultshadow;
+        h1{
+            color: $mylight;
+        }
+    
+        form{
+            width: max-content;
+            input{
+                display: block;
+                max-width: 400px;
+                width: 50%;
+                min-width: 300px;
+                padding: $defaultvalue;
+                margin: $defaultvalue;
+                border-radius: $defaultradius;
+            }
+        }
+        button{
+            padding: $defaultvalue;
+            margin: $defaultvalue;
+            border-radius: $defaultradius;
+        }
+        a{
+            color: $mylight;
+        }
+    }
+}
