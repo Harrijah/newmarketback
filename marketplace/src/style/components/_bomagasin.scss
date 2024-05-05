@@ -1,0 +1,13 @@
+.monmagasin{
+    .infoblock{
+        @include withtxtparams;
+        ul{
+            @include cleanmyul;
+            li{
+                button{
+                    @include backofficebtn01;
+                }
+            }
+        }
+    }
+}

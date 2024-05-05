@@ -1,36 +1,32 @@
 .bocontainer{
-    position: relative;
-    display: block;
-    width: 100%;
+    @include stdparams;
     height: 100%;
 
     .pplban{
-        position: inherit;
-        display: block;
-        width: 100%;
-        height: 40vh;
-        background-color: $color08;
+        @include principalban;
+        background: url('../../../public/image/pdc.jpg') top/cover;
     }
     .secondban{
-        position: inherit;
+        @include stdparams;
         display: flex;
-        width: 100%;
         .column01{
-            position: inherit;
-            width: 20%;
-            min-height: 60vh;
-            background-color: $color09;
+            @include lateralleftcol;
             .block01{
-                position: relative;
-                display: block;
-                width: 100%;
                 button{
-                    display: block;
-                    position: relative;
-                    width: 100%;
+                    @include lateralbobtn;
                 }
             }
 
+        }
+        .column02{
+            @include pplcol;
+            .contentcontainer{
+                @include stdparams;
+                h1{
+                    display: block;
+                    text-align: center;
+                }
+            }
         }
     }
 }

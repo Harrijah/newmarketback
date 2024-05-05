@@ -12,17 +12,105 @@ $color06 : #FAECD9;
 
 $mydark : #22303C;
 $darker : #23293D;
-$mylight : #838B92;
+// $mylight : #838B92;
+$mylight : #c3ced7;
 $color07 : #4C5B68;
 $color08 : #838B92;
 $color09 : #8AA5BD;
 $color10 : #82B8E7;
+$styletext : #f0ad4e ;
 
 // defaultvalue
 $defaultvalue : 0.3rem;
+$defaultvalue02: 0.5rem;
+$defaultvalue03: 1rem;
+$defaultvalue04: 2rem;
 $defaultradius : 5px;
 $defaultshadow : 0 0 15px rgba(0, 0, 0, 0.6);
 $defaultdarkbg : radial-gradient(circle at center, $mydark, $darker);
+$defaultborder : solid 1px $color09;
+$white : whitesmoke;
+
+@mixin stdparams{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+@mixin principalban{
+    position: inherit;
+    display: block;
+    width: 100%;
+    height: 40vh;
+    background-color: $mydark;
+}
+@mixin withtxtparams{
+    position: relative;
+    display: block;
+    min-width: 50%;
+    width: fit-content;
+    margin: $defaultvalue02;
+    padding: $defaultvalue03 $defaultvalue04;
+    border: solid 1px $mylight;
+    border-radius: $defaultradius;
+}
+@mixin lateralleftcol{
+    position: rel;
+    width: 15%;
+    min-height: 60vh;
+    background-color: $mydark;
+}
+@mixin pplcol{
+    position: relative;
+    width: 85%;
+    min-height: 60vh;
+    background-color: $white;
+    padding: $defaultvalue04;
+}
+@mixin backofficebtn01 {
+    position: relative;
+    border-radius: $defaultradius;
+    border: $defaultborder;
+    padding: $defaultvalue;
+    margin: $defaultvalue $defaultvalue02;
+    cursor: pointer;
+}
+
+@mixin stdbtncolor{
+    background-color: $mylight;
+    color: $mydark;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+        background-color: $mydark;
+        color: $mylight;
+    }
+}
+
+@mixin cleanmyul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin stdlink01{
+    color: $mylight;
+    text-decoration: none;
+    &:hover{
+        color: $white;
+    }
+}
+
+@mixin lateralbobtn{
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: $defaultvalue02;
+    border: none;
+    border-radius: 0;
+    border-bottom: solid 1px $white;
+
+    @include stdbtncolor;
+}
 
 @font-face {
     font-family: nunito;
@@ -32,10 +120,17 @@ body{
     // background-color: $color06;
     font-family: nunito;
     color: $mydark;
+    font-size: 0.8rem;
     margin: 0;
     padding: 0;
-    
+
     h1{
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    h2{
+        font-size: 1rem;
         margin: 0;
         padding: 0;
     }
@@ -45,7 +140,7 @@ body{
         position: relative;
         width: 100%;
         min-height: 100vh;
-        background: $color06;
+        background: $white;
         margin: 0;
         padding: 0;
     }

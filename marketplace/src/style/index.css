@@ -10,6 +10,17 @@
 body {
   font-family: nunito;
   color: #22303C;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+}
+body h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+body h2 {
+  font-size: 1rem;
   margin: 0;
   padding: 0;
 }
@@ -17,7 +28,10 @@ body .container {
   display: block;
   position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  background: whitesmoke;
+  margin: 0;
+  padding: 0;
 }
 
 .formback {
@@ -34,17 +48,17 @@ body .container {
   width: 50%;
   min-width: 350px;
   margin: auto;
-  background-color: #22303C;
+  background: radial-gradient(circle at center, #22303C, #23293D);
   align-items: center;
   justify-content: center;
   top: 50%;
   transform: translateY(-50%);
   padding: 0.3rem;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 .formback .formcontainer h1 {
-  color: #838B92;
+  color: #c3ced7;
 }
 .formback .formcontainer form {
   width: -moz-max-content;
@@ -65,5 +79,261 @@ body .container {
   border-radius: 5px;
 }
 .formback .formcontainer a {
-  color: #838B92;
+  color: #c3ced7;
+}
+
+.bocontainer {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.bocontainer .pplban {
+  position: inherit;
+  display: block;
+  width: 100%;
+  height: 40vh;
+  background-color: #22303C;
+  background: url("../../../public/image/pdc.jpg") top/cover;
+}
+.bocontainer .secondban {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+}
+.bocontainer .secondban .column01 {
+  position: rel;
+  width: 15%;
+  min-height: 60vh;
+  background-color: #22303C;
+}
+.bocontainer .secondban .column01 .block01 button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0;
+  border-bottom: solid 1px whitesmoke;
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
+  cursor: pointer;
+}
+.bocontainer .secondban .column01 .block01 button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
+}
+.bocontainer .secondban .column02 {
+  position: relative;
+  width: 85%;
+  min-height: 60vh;
+  background-color: whitesmoke;
+  padding: 2rem;
+}
+.bocontainer .secondban .column02 .contentcontainer {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.bocontainer .secondban .column02 .contentcontainer h1 {
+  display: block;
+  text-align: center;
+}
+
+.monmagasin .infoblock {
+  position: relative;
+  display: block;
+  min-width: 50%;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  border: solid 1px #c3ced7;
+  border-radius: 5px;
+}
+.monmagasin .infoblock ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.monmagasin .infoblock ul li button {
+  position: relative;
+  border-radius: 5px;
+  border: solid 1px #8AA5BD;
+  padding: 0.3rem;
+  margin: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+
+#navigation {
+  display: block;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background-color: #c3ced7;
+  padding: 0 10%;
+}
+#navigation .mylinks {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+#navigation .mylinks .logocontainer {
+  position: relative;
+  padding: 0.3rem;
+}
+#navigation .mylinks .linkcontainer {
+  position: relative;
+  display: flex;
+}
+#navigation .mylinks .linkcontainer a, #navigation .mylinks .linkcontainer button {
+  padding: 0.3rem;
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+#navigation .mylinks .linkcontainer a:hover, #navigation .mylinks .linkcontainer button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
+}
+
+#footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  position: static;
+  min-height: 20vh;
+  background-color: #22303C;
+  color: #c3ced7;
+  border-top: solid 1rem #c3ced7;
+}
+#footer #connexionmodal {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  text-align: center;
+}
+#footer #connexionmodal .modal-content {
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+  padding: 2rem;
+  width: 35%;
+  margin: auto;
+  background-color: #22303C;
+  border-radius: 5px;
+}
+#footer #connexionmodal .modal-content .modal-header {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#footer #connexionmodal .modal-content .modal-body {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+#footer #connexionmodal .modal-content .modal-body .formcontainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background: #22303C;
+  align-items: center;
+  justify-content: center;
+}
+#footer #connexionmodal .modal-content .modal-body .formcontainer h1 {
+  color: #c3ced7;
+}
+#footer #connexionmodal .modal-content .modal-body .formcontainer form {
+  width: -moz-max-content;
+  width: max-content;
+}
+#footer #connexionmodal .modal-content .modal-body .formcontainer form input {
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  min-width: 300px;
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+}
+#footer #connexionmodal .modal-content .modal-footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#footer #connexionmodal .modal-content .modal-footer button {
+  padding: 0.3rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+  width: 50%;
+  max-width: 200px;
+  min-width: 100px;
+  margin: auto;
+}
+#footer #connexionmodal .modal-content .modal-footer a {
+  color: #c3ced7;
+}
+#footer .footercontainer {
+  display: flex;
+}
+#footer .footercontainer h2 {
+  text-decoration: underline;
+  color: #f0ad4e;
+}
+#footer .footercontainer .colone {
+  position: relative;
+  display: block;
+  width: 100%;
+  width: 35%;
+  padding: 2rem;
+}
+#footer .footercontainer .coltwo {
+  position: relative;
+  display: block;
+  width: 100%;
+  width: 30%;
+  padding: 2rem;
+}
+#footer .footercontainer .coltwo ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#footer .footercontainer .coltwo ul li a {
+  color: #c3ced7;
+  text-decoration: none;
+}
+#footer .footercontainer .coltwo ul li a:hover {
+  color: whitesmoke;
+}
+#footer .footercontainer .colthree {
+  position: relative;
+  display: block;
+  width: 100%;
+  width: 35%;
+  padding: 2rem;
+}
+#footer .footercontainer .colthree ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }/*# sourceMappingURL=index.css.map */

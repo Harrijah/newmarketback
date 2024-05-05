@@ -1,0 +1,144 @@
+#navigation{
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-color: $mylight;
+    padding: 0 10%;
+    .mylinks{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        .logocontainer{
+            position: relative;
+            padding: $defaultvalue;
+        }
+        .linkcontainer{
+            position: relative;
+            display: flex;
+            a, button{
+                padding: $defaultvalue;
+                @include stdbtncolor;
+                border: none;
+            }
+        }
+    }
+}
+#footer{
+    @include stdparams;
+    position:static;
+    min-height: 20vh;
+    background-color: $mydark;
+    color: $mylight;
+    border-top: solid 1rem $mylight;
+
+    #connexionmodal {
+        @include stdparams;
+        display: none;
+        position: absolute;
+        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        background: rgba(0, 0, 0, 0.6);
+        box-shadow: $defaultshadow;
+        z-index: 1;
+        text-align: center;
+        .modal-content{
+            position: relative;
+            top: 50vh;
+            transform: translateY(-50%);
+            padding: $defaultvalue04;
+            width: 35%;
+            margin: auto;
+            background-color: $mydark;
+            border-radius: $defaultradius;
+            .modal-header{
+                @include stdparams;
+            }
+            .modal-body{
+                @include stdparams;
+                .formcontainer{
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto;
+                    background: $mydark;
+                    align-items: center;
+                    justify-content: center;
+                    h1{
+                        color: $mylight;
+                    }
+                
+                    form{
+                        width: max-content;
+                        input{
+                            display: block;
+                            max-width: 400px;
+                            width: 50%;
+                            min-width: 300px;
+                            padding: $defaultvalue;
+                            margin: $defaultvalue;
+                            border-radius: $defaultradius;
+                        }
+                    }
+                }
+            }
+            .modal-footer{
+                @include stdparams;
+                display: flex;
+                flex-direction: column;
+                button{
+                    padding: $defaultvalue;
+                    margin: $defaultvalue;
+                    border-radius: $defaultradius;
+                    width: 50%;
+                    max-width: 200px;
+                    min-width: 100px;
+                    margin: auto;
+                }
+                a{
+                    color: $mylight;
+                }
+            }
+        }
+    }
+
+
+
+    .footercontainer{
+        display: flex;
+        h2{
+            text-decoration: underline;
+            color: $styletext;
+        }
+        .colone{
+            @include stdparams;
+            width: 35%;
+            padding: $defaultvalue04;
+        }
+        .coltwo{
+            @include stdparams;
+            width: 30%;
+            padding: $defaultvalue04;
+            ul{
+                @include cleanmyul;
+                li{
+                    a{
+                        @include stdlink01;
+                    }
+                }
+            }
+        }
+        .colthree{
+            @include stdparams;
+            width: 35%;
+            padding: $defaultvalue04;
+            ul{
+                @include cleanmyul;
+            }
+        }
+    }
+}
