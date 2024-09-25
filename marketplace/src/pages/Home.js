@@ -17,6 +17,7 @@ const Home = () => {
     const [enavant, setEnavant] = useState('enavant');
     const [rayonselect, setRayonselect] = useState(0);
     const [categorieselect, setCategorieselect] = useState(0);
+    const [souscategorieselect, setSouscategorieselect] = useState(0);
 
     // --------------------------------- Fonctions
     // afficher la liste de rayons avec des produits
@@ -37,6 +38,11 @@ const Home = () => {
     const categorychoice = (e) => {
         setCategorieselect(e.target.value);
     }
+    // sélectionner une catégorie
+    const souscategorychoice = (e) => {
+        setSouscategorieselect(e.target.value);
+    }
+
 
     // obtenir une liste de sous-catégories
     const souscatlist = souscatgen(rayonselect, rayonlist, categorielist, categorieselect);
@@ -114,7 +120,7 @@ const Home = () => {
                 <div className="productfilter">
                     <div className="filtercontainer">
                         <h2>Trouvez un produit en 3 clics</h2>
-                        <Productslister allproductslist={allproductslist} rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} categorychoice={categorychoice} />
+                        <Productslister allproductslist={allproductslist} rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} />
                     </div>
                 </div>
             </div>

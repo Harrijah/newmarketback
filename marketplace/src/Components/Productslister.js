@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from "react";
 import { isEmpty } from "../Assets/Utils";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { showMyproduct } from "../action/showproduct.action";
+import { searchinfo } from "../Assets/Functions";
 
-const Productslister = ({ allproductslist, rayonlist, filteredcategory, souscatlist02, rayonchoice, categorychoice }) => {
+const Productslister = ({ allproductslist, rayonlist, filteredcategory, souscatlist02, rayonchoice, rayonselect, categorychoice, categorieselect, souscategorychoice, souscategorieselect }) => {
     const [filteredproductlist, setFilteredproductlist] = useState([]);
+    const marques = useSelector((state) => state.marqueReducer.marque);
+    const magasins = useSelector((state) => state.storeReducer.allstore);
     const defaultimage = './image/imageicon.png';
+    const [keyword, setKeyword] = useState('');
     const dispatch = useDispatch();
+    const removeAccents = (str) => {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    };
 
     useEffect(() => {
         if (allproductslist) {
             const templist = !isEmpty(allproductslist) && Array.from(allproductslist)
-                // .filter((id) => allproductslist.id != 0)
+                .filter((product) => rayonselect == 0 || product.rayon == rayonselect)
+                .filter((product) => categorieselect == 0 || product.categorie == categorieselect)
+                .filter((product) => souscategorieselect == 0 || product.souscategorie == souscategorieselect)
+                .filter((product) => keyword ? removeAccents(product.courtdescript.toLowerCase()).includes(keyword)
+                    // || removeAccents(product.courtdescript.toLowerCase()).includes(keyword)
+                    : true)
                 .map((product) => (     
                 <div className="productbox" key={product.id}>
                     <div className="elementscontainer">
                         <div className="imgsection">
-                            <button onClick={() => dispatch(showMyproduct(product.id)) }><img src={'http://localhost:8080/uploads/'+product.image01} alt="" /></button>
+                            <div className="productactions">
+                                <button>Pour plus tard</button>
+                                <button>Voir en détails</button>
+                            </div>
+                            <button onClick={() => dispatch(showMyproduct(product.id))}>
+                            <span className="apercu">Aperçu</span>
+                            <img src={'http://localhost:8080/uploads/' + product.image01} alt="" />
+                            </button>
                         </div>
                         <div className="txtsection">
-                            <h3>Nom du produit</h3>
+                        <a onClick={() => dispatch(showMyproduct(product.id)) }><h3>{product.nomproduit}</h3></a>
                             <div className="otherdetails">
-                                <span><b>Marque</b> : {product.marque}</span>
-                                <span>Vendeur : {product.storeid}</span>
+                                <span><b> {!isEmpty(product.marque) && searchinfo(marques, product.marque, 'marque')}</b></span>
+                                <span>{!isEmpty(product.storeid) && searchinfo(magasins, product.storeid, 'nommagasin')}</span>
                             </div>
                             <div className="prixproduit">
                                 {/* <span>100 000 Ar</span> */}
@@ -32,10 +51,6 @@ const Productslister = ({ allproductslist, rayonlist, filteredcategory, souscatl
                                 <input type="number" name="" id="" className="quantityinput" min={0} defaultValue={'0'} />
                                 <button>Ajouter au panier</button>
                             </div>
-                            <div className="productactions">
-                                <button>Pour plus tard</button>
-                                <button>Voir en détails</button>
-                            </div>
                         </div>
 
                     </div>
@@ -44,7 +59,7 @@ const Productslister = ({ allproductslist, rayonlist, filteredcategory, souscatl
             )
             setFilteredproductlist(templist);
         }
-    }, [allproductslist]);
+    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword]);
 
 
     return (
@@ -58,10 +73,11 @@ const Productslister = ({ allproductslist, rayonlist, filteredcategory, souscatl
                     <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
                     {filteredcategory}
                 </select>
-                <select name="" id="">
+                <select name="" id="" onChange={(e) => souscategorychoice(e)}>
                     <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
                     {souscatlist02}
-                </select>         
+                </select>    
+                <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
             </div>
             <div className="filteredproducts">
                 <div className="productscontainer">

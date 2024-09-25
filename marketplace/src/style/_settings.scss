@@ -485,47 +485,127 @@ body{
           box-shadow: $defaultshadow02;
           margin: $defaultvalue02;
           .elementscontainer{
-            .imgsection{
-              max-height: 175px;
+            position: relative;
+            .imgsection {
+              position: relative;
               overflow: hidden;
-              button{
+              max-height: 200px;
+              &:hover {
+                .apercu {
+                  top: -20px;
+                }
+                .productactions button:nth-of-type(1) {
+                  bottom: -175px;
+                }
+                .productactions button:nth-of-type(2) {
+                  bottom: -175px; 
+                }
+              }
+              .apercu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                color: $mylight;
+                font-size: 1.5rem;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background-color: rgba(0, 0, 0, 0.75);
+                top: -250px;
+                transition: 1s ease-in-out;
+              }
+              .productactions {
+                position: relative;
+                width: 100%;
+                display: flex; 
+                justify-content: space-around; 
+                transition: 0.5s ease-in-out;
+            
+                button {
+                  border: solid 1px $mylight;
+                  border-radius: $defaultradius;
+                  height: 30px;
+                  width: 40%; 
+                  box-shadow: $defaultshadow02;
+                  font-size: 0.7rem;
+                  margin: $defaultvalue;
+                  position: absolute;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  z-index: 2;
+                  transition: 0.5s ease-in-out;
+                }
+                button:nth-of-type(1) {
+                  left : 5%;
+                  bottom: -300px; // Position initiale
+                  transition-delay: 0.1s; // Légère latence
+                }
+                button:nth-of-type(2) {
+                  left : 50%;
+                  bottom: -300px; // Position initiale
+                  transition-delay: 0.3s; // Latence légèrement plus longue
+                }
+              }
+              button {
                 position: relative;
                 width: 100%;
                 padding: 0;
                 border: 0;
                 cursor: pointer;
-                img{
+                img {
                   position: relative;
                   width: 100%;
-                }}
+            
+                  &:hover {
+                    background-color: rgba(0, 0, 0, 0.441);
+                  }
+                }
+              }
             }
+            
             .txtsection{
               display: block;
               position: relative;
-              h3{
-                position: inherit;
-                display: block;
-                margin: 0 auto;
-                padding: $defaultvalue;
+              a{
+                color: $color07;
+                cursor: pointer;
+                &:hover{
+                  color: $mylight;
+                }
+                h3{
+                  position: inherit;
+                  display: block;
+                  margin: 0 auto;
+                  padding: $defaultvalue;
+                }
               }
               .otherdetails{
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 padding: 0 $defaultvalue02 $defaultvalue02;
+                span:nth-of-type(2) {
+                  color: $color08;
+                }
               }
               .prixproduit{
                 position: relative;
                 display: flex;
                 flex-direction: column;
                 padding: 0 $defaultvalue02 $defaultvalue02;
+                align-items: flex-end;
+                color: $styletext;
+                font-size: 1rem;
+                font-weight: 800;
               }
               .quantityproduit{
                 position: relative;
                 display: flex;
                 border-bottom: solid 1px $mylight;
                 padding: 0 $defaultvalue02 $defaultvalue02;
-                margin-bottom: $defaultvalue02;
+                // margin-bottom: $defaultvalue02;
                   .quantityinput{
                     display: inline-block;
                     width: 50%;
@@ -539,29 +619,12 @@ body{
                     width: 50%;
                     box-shadow: $defaultshadow02;
                     font-size: 0.7rem;
-                    background-color: $coolgreen;
+                    background-color: $mylight;
                     cursor: pointer;
                     &:hover{
                       background-color: #fff;
                     }
                   }
-              }
-              .productactions{
-                background-color: whitesmoke;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                button{
-                  border: solid 1px $mylight;
-                  border-radius: $defaultradius;
-                  background: $white;
-                  height: 30px;
-                  width: 50%;
-                  box-shadow: $defaultshadow02;
-                  font-size: 0.7rem;
-                  width: 40%;
-                  margin: $defaultvalue;
-                }
               }
             }
 

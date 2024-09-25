@@ -2,6 +2,18 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "./Utils";
 
+
+// join un par un
+export const searchinfo = (base, id, request) => {
+  const tempinfo = !isEmpty(base) && Array.from(base).find((info) => info.id == id);
+  if (tempinfo && request in tempinfo) {
+      return (<span>{tempinfo[request]}</span>)
+  } else {
+      return ('');
+  }
+} 
+
+
 // retourne la liste de tous les rayons
 export const rayonsgen = () => {
   const [myrayons, setMyrayons] = useState([]);
