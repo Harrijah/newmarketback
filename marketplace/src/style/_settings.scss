@@ -1,6 +1,6 @@
 *{
-    box-sizing: border-box;
-    border-radius: 2px;
+  box-sizing: border-box;
+  border-radius: 2px;
 }
 
 $color01 : #FAD095;
@@ -12,13 +12,15 @@ $color06 : #FAECD9;
 
 $mydark : #22303C;
 $darker : #23293D;
-// $mylight : #838B92;
 $mylight : #c3ced7;
 $color07 : #4C5B68;
 $color08 : #838B92;
 $color09 : #8AA5BD;
 $color10 : #82B8E7;
-$styletext : #f0ad4e ;
+$styletext : #f0ad4e;
+
+$coolgreen : #33b864;
+$coolgreen02 : #aaffaa;
 
 // defaultvalue
 $defaultvalue : 0.3rem;
@@ -27,121 +29,548 @@ $defaultvalue03: 1rem;
 $defaultvalue04: 2rem;
 $defaultradius : 5px;
 $defaultshadow : 0 0 15px rgba(0, 0, 0, 0.6);
+$defaultshadow02 : 0 0 15px rgba(0, 0, 0, 0.1);
 $defaultdarkbg : radial-gradient(circle at center, $mydark, $darker);
-$defaultborder : solid 1px $color09;
+$defaultborder : solid 1px $mylight;
 $white : whitesmoke;
+$extraHeight: 100px;
 
 @mixin stdparams{
-    position: relative;
-    display: block;
-    width: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
 }
 @mixin principalban{
-    position: inherit;
-    display: block;
-    width: 100%;
-    height: 40vh;
-    background-color: $mydark;
+  position: inherit;
+  display: block;
+  width: 100%;
+  height: 40vh;
+  background-color: $mydark;
 }
 @mixin withtxtparams{
-    position: relative;
-    display: block;
-    min-width: 50%;
-    width: fit-content;
-    margin: $defaultvalue02;
-    padding: $defaultvalue03 $defaultvalue04;
-    border: solid 1px $mylight;
-    border-radius: $defaultradius;
+  position: relative;
+  display: block;
+  min-width: 50%;
+  width: fit-content;
+  margin: $defaultvalue02;
+  padding: $defaultvalue03 $defaultvalue04;
+  border: solid 1px $mylight;
+  border-radius: $defaultradius;
 }
 @mixin lateralleftcol{
-    position: rel;
-    width: 15%;
-    min-height: 60vh;
-    background-color: $mydark;
+  position: relative;
+  width: 15%;
+  min-height: 60vh;
+  background-color: $mydark;
 }
 @mixin pplcol{
-    position: relative;
-    width: 85%;
-    min-height: 60vh;
-    background-color: $white;
-    padding: $defaultvalue04;
-}
-@mixin backofficebtn01 {
-    position: relative;
-    border-radius: $defaultradius;
-    border: $defaultborder;
-    padding: $defaultvalue;
-    margin: $defaultvalue $defaultvalue02;
-    cursor: pointer;
+  position: relative;
+  width: 85%;
+  min-height: 60vh;
+  background-color: $white;
+  padding: 0 $defaultvalue04 $defaultvalue04;
 }
 
 @mixin stdbtncolor{
-    background-color: $mylight;
-    color: $mydark;
-    text-decoration: none;
-    cursor: pointer;
-    &:hover{
-        background-color: $mydark;
-        color: $mylight;
-    }
+  background-color: $mylight;
+  color: $mydark;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+      background-color: $mydark;
+      color: $mylight;
+  }
 }
 
 @mixin cleanmyul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 @mixin stdlink01{
-    color: $mylight;
-    text-decoration: none;
-    &:hover{
-        color: $white;
-    }
+  color: $mylight;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover{
+      color: $white;
+  }
+}
+
+@mixin titleafter{
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 30%;
+  background-color: $color07;
+  left: 0;
+  top: 25px;
+}
+@mixin backofficebtn01 {
+  @include stdbtncolor;
+  position: relative;
+  // border-radius: $defaultradius;
+  border: $defaultborder;
+  padding: $defaultvalue02 $defaultvalue04;
+  margin: 0.1rem;
+  cursor: pointer;
+  box-shadow: $defaultshadow02;
+  max-width: 350px;
+
+}
+@mixin softbutton{
+  margin: $defaultvalue;
+  display: block;
+  border: none;
+  box-shadow: none;
+  padding: $defaultvalue;
+  background-color: $white;
+  color: $color08;
+  cursor: pointer;
+  &:hover{
+      color: $darker;
+  }
 }
 
 @mixin lateralbobtn{
-    display: block;
-    position: relative;
-    width: 100%;
-    padding: $defaultvalue02;
-    border: none;
-    border-radius: 0;
-    border-bottom: solid 1px $white;
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: $defaultvalue02;
+  border: none;
+  border-radius: 0;
+  border-bottom: solid 1px $white;
 
-    @include stdbtncolor;
+  @include stdbtncolor;
+}
+
+@mixin myinput{
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  // min-width: 300px;
+  
+  padding: $defaultvalue02;
+  margin: $defaultvalue;
+  // border-radius: $defaultradius;
+  border: solid 1px $mylight;
+}
+
+@mixin flexbarr{
+  position: relative;
+  display: flex;
+  width: 90%;
+  margin: auto;
 }
 
 @font-face {
-    font-family: nunito;
-    src: url('../../public/fonts/Nunito-Italic-VariableFont_wght.ttf');
+  font-family: nunito;
+  src: url('../../public/fonts/Nunito-Italic-VariableFont_wght.ttf');
+}
+*{
+  box-sizing: border-box;
+  // transition: 1s;
 }
 body{
-    // background-color: $color06;
-    font-family: nunito;
-    color: $mydark;
-    font-size: 0.8rem;
+  // background-color: $color06;
+  font-family: nunito;
+  color: $mydark;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  position: static;
+  transition: ease 1s;
+
+  h1{
+    font-size: 1.5rem;
     margin: 0;
     padding: 0;
+  }
+  h2{
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+  }
 
-    h1{
-        font-size: 1.5rem;
-        margin: 0;
-        padding: 0;
-    }
-    h2{
-        font-size: 1rem;
-        margin: 0;
-        padding: 0;
-    }
+  .container{
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: $white;
+    margin: 0;
+    padding: 0;
+  }
 
-    .container{
+  input{
+      @include myinput;
+  }
+  .imginput{
+    display:inline-block;
+    max-width: 200px;
+    width: 50%;
+    min-width: 150px;
+    padding: $defaultvalue;
+    margin: $defaultvalue 0;
+    // border-radius: $defaultradius;
+    border: solid 1px $mylight;
+  }
+
+  Editor{
+    background-color: white;
+  }
+  
+  .modalleftcol{
+    background: $color08;
+    margin: 1%;
+    padding: 1%;
+  }
+  .bricks{
+    @include stdparams;
+    // max-width: 60%;
+  }
+  .brickctnr{
+    @include stdparams;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    height: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    // max-width: 60%;
+    .blockbrick{
+      display: inline-block;
+      position: relative;
+      // vertical-align: top;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 150px;
+      height: fit-content;
+      margin: 1% 1%;
+      padding: 0;
+      // background: $neutre;
+      // border: solid 2px $sabledore;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease-in-out;
+      div{
+        display: flex;
+        align-items: flex-start; /* Aligner l'image et la croix en haut */
+        max-width: 150px;
+        img{
+          display: block;
+          margin: auto;
+          height: auto;
+          max-width: 150px;
+        }
+        .todeleteme{
+          margin: auto;
+          height: auto;
+          max-width: 150px;
+          display: inline-block;
+          position: absolute;
+          left: 90%;
+          &::after{
+            content: "X";
+            font-size: 1rem;
+            font-weight: bold;
+            position: absolute;
+            left: 75%;
+            top: -13px;
+            width: 30px;
+            height: 25px;
+            border-radius: 50px;
+            background-color: rgba(78, 78, 78, 0.71);
+            z-index: 10;
+            padding-top: 3px;
+            text-align: center;
+            cursor: pointer;
+            color: white;
+          }
+          &:hover::after {
+            background-color: $color07;
+          }
+        }
+        
+        .todeleteme img {
+          display: block;
+          margin: 0; /* Enlever le margin auto pour éviter un centrage vertical */
+          height: auto;
+          max-width: 150px;
+        }
+
+      }
+    }
+  }
+
+  .separatecol{
+    position: relative;
+    display: flex;
+    margin: auto;
+    max-width: 95%;
+    .col01{
+      @include stdparams;
+      img{
         display: block;
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        background: $white;
-        margin: 0;
-        padding: 0;
+        margin: auto;
+        height: auto;
+        // max-width: 150px;
+      }
     }
+    .col02{
+      @include stdparams;
+      .modaldescript{
+        max-width: 30vw;
+        padding: $defaultvalue03;
+        border-top: solid 1px $mylight;
+        p{
+          text-align: left;
+        }
+      }
+      img{
+        display: block;
+        margin: auto;
+        height: auto;
+        max-width: 150px;
+      }
+    }
+  }
+  .lastbutton{
+    @include stdparams;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    button{
+      // text-align: center;
+      @include backofficebtn01;
+      margin: $defaultvalue03;
+    }
+  }
+  textarea{
+    display: block;
+    position: relative;
+    resize: vertical;
+    width: 100%;
+    min-width: 50%;
+  }
+  .myfontawesome{
+    padding: $defaultvalue $defaultvalue02 !important;
+    margin: $defaultvalue !important;
+  }
+  .imagegrid{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas: 
+    "ap01 bp"
+    "ap02 bp"
+    "ap03 bp"
+    "ap04 bp"
+    "ap05 bp"
+    "ap06 bp"
+    ;
+    .gridimage01, .gridimage02, .gridimage03, .gridimage04, .gridimage05, .gridimage06{
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 50px;
+      background-color: $white;
+      padding: 0 !important;
+      button{
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        img{
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+    img{
+      position: relative;
+      width: 100%;
+      height: max-content;
+    }
+    .pplimage{
+      grid-area: bp;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      overflow: hidden;
+      padding: $defaultvalue03;
+      img{
+        display: block;
+        width: 100% !important;
+        height: auto;
+        background-size: cover;
+        background-position: center;
+        box-shadow: $defaultshadow02;
+      }
+
+    }
+    .gridimage01{
+      grid-area: ap01;
+    }
+    .gridimage02{
+      grid-area: ap02;
+    }
+    .gridimage03{
+      grid-area: ap03;
+    }
+    .gridimage04{
+      grid-area: ap04;
+    }
+    .gridimage05{
+      grid-area: ap05;
+    }
+    .gridimage06{
+      grid-area: ap06;
+    }
+  }
+
+  .productslister{
+    @include stdparams;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    .barfilter{
+      position: relative;
+      display: flex;
+      width: 80%;
+      margin: auto;
+      padding: $defaultvalue02;
+      // background-color: $mylight;
+      align-items: center;
+      justify-content: center;
+      select{
+        margin: $defaultvalue02;
+        padding: $defaultvalue03 $defaultvalue04;
+        border: solid 1px $mylight;
+        border-radius: $defaultradius;
+        width: 30%;
+        box-shadow: $defaultshadow02;
+      }
+    }
+    .filteredproducts{
+      @include stdparams;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      .productscontainer{
+        @include stdparams;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        .productbox{
+          position: relative;
+          max-width: 245px;
+          background-color: #fff;
+          box-shadow: $defaultshadow02;
+          margin: $defaultvalue02;
+          .elementscontainer{
+            .imgsection{
+              max-height: 175px;
+              overflow: hidden;
+              button{
+                position: relative;
+                width: 100%;
+                padding: 0;
+                border: 0;
+                cursor: pointer;
+                img{
+                  position: relative;
+                  width: 100%;
+                }}
+            }
+            .txtsection{
+              display: block;
+              position: relative;
+              h3{
+                position: inherit;
+                display: block;
+                margin: 0 auto;
+                padding: $defaultvalue;
+              }
+              .otherdetails{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                padding: 0 $defaultvalue02 $defaultvalue02;
+              }
+              .prixproduit{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                padding: 0 $defaultvalue02 $defaultvalue02;
+              }
+              .quantityproduit{
+                position: relative;
+                display: flex;
+                border-bottom: solid 1px $mylight;
+                padding: 0 $defaultvalue02 $defaultvalue02;
+                margin-bottom: $defaultvalue02;
+                  .quantityinput{
+                    display: inline-block;
+                    width: 50%;
+                    margin: 0;
+                  }
+                  button{
+                    border: solid 1px $mylight;
+                    border-radius: $defaultradius;
+                    background: $white;
+                    height: 40px;
+                    width: 50%;
+                    box-shadow: $defaultshadow02;
+                    font-size: 0.7rem;
+                    background-color: $coolgreen;
+                    cursor: pointer;
+                    &:hover{
+                      background-color: #fff;
+                    }
+                  }
+              }
+              .productactions{
+                background-color: whitesmoke;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                button{
+                  border: solid 1px $mylight;
+                  border-radius: $defaultradius;
+                  background: $white;
+                  height: 30px;
+                  width: 50%;
+                  box-shadow: $defaultshadow02;
+                  font-size: 0.7rem;
+                  width: 40%;
+                  margin: $defaultvalue;
+                }
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+  }
+
+
 }

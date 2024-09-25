@@ -26,13 +26,7 @@
         form{
             width: max-content;
             input{
-                display: block;
-                max-width: 400px;
-                width: 50%;
-                min-width: 300px;
-                padding: $defaultvalue;
-                margin: $defaultvalue;
-                border-radius: $defaultradius;
+                @include myinput;
             }
         }
         button{

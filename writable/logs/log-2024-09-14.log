@@ -1,0 +1,106 @@
+INFO - 2024-09-14 04:37:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-14 04:43:35 --> Error: Call to a member function getName() on null
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 104.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 04:45:58 --> Error: Call to a member function getName() on null
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 104.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 04:46:21 --> Error: Call to a member function getName() on null
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 04:47:29 --> Error: Call to a member function getName() on null
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 04:49:01 --> Error: Call to a member function getName() on null
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 06:34:27 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 110.
+ 1 APPPATH\Controllers\Produit.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 06:34:47 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 110.
+ 1 APPPATH\Controllers\Produit.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 06:35:55 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 110.
+ 1 APPPATH\Controllers\Produit.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 06:37:56 --> ErrorException: Undefined property: CodeIgniter\HTTP\IncomingRequest::$getPost
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 110.
+ 1 APPPATH\Controllers\Produit.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$getPost', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-14 12:50:47 --> ErrorException: Undefined property: CodeIgniter\HTTP\IncomingRequest::$getPost
+[Method: POST, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 110.
+ 1 APPPATH\Controllers\Produit.php(110): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: CodeIgniter\\HTTP\\IncomingRequest::$getPost', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 110)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')

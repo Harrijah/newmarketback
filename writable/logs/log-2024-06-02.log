@@ -1,0 +1,52 @@
+INFO - 2024-06-02 16:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-06-02 17:24:11 --> Error: Call to a member function getsouscat() on null
+[Method: GET, Route: getsouscat]
+in APPPATH\Controllers\Souscat.php on line 10.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SousCat->getsouscat()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SousCat))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-06-02 18:08:59 --> Error: Call to a member function addsouscat() on null
+[Method: POST, Route: addsouscat]
+in APPPATH\Controllers\Souscat.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SousCat->addsouscat()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SousCat))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-06-02 18:11:02 --> Error: Call to a member function addsouscat() on null
+[Method: POST, Route: addsouscat]
+in APPPATH\Controllers\Souscat.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SousCat->addsouscat()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SousCat))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-06-02 18:11:53 --> Error: Call to a member function addsouscat() on null
+[Method: POST, Route: addsouscat]
+in APPPATH\Controllers\Souscat.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SousCat->addsouscat()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SousCat))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-06-02 18:12:35 --> Error: Call to a member function addsouscat() on null
+[Method: POST, Route: addsouscat]
+in APPPATH\Controllers\Souscat.php on line 19.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\SousCat->addsouscat()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SousCat))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-06-02 18:31:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

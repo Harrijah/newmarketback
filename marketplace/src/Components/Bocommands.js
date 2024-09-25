@@ -2,8 +2,11 @@ import React from 'react';
 
 const Bocommands = () => {
     return (
-        <div>
-            <h2>Liste des commandes</h2>
+        <div className="monmagasin">
+            <h1>Liste des commandes</h1>
+            <div className="infoblock">
+                <p>Pas de commande en cours</p>
+            </div>
         </div>
     )
 }

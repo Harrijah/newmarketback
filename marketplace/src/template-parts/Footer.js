@@ -1,44 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { connectUser } from '../action/connexion.action';
 
+//1 // css :  './Template-parts/_footer.scss'
+//2 // css :  './Template-parts/_modal.scss'
+const Footer = () => {
 
-const Footer = ({connectmyuser}) => {
-    const isConnected = useSelector((state) => state.connexionReducer.isConnected);
-    const dispatch = useDispatch();
-
-    const connectme = () => {
-        dispatch(connectUser(true));
-    }
-    let modal;
-    isConnected && isConnected ? modal = ('') : (
-        modal = 
-        <div id="connexionmodal" style={{display : connectmyuser && 'block'}}>
-            <div className="modal-content">
-                <div className="modal-header">
-                    <h1>Connexion BackOffice</h1>
-                </div>
-                <div className="modal-body">
-                    <div className="formcontainer">
-                        <form>
-                            <input type="email" name="email" id="email" />
-                            <input type="password" name="pwd" id="pwd" />
-                            <input type="submit" value="Valider" />
-                        </form>
-                    </div>
-                </div>
-                <div className="modal-footer">
-                    <button onClick={ connectme }>Connecter</button>
-                    <a href="#">Créer un compte</a>
-                </div>
-            </div>
-        </div>
-    );
-
-    
     return (
         <div id='footer'>
-            { modal }
             <div className="footercontainer">
                 <div className="colone">
                     <h2>La meilleure place pour acheter</h2>

@@ -1,5 +1,24 @@
 .monmagasin{
+    display: block;
+    position: static;
     .infoblock{
+        // .todeleteme{
+        //     &::after{
+        //       content: "X";
+        //       font-size: 1rem;
+        //       font-weight: bold;
+        //       position: absolute;
+        //       left: 90%;
+        //       top: -15px;
+        //       width: 30px;
+        //       height: 25px;
+        //       border-radius: 50px;
+        //       background-color: red;
+        //       z-index: 1;
+        //       padding-top: 5px;
+        //       text-align: center;
+        //     }
+        // }
         @include withtxtparams;
         ul{
             @include cleanmyul;
@@ -9,5 +28,20 @@
                 }
             }
         }
+        .addproductclass{
+            position: relative;
+            width: fit-content;
+            display: flex;
+            .productclass{
+                position: relative;
+                min-width: 300px;
+                padding: 0 $defaultvalue;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    button{
+        @include backofficebtn01;
     }
 }

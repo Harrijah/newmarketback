@@ -1,0 +1,34 @@
+.pplban {
+  @include principalban;
+  background: url("../../../public/image/pdc.jpg") top/cover;
+}
+.prsnlban {
+  @include stdparams;
+  padding: $defaultvalue 0;
+  text-align: center;
+}
+.column01 {
+  @include lateralleftcol;
+  position: relative;
+  float: left;
+  height: 100%;
+  .block01 {
+    button {
+      @include lateralbobtn;
+    }
+  }
+}
+.column02 {
+  @include pplcol;
+  position: static;
+  display: inline-block;
+  .contentcontainer {
+    @include stdparams;
+    height: 100%;
+    position: static;
+    h1 {
+      display: block;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+.slideshowcontainer{
+    display: flex;
+    position: relative;
+    .imgpart{
+        @include stdparams;
+        display: flex;
+        align-items: center;
+        height: 80vh;
+        width: 70%;
+        overflow: hidden;
+        // background-color: blue;
+        // justify-content: center;
+        .mainimage{
+            display: block;
+            width: 89%;
+            height: auto;
+            .slidebox{
+                display: none;
+            }
+            .showme{
+                display: block;
+            }
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+        .leftchevron, .rightchevron{
+            display: block;
+            width: 5%;
+            button{
+                cursor: pointer;
+                border: none;
+                background-color: $white;
+                &:hover{
+                    color: $mylight;
+                }
+                i{
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+    .productpart{
+        @include stdparams;
+        width: 30%;
+        .listcontainer{
+            @include withtxtparams;
+            padding: $defaultvalue;
+            width: 90%;
+            margin: auto;
+            max-height: 70vh;
+            overflow-y: scroll;
+            .simpleproductbox{
+                display: flex;
+                border-bottom: solid 1px $mylight;
+                .productthumbnail{
+                    width: 20%;
+                    img{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+                .productinfos{
+                    width: 80%;
+                    .productname{
+                        button{
+                            @include softbutton;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .listcontainer02{
+            @include withtxtparams;
+            padding: $defaultvalue;
+            width: 90%;
+            margin: auto;
+            max-height: 70vh;
+            select{
+                display: block;
+                height: 30px;
+                border: none;
+                box-shadow: none;
+                padding: $defaultvalue;
+                background-color: $white;
+                color: $color08;
+                cursor: pointer;
+                width: 100%;
+                &:hover{
+                    color: $darker;
+                }
+            }
+        }
+    }
+}

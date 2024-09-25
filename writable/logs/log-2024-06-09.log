@@ -1,0 +1,109 @@
+ERROR - 2024-06-09 01:06:13 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'newmarket', 3306, '', 0)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 Z:\CodeIgniter\newmarketplace\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 Z:\CodeIgniter\newmarketplace\app\Models\CategorieModel.php(12): CodeIgniter\BaseModel->findAll()
+#7 Z:\CodeIgniter\newmarketplace\app\Controllers\Categorie.php(14): App\Models\CategorieModel->getcategorie()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\Categorie->getcategorie()
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorie))
+#10 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 Z:\CodeIgniter\newmarketplace\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 Z:\CodeIgniter\newmarketplace\app\Models\CategorieModel.php(12): CodeIgniter\BaseModel->findAll()
+#6 Z:\CodeIgniter\newmarketplace\app\Controllers\Categorie.php(14): App\Models\CategorieModel->getcategorie()
+#7 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\Categorie->getcategorie()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorie))
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#14 {main}
+CRITICAL - 2024-06-09 01:06:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: GET, Route: getcategorie]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `categorie`', [], false)
+ 3 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\CategorieModel.php(12): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Categorie.php(14): App\Models\CategorieModel->getcategorie()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Categorie->getcategorie()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categorie))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+ERROR - 2024-06-09 01:06:17 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:186
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php(186): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'newmarket', 3306, '', 0)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 Z:\CodeIgniter\newmarketplace\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#5 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 Z:\CodeIgniter\newmarketplace\app\Models\MarqueModel.php(12): CodeIgniter\BaseModel->findAll()
+#7 Z:\CodeIgniter\newmarketplace\app\Controllers\Marque.php(10): App\Models\MarqueModel->getmarque()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\Marque->getmarque()
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marque))
+#10 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 Z:\CodeIgniter\newmarketplace\system\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+#4 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 Z:\CodeIgniter\newmarketplace\app\Models\MarqueModel.php(12): CodeIgniter\BaseModel->findAll()
+#6 Z:\CodeIgniter\newmarketplace\app\Controllers\Marque.php(10): App\Models\MarqueModel->getmarque()
+#7 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\Marque->getmarque()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marque))
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#14 {main}
+CRITICAL - 2024-06-09 01:06:17 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: GET, Route: getmarque]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `marque`', [], false)
+ 3 SYSTEMPATH\Model.php(275): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\MarqueModel.php(12): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Marque.php(10): App\Models\MarqueModel->getmarque()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Marque->getmarque()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marque))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-06-09 01:06:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

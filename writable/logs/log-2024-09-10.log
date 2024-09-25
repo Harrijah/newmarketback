@@ -1,0 +1,356 @@
+INFO - 2024-09-10 15:41:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-10 16:56:32 --> ArgumentCountError: Too few arguments to function App\Controllers\Produit::modifyProduct(), 1 passed in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 16:58:42 --> TypeError: App\Controllers\Produit::modifyProduct(): Argument #1 ($data) must be of type array, string given, called in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:00:27 --> TypeError: App\Controllers\Produit::modifyProduct(): Argument #1 ($data) must be of type array, string given, called in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:01:44 --> ArgumentCountError: Too few arguments to function App\Controllers\Produit::modifyProduct(), 1 passed in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:02:57 --> ArgumentCountError: Too few arguments to function App\Controllers\Produit::modifyProduct(), 1 passed in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:07:51 --> TypeError: App\Controllers\Produit::modifyProduct(): Argument #1 ($data) must be of type array, string given, called in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:08:56 --> ArgumentCountError: Too few arguments to function App\Controllers\Produit::modifyProduct(), 1 passed in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933 and exactly 2 expected
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 71.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:26:24 --> Error: Call to undefined method App\Controllers\Produit::setJSON()
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 136.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:34:20 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Controllers\Produit.php on line 90.
+ 1 APPPATH\Controllers\Produit.php(90): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 90)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:39:11 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 38.
+ 1 APPPATH\Models\ProduitModel.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 38)
+ 2 APPPATH\Controllers\Produit.php(116): App\Models\ProduitModel->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:41:40 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 38.
+ 1 APPPATH\Models\ProduitModel.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 38)
+ 2 APPPATH\Controllers\Produit.php(116): App\Models\ProduitModel->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:47:57 --> Error: Undefined constant "App\Models\request"
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 36.
+ 1 APPPATH\Controllers\Produit.php(116): App\Models\ProduitModel->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:48:48 --> Error: Call to a member function getJSON() on null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 36.
+ 1 APPPATH\Controllers\Produit.php(116): App\Models\ProduitModel->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:50:44 --> Error: Call to a member function getJSON() on null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 36.
+ 1 APPPATH\Controllers\Produit.php(116): App\Models\ProduitModel->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 17:56:09 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 39.
+ 1 APPPATH\Models\ProduitModel.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 39)
+ 2 APPPATH\Controllers\Produit.php(116): App\Models\ProduitModel->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:08:22 --> ArgumentCountError: Too few arguments to function App\Models\ProduitModel::modifyProduct(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\Produit.php on line 117 and exactly 1 expected
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 33.
+ 1 APPPATH\Controllers\Produit.php(117): App\Models\ProduitModel->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:09:19 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 39.
+ 1 APPPATH\Models\ProduitModel.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 39)
+ 2 APPPATH\Controllers\Produit.php(117): App\Models\ProduitModel->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:12:33 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 39.
+ 1 APPPATH\Models\ProduitModel.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 39)
+ 2 APPPATH\Controllers\Produit.php(120): App\Models\ProduitModel->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:13:23 --> ErrorException: Trying to access array offset on value of type null
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 39.
+ 1 APPPATH\Models\ProduitModel.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 39)
+ 2 APPPATH\Controllers\Produit.php(120): App\Models\ProduitModel->modifyProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:30:10 --> ErrorException: Undefined variable $data
+[Method: PUT, Route: modifyProduct/68]
+in APPPATH\Models\ProduitModel.php on line 38.
+ 1 APPPATH\Models\ProduitModel.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $data', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 38)
+ 2 APPPATH\Controllers\Produit.php(128): App\Models\ProduitModel->modifyProduct('68')
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:31:06 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct/68]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(128): App\Models\ProduitModel->modifyProduct([...], '68')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:32:18 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct/68]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(128): App\Models\ProduitModel->modifyProduct([...], '68')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct('68')
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:38:48 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(129): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:41:09 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(129): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:41:40 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(129): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:44:14 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(130): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:50:59 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(131): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 18:52:54 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(40): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(133): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 19:03:44 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: PUT, Route: modifyProduct]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [])
+ 3 APPPATH\Models\ProduitModel.php(39): CodeIgniter\Model->update()
+ 4 APPPATH\Controllers\Produit.php(135): App\Models\ProduitModel->modifyProduct([...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-10 20:20:44 --> Error: Array callback must have exactly two elements
+[Method: PUT, Route: modifyProduct]
+in APPPATH\Controllers\Produit.php on line 92.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->modifyProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')

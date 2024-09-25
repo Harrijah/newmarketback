@@ -1,0 +1,215 @@
+// const [renderimages, setRenderimages] = useState([]);
+  // useEffect(() => {
+  //   setRenderimages([
+  //     {
+  //       preview: previews[0],
+  //       productImage: selectedproduct?.image01
+  //     },
+  //     {
+  //       preview: previews[1],
+  //       productImage: selectedproduct?.image02
+  //     },
+  //     {
+  //       preview: previews[2],
+  //       productImage: selectedproduct?.image03
+  //     },
+  //     {
+  //       preview: previews[3],
+  //       productImage: selectedproduct?.image04
+  //     },
+  //     {
+  //       preview: previews[4],
+  //       productImage: selectedproduct?.image05
+  //     },
+  //     {
+  //       preview: previews[5],
+  //       productImage: selectedproduct?.image06
+  //     },
+  //   ]);
+  // }, [previews, selectedproduct])
+
+
+
+<div className="blockbrick">
+                    {
+                      // Modification de produit existant
+                      selectedproduct ? (
+                        // Si il n'y a pas encore d'image 
+                        (changeimage && previews[0]) ? (
+                          <div>
+                            <img src={previews[0]} alt="mon image" />
+                            <span onClick={() => suppressimage(0)} className="todeleteme"></span>
+                          </div>
+                        ) : (
+                            // Si il y a déjà une image associé au produit
+                            (selectedproduct.image01
+                            ) ? (
+                                <div>
+                                  <img src={'http://localhost:8080/uploads/' + selectedproduct.image01} alt="image non chargée" />
+                                  <span onClick={() => suppressimage(0)} className="todeleteme"></span>
+                                </div>
+                            ) : (
+                                <div>
+                                  <img src={imagedefault} alt="pas d\'image sur le produit" />
+                                </div>)
+                          )
+                      ) : (
+                          // Création de nouveau produit
+                          (changeimage && previews[0]) ? (
+                            <div>
+                              <img src={previews[0]} alt="mon image" />
+                            </div>
+                          ) : (
+                              <div>
+                                <img src={imagedefault} alt="pas encore d\'image" />
+                              </div>
+                          )
+                       )
+                    }
+                    
+                      {/* <label> {previews[0] && images[0].name}</label> */}
+                      <input className="imginput" type="file" onChange={(e) => handleImageChange(e, 0)} />
+                    </div>
+                    <div className="blockbrick">
+                    {/* {
+                      selectedproduct ? (
+                        (changeimage && previews[1]) ? (
+                          <div><img src={previews[1]} alt="mon image" /></div>
+                        ) : (
+                          (selectedproduct.image02
+                          ) ? (
+                            <div><img src={'http://localhost:8080/uploads/' + selectedproduct.image02} alt="image non chargée" /></div>
+                          ) : (
+                            <div><img src={imagedefault} alt="pas d\'image sur le produit" /></div>)
+                        )
+                      ) : (
+                        (changeimage && previews[1]
+                        ) ? (
+                          <div><img src={previews[1]} alt="mon image" /></div>
+                        ) : (
+                          <div><img src={imagedefault} alt="pas encore d\'image" /></div>
+                      )
+                    } */
+                  }
+                      {/* <label>{previews[1] && images[1].name}</label> */}
+                      <input className="imginput" type="file" onChange={(e) => handleImageChange(e, 1)} />
+                    </div>
+                    <div className="blockbrick">
+                      {  changeimage && previews[2] ? <div><img src={previews[2]} alt="icone image" /></div> : <div><img src={imagedefault} alt="icone image" /></div> }
+                      {/* <label>{previews[2] && images[2].name}</label> */}
+                      <input className="imginput" type="file" onChange={(e) => handleImageChange(e, 2)} />
+                    </div>
+                    <div className="blockbrick">
+                      {  changeimage && previews[3] ? <div><img src={previews[3]} alt="icone image" /></div> : <div><img src={imagedefault} alt="icone image" /></div> }
+                      {/* <label>{previews[3] && images[3].name}</label> */}
+                      <input className="imginput" type="file" onChange={(e) => handleImageChange(e, 3)} />
+                    </div>
+                    <div className="blockbrick">
+                      {  changeimage && previews[4] ? <div><img src={previews[4]} alt="icone image" /></div> : <div><img src={imagedefault} alt="icone image" /></div> }
+                      {/* <label>{previews[4] && images[4].name}</label> */}
+                      <input className="imginput" type="file" onChange={(e) => handleImageChange(e, 4)} />
+                    </div>
+                    <div className="blockbrick">
+                      {  changeimage && previews[5] ? <div><img src={previews[5]} alt="icone image" /></div> : <div><img src={imagedefault} alt="icone image" /></div> }
+                      {/* <label>{previews[5] && images[5].name}</label> */}
+                      <input className="imginput" type="file" onChange={(e) => handleImageChange(e, 5)} />
+                    </div>
+
+
+ if(images[0]){
+          setMyimagechoice('http://localhost:8080/uploads/' + selectedproduct.image01);
+          setSuppressbtn(true);
+          console.log('cas 01');
+        } else if (changeimage && previews[0] == null) {
+          setMyimagechoice(imagedefault);
+          setSuppressbtn(false);
+          console.log('cas 02');
+          console.log(changeimage);
+        } else if (changeimage && previews[0]) {
+          setMyimagechoice(previews[0]);
+          setSuppressbtn(true);
+          console.log('cas 03');
+        }  else if (images[0] && previews[0]) {
+          setMyimagechoice(previews[0]);
+          setSuppressbtn(true);
+          console.log('cas 04');
+        } else if (previews[0] && selectedproduct.image01){
+          setMyimagechoice('http://localhost:8080/uploads/' + selectedproduct.image01);
+          setSuppressbtn(true);
+          console.log('cas 05');
+        }  else {
+          setMyimagechoice(imagedefault);
+          setMyimagechoice('http://localhost:8080/uploads/' + selectedproduct.image01);
+          setSuppressbtn(true);
+          console.log('cas XX');
+        }
+
+
+
+
+{/* *****************************************************************
+                              Ajouter rayons/catégories
+          ***************************************************************** */}
+      <div className="">
+        {/* *****************************************************************
+                                Formulaire Ajouter un rayon 
+            ***************************************************************** */}
+        <div className="addproductclass">
+          {/* <div className="productclass">
+            <h3>Ajouter un rayon</h3>
+            <form ref={rayonform} onSubmit={(e) => submitrayon(e)}>
+              <input type="text" />
+            </form>
+          </div> */}
+
+          {/* *****************************************************************
+                                Formulaire Ajouter une catégorie 
+            ***************************************************************** */}
+          {/* <div className="productclass">
+            <h3>Ajouter une catégorie</h3>
+            <form ref={categorieform} onSubmit={(e) => submitcategorie(e)}>
+              <select onChange={(e) => rayonchoice(e)}>
+                <option key="0" value="0">
+                  Sélectionner un rayon
+                </option>
+                {rayonlist}
+              </select>
+              <input type="text" />
+            </form>
+          </div> */}
+
+          {/* *****************************************************************
+                                Formulaire Ajouter une sous-catégorie 
+            ***************************************************************** */}
+          {/* <div className="productclass">
+            <h3>Ajouter une sous-catégorie</h3>
+            <form ref={souscatform} onSubmit={(e) => submitsouscat(e)}>
+              <select onChange={(e) => categoriechoice(e)}>
+                <option key="0" value="0">
+                  Sélectionner une catégorie
+                </option>
+                {categorielist}
+              </select>
+              <input type="text" name="souscategorie" id="souscategorie" />
+            </form>
+          </div> */}
+        </div>
+
+        {/* *****************************************************************
+                              Formulaire Ajouter une marque 
+          ***************************************************************** */}
+        {/* <div className="addproductclass">
+          <div className="productclass">
+            <h3>Ajouter une marque</h3>
+            <form ref={brandrayonform} onSubmit={(e) => submitbrand(e)}>
+              <select>
+                <option key="0" value="souscategorie">
+                  Sélectionner un rayon
+                </option>
+                {rayonlist}
+              </select>
+              <input type="text" name="marque" id="marque" />
+            </form>
+          </div>
+        </div> */}
+      </div>

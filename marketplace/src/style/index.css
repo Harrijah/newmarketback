@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   border-radius: 2px;
@@ -7,12 +8,17 @@
   font-family: nunito;
   src: url("../../public/fonts/Nunito-Italic-VariableFont_wght.ttf");
 }
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: nunito;
   color: #22303C;
   font-size: 0.8rem;
   margin: 0;
   padding: 0;
+  position: static;
 }
 body h1 {
   font-size: 1.5rem;
@@ -23,6 +29,7 @@ body h2 {
   font-size: 1rem;
   margin: 0;
   padding: 0;
+  text-decoration: underline;
 }
 body .container {
   display: block;
@@ -32,6 +39,234 @@ body .container {
   background: whitesmoke;
   margin: 0;
   padding: 0;
+}
+body input {
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  min-width: 300px;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  border: solid 1px #c3ced7;
+}
+body .imginput {
+  display: inline-block;
+  max-width: 200px;
+  width: 50%;
+  min-width: 150px;
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  border: solid 1px #c3ced7;
+}
+body Editor {
+  background-color: white;
+}
+body .modalleftcol {
+  background: #838B92;
+  margin: 1%;
+  padding: 1%;
+}
+body .bricks {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+body .brickctnr {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body .brickctnr .blockbrick {
+  display: inline-block;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 150px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 1% 1%;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+body .brickctnr .blockbrick div {
+  display: flex;
+  align-items: flex-start; /* Aligner l'image et la croix en haut */
+  max-width: 150px;
+}
+body .brickctnr .blockbrick div img {
+  display: block;
+  margin: auto;
+  height: auto;
+  max-width: 150px;
+}
+body .brickctnr .blockbrick div .todeleteme {
+  margin: auto;
+  height: auto;
+  max-width: 150px;
+  display: inline-block;
+  position: absolute;
+  left: 90%;
+}
+body .brickctnr .blockbrick div .todeleteme::after {
+  content: "X";
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  left: 75%;
+  top: -13px;
+  width: 30px;
+  height: 25px;
+  border-radius: 50px;
+  background-color: rgba(78, 78, 78, 0.71);
+  z-index: 10;
+  padding-top: 3px;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+}
+body .brickctnr .blockbrick div .todeleteme:hover::after {
+  background-color: #4C5B68;
+}
+body .brickctnr .blockbrick div .todeleteme img {
+  display: block;
+  margin: 0; /* Enlever le margin auto pour éviter un centrage vertical */
+  height: auto;
+  max-width: 150px;
+}
+body .separatecol {
+  position: relative;
+  display: flex;
+  margin: auto;
+  max-width: 95%;
+}
+body .separatecol .col01 {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+body .separatecol .col01 img {
+  display: block;
+  margin: auto;
+  height: auto;
+  max-width: 150px;
+}
+body .separatecol .col02 {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+body .separatecol .col02 img {
+  display: block;
+  margin: auto;
+  height: auto;
+  max-width: 150px;
+}
+body .lastbutton {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+body .lastbutton button {
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  border: solid 1px #c3ced7;
+  padding: 0.5rem 2rem;
+  margin: 0.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin: 1rem;
+}
+body .lastbutton button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
+}
+body textarea {
+  display: block;
+  position: relative;
+  resize: vertical;
+  width: 100%;
+  min-width: 50%;
+}
+body .myfontawesome {
+  padding: 0.3rem 0.5rem !important;
+  margin: 0.3rem !important;
+}
+body .imagegrid {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 90%;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas: "ap01 bp" "ap02 bp" "ap03 bp" "ap04 bp" "ap05 bp" "ap06 bp";
+}
+body .imagegrid img {
+  position: relative;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .imagegrid .pplimage {
+  grid-area: bp;
+}
+body .imagegrid .gridimage01 {
+  grid-area: ap01;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: green;
+}
+body .imagegrid .gridimage02 {
+  grid-area: ap02;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: pink;
+}
+body .imagegrid .gridimage03 {
+  grid-area: ap03;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: #82B8E7;
+}
+body .imagegrid .gridimage04 {
+  grid-area: ap04;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: whitesmoke;
+}
+body .imagegrid .gridimage05 {
+  grid-area: ap05;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: whitesmoke;
+}
+body .imagegrid .gridimage06 {
+  grid-area: ap06;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: whitesmoke;
 }
 
 .formback {
@@ -69,9 +304,9 @@ body .container {
   max-width: 400px;
   width: 50%;
   min-width: 300px;
-  padding: 0.3rem;
+  padding: 0.5rem;
   margin: 0.3rem;
-  border-radius: 5px;
+  border: solid 1px #c3ced7;
 }
 .formback .formcontainer button {
   padding: 0.3rem;
@@ -82,13 +317,7 @@ body .container {
   color: #c3ced7;
 }
 
-.bocontainer {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.bocontainer .pplban {
+.pplban {
   position: inherit;
   display: block;
   width: 100%;
@@ -96,19 +325,25 @@ body .container {
   background-color: #22303C;
   background: url("../../../public/image/pdc.jpg") top/cover;
 }
-.bocontainer .secondban {
+
+.prsnlban {
   position: relative;
   display: block;
   width: 100%;
-  display: flex;
+  padding: 0.3rem 0;
+  text-align: center;
 }
-.bocontainer .secondban .column01 {
-  position: rel;
+
+.column01 {
+  position: relative;
   width: 15%;
   min-height: 60vh;
   background-color: #22303C;
+  position: relative;
+  float: left;
+  height: 100%;
 }
-.bocontainer .secondban .column01 .block01 button {
+.column01 .block01 button {
   display: block;
   position: relative;
   width: 100%;
@@ -121,23 +356,28 @@ body .container {
   text-decoration: none;
   cursor: pointer;
 }
-.bocontainer .secondban .column01 .block01 button:hover {
+.column01 .block01 button:hover {
   background-color: #22303C;
   color: #c3ced7;
 }
-.bocontainer .secondban .column02 {
+
+.column02 {
   position: relative;
   width: 85%;
   min-height: 60vh;
   background-color: whitesmoke;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
+  position: static;
+  display: inline-block;
 }
-.bocontainer .secondban .column02 .contentcontainer {
+.column02 .contentcontainer {
   position: relative;
   display: block;
   width: 100%;
+  height: 100%;
+  position: static;
 }
-.bocontainer .secondban .column02 .contentcontainer h1 {
+.column02 .contentcontainer h1 {
   display: block;
   text-align: center;
 }
@@ -158,27 +398,115 @@ body .container {
   padding: 0;
   list-style: none;
 }
+.monmagasin .infoblock ul li form {
+  display: inline-block;
+}
+.monmagasin .infoblock ul li form input {
+  display: inline-block !important;
+}
+.monmagasin .infoblock ul li form input[type=submit] {
+  max-width: 30px;
+  min-width: 30px;
+  display: inline-block !important;
+}
 .monmagasin .infoblock ul li button {
-  position: relative;
-  border-radius: 5px;
-  border: solid 1px #8AA5BD;
-  padding: 0.3rem;
-  margin: 0.3rem 0.5rem;
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
   cursor: pointer;
+  position: relative;
+  border: solid 1px #c3ced7;
+  padding: 0.5rem 2rem;
+  margin: 0.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+}
+.monmagasin .infoblock ul li button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
+}
+
+.monmagasin {
+  display: block;
+  position: static;
+}
+.monmagasin .infoblock {
+  position: relative;
+  display: block;
+  min-width: 50%;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0.5rem;
+  padding: 1rem 2rem;
+  border: solid 1px #c3ced7;
+  border-radius: 5px;
+}
+.monmagasin .infoblock ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.monmagasin .infoblock ul li button {
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  border: solid 1px #c3ced7;
+  padding: 0.5rem 2rem;
+  margin: 0.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+}
+.monmagasin .infoblock ul li button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
+}
+.monmagasin .infoblock .addproductclass {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+}
+.monmagasin .infoblock .addproductclass .productclass {
+  position: relative;
+  min-width: 300px;
+  padding: 0 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+.monmagasin button {
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  border: solid 1px #c3ced7;
+  padding: 0.5rem 2rem;
+  margin: 0.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+}
+.monmagasin button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
 }
 
 #navigation {
   display: block;
-  position: absolute;
+  position: static;
   width: 100%;
   z-index: 1;
   background-color: #c3ced7;
-  padding: 0 10%;
 }
 #navigation .mylinks {
   position: relative;
   display: flex;
   justify-content: space-between;
+  padding: 0 10%;
 }
 #navigation .mylinks .logocontainer {
   position: relative;
@@ -205,92 +533,10 @@ body .container {
   position: relative;
   display: block;
   width: 100%;
-  position: static;
   min-height: 20vh;
   background-color: #22303C;
   color: #c3ced7;
   border-top: solid 1rem #c3ced7;
-}
-#footer #connexionmodal {
-  position: relative;
-  display: block;
-  width: 100%;
-  display: none;
-  position: absolute;
-  top: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  z-index: 1;
-  text-align: center;
-}
-#footer #connexionmodal .modal-content {
-  position: relative;
-  top: 50vh;
-  transform: translateY(-50%);
-  padding: 2rem;
-  width: 35%;
-  margin: auto;
-  background-color: #22303C;
-  border-radius: 5px;
-}
-#footer #connexionmodal .modal-content .modal-header {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-#footer #connexionmodal .modal-content .modal-body {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-#footer #connexionmodal .modal-content .modal-body .formcontainer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  background: #22303C;
-  align-items: center;
-  justify-content: center;
-}
-#footer #connexionmodal .modal-content .modal-body .formcontainer h1 {
-  color: #c3ced7;
-}
-#footer #connexionmodal .modal-content .modal-body .formcontainer form {
-  width: -moz-max-content;
-  width: max-content;
-}
-#footer #connexionmodal .modal-content .modal-body .formcontainer form input {
-  display: block;
-  max-width: 400px;
-  width: 50%;
-  min-width: 300px;
-  padding: 0.3rem;
-  margin: 0.3rem;
-  border-radius: 5px;
-}
-#footer #connexionmodal .modal-content .modal-footer {
-  position: relative;
-  display: block;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-#footer #connexionmodal .modal-content .modal-footer button {
-  padding: 0.3rem;
-  margin: 0.3rem;
-  border-radius: 5px;
-  width: 50%;
-  max-width: 200px;
-  min-width: 100px;
-  margin: auto;
-}
-#footer #connexionmodal .modal-content .modal-footer a {
-  color: #c3ced7;
 }
 #footer .footercontainer {
   display: flex;
@@ -321,6 +567,7 @@ body .container {
 #footer .footercontainer .coltwo ul li a {
   color: #c3ced7;
   text-decoration: none;
+  cursor: pointer;
 }
 #footer .footercontainer .coltwo ul li a:hover {
   color: whitesmoke;
@@ -336,4 +583,131 @@ body .container {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.createshop select {
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  min-width: 300px;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  border: solid 1px #c3ced7;
+}
+.createshop textarea {
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  min-width: 300px;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  border: solid 1px #c3ced7;
+  resize: vertical;
+}
+
+.modal {
+  position: relative;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+}
+.modal .modal-content {
+  position: relative;
+  padding: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 75%;
+  max-width: 85%;
+  margin: 45px auto;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 5;
+  color: #22303C;
+}
+.modal .modal-content .modal-header {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.modal .modal-content .modal-body {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.modal .modal-content .modal-body .formcontainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background: whitesmoke;
+  align-items: center;
+  justify-content: center;
+}
+.modal .modal-content .modal-body .formcontainer h1 {
+  color: #22303C;
+}
+.modal .modal-content .modal-body .formcontainer form {
+  text-align: left;
+}
+.modal .modal-content .modal-body .formcontainer form select {
+  display: block;
+  max-width: 400px;
+  width: 50%;
+  min-width: 300px;
+  padding: 0.5rem;
+  margin: 0.3rem;
+  border: solid 1px #c3ced7;
+}
+.modal .modal-content .modal-footer {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-content .modal-footer button {
+  width: 50%;
+  max-width: 200px;
+  min-width: 100px;
+  background-color: #c3ced7;
+  color: #22303C;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  border: solid 1px #c3ced7;
+  padding: 0.5rem 2rem;
+  margin: 0.1rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+}
+.modal .modal-content .modal-footer button:hover {
+  background-color: #22303C;
+  color: #c3ced7;
+}
+.modal .modal-content .modal-footer .linkbutton {
+  border: none;
+  background-color: #22303C;
+  color: #c3ced7;
+  text-decoration: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.modal .modal-content .modal-footer .linkbutton:hover {
+  color: whitesmoke;
 }/*# sourceMappingURL=index.css.map */

@@ -1,12 +1,204 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 
-const Boproducts = () => {
-    return (
-        <div>
-            <h2>Liste des produits</h2>
-            <button>Ajouter un produit</button>
-        </div>
-    )
-}
+//------------------------------Autres-------------------------------------------
+import { isEmpty } from "../Assets/Utils";
+
+//------------------------------REDUX-------------------------------------------
+import { useDispatch, useSelector } from "react-redux";
+import { deleteProduct, getOneproduct } from "../action/produit.action";
+import Productformulaire from "./Productformulaire";
+
+//-----------------------------EDITOR
+import { EditorState } from "draft-js";
+import { showMyproduct } from "../action/showproduct.action";
+
+// css :  './components/_bomagasin.scss'
+const Boproducts = ({ userdata, storedata, productslist }) => {
+  const dispatch = useDispatch();
+  const [images, setImages] = useState([[], [], [], [], [], []]);
+  const [previews, setPreviews] = useState([
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+  ]);
+
+  //------------------------------ Formulaire - Produit
+  const productform = useRef();
+
+  //------------------------------ Variables ---------------------------------------
+  // Formulaires : Rayon, Catégorie, Sous-catégorie, Marque
+  const [rayonselect, setRayonselect] = useState(null);
+  const [categorieselect, setCategorieselect] = useState(null);
+  const [souscategorieselect, setSouscategorieselect] = useState(null);
+  const [marqueselect, setMarqueselect] = useState(null);
+  // Initialise l'état de l'éditeur vide par défaut
+  const [descricourt, setDescricourt] = useState(() => EditorState.createEmpty());
+  const [descrilong, setDescrilong] = useState(() => EditorState.createEmpty());
+  const [productmodal, setProductmodal] = useState(false);
+  const [selectedproduct, setSelectedproduct] = useState(null);
+  const [myproductlist, setMyproductlist] = useState([]);
+  
+  
+  // ------------------------------ Fonctions  ----------------------------------
+  // Ouvrir aperçu de produit 
+  const openmymodal = (id) => {
+    dispatch(showMyproduct(id));
+  } 
+  // Charger un produit
+  const chargeproduct = (id) => {
+    const foundproduct = !isEmpty(productslist) && productslist.find((myone) => (myone.id == id));
+    setSelectedproduct(!isEmpty(foundproduct) && foundproduct);
+  }
+  
+  // Ouvrir le modal de modification de produit
+  const showproductmodal = async (id) => {
+    chargeproduct(id);
+    setProductmodal(true);
+    setDescricourt(EditorState.createEmpty());
+    setDescrilong(EditorState.createEmpty());
+  };
+
+  // Fonction pour supprimer les infos temporaires de produit
+  const clearinfos = () => {
+    productform.current.reset();
+    setRayonselect(null);
+    setCategorieselect(null);
+    setSouscategorieselect(null);
+    setMarqueselect(null);
+    setImages([null, null, null, null, null, null]);
+    setPreviews([null, null, null, null, null, null]);
+    setSelectedproduct(null);
+  }
+  const hidemodal = (e) => {
+    e.target.className == "modal" && setProductmodal(false);
+    // clearinfos();
+  };
+  const closeproductmodal = () => {
+    setProductmodal(false);
+    clearinfos();
+  };           
+  
+  // Delete product
+  const deletemyproduct = (id) => {
+    dispatch(deleteProduct(id));
+  };
+
+
+//----------------------------------- Logiques
+  // Liste de produits : générer la liste en amont, ensuite mettre dans HTML
+  useEffect(() => {
+    const tempmyproductlist =
+      !isEmpty(productslist) &&
+      productslist.map((produit) => (
+        <li key={produit.id}>
+          <b> {''} </b> <button onClick={() => openmymodal(produit.id)}>{produit.nomproduit}</button>
+          <button
+            className="myfontawesome"
+            onClick={() => showproductmodal(produit.id)}
+          >
+            <i className="fa fa-edit"></i>
+          </button>
+          <button
+            className="myfontawesome"
+            onClick={() => {
+              deletemyproduct(produit.id);
+            }}
+          >
+            <i className="fa fa-trash-alt"></i>
+          </button>
+        </li>
+      ));
+    setMyproductlist(tempmyproductlist);
+
+  }, [productslist]);
+
+
+  // Montrer le Modal de modification de produits
+  useEffect(() => {
+    if (productmodal) {
+      if (selectedproduct) {
+        setImages([
+          selectedproduct.image01,
+          selectedproduct.image02,
+          selectedproduct.image03,
+          selectedproduct.image04,
+          selectedproduct.image05,
+          selectedproduct.image06,
+        ]);
+      }
+      else {
+        setImages([null, null, null, null, null, null]);
+        setPreviews([null, null, null, null, null, null]);
+        setSelectedproduct(null);
+      }
+    }
+    else {
+      clearinfos();
+    }
+  }, [productmodal, selectedproduct]);
+
+
+  // **************************************************************************************************************
+  // ----------------------------------------------------JSX-------------------------------------------------------
+  // **************************************************************************************************************
+  return (
+    <div className="monmagasin">
+      <h1>Mes produits</h1>
+
+      {/* *****************************************************************
+                              Ajouter un produit 
+          ***************************************************************** */}
+      <div className="infoblock">
+        <h2>Ajouter un produit</h2>
+        <button className="todeleteme" onClick={() => showproductmodal(0)}>Nouveau produit</button>
+      </div>
+
+      {/* *****************************************************************
+                              Liste des produits
+          ***************************************************************** */}
+      <div className="infoblock">
+        <h2>Liste des produits</h2>
+        <ul>{!isEmpty(myproductlist) && myproductlist}</ul>
+      </div>
+
+      {/* *****************************************************************
+                              Modal ajout produit 
+          ***************************************************************** */}
+      <div
+        id="productmodal"
+        className="modal"
+        style={{ display: productmodal && "flex" }} //
+        onClick={(e) => hidemodal(e)}
+      >
+        <Productformulaire
+          closeproductmodal={closeproductmodal}
+          userdata={userdata}
+          storedata={storedata}
+          selectedproduct={selectedproduct}
+          images={images}
+          setImages={setImages}
+          previews={previews}
+          setPreviews={setPreviews}
+          productform={productform}
+          rayonselect={rayonselect}
+          setRayonselect={setRayonselect}
+          categorieselect={categorieselect}
+          setCategorieselect={setCategorieselect}
+          souscategorieselect={souscategorieselect}
+          setSouscategorieselect={setSouscategorieselect}
+          marqueselect={marqueselect}
+          setMarqueselect={setMarqueselect}
+          descricourt={descricourt}
+          descrilong={descrilong}
+          setDescricourt={setDescricourt}
+          setDescrilong={setDescrilong}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Boproducts;

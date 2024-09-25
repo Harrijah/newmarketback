@@ -1,0 +1,286 @@
+ERROR - 2024-05-17 05:21:19 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', '', 'newmarket', 3306, '', 0)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 Z:\CodeIgniter\newmarketplace\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 Z:\CodeIgniter\newmarketplace\app\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+#7 Z:\CodeIgniter\newmarketplace\app\Controllers\User.php(75): App\Models\UserModel->connectme()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\User->connectme()
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#10 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 Z:\CodeIgniter\newmarketplace\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 Z:\CodeIgniter\newmarketplace\app\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+#6 Z:\CodeIgniter\newmarketplace\app\Controllers\User.php(75): App\Models\UserModel->connectme()
+#7 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\User->connectme()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#14 {main}
+CRITICAL - 2024-05-17 05:21:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: POST, Route: connectme]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\User.php(75): App\Models\UserModel->connectme()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+ERROR - 2024-05-17 05:22:27 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', '', 'newmarket', 3306, '', 0)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 Z:\CodeIgniter\newmarketplace\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 Z:\CodeIgniter\newmarketplace\app\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+#7 Z:\CodeIgniter\newmarketplace\app\Controllers\User.php(75): App\Models\UserModel->connectme()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\User->connectme()
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#10 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 Z:\CodeIgniter\newmarketplace\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 Z:\CodeIgniter\newmarketplace\app\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+#6 Z:\CodeIgniter\newmarketplace\app\Controllers\User.php(75): App\Models\UserModel->connectme()
+#7 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\User->connectme()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#14 {main}
+CRITICAL - 2024-05-17 05:22:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: POST, Route: connectme]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\User.php(75): App\Models\UserModel->connectme()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-05-17 05:23:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 05:51:21 --> ArgumentCountError: Too few arguments to function App\Controllers\User::updateinfo(), 0 passed in Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php on line 933 and exactly 1 expected
+[Method: POST, Route: updateinfo]
+in APPPATH\Controllers\User.php on line 105.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-05-17 05:52:43 --> ErrorException: Undefined variable $input
+[Method: POST, Route: updateinfo]
+in APPPATH\Controllers\User.php on line 108.
+ 1 APPPATH\Controllers\User.php(108): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $input', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\User.php', 108)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-05-17 05:53:09 --> ErrorException: Undefined variable $input
+[Method: POST, Route: updateinfo]
+in APPPATH\Models\UserModel.php on line 74.
+ 1 APPPATH\Models\UserModel.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $input', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\UserModel.php', 74)
+ 2 APPPATH\Controllers\User.php(108): App\Models\UserModel->updateinfo()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-05-17 05:56:22 --> ErrorException: Undefined variable $input
+[Method: POST, Route: updateinfo]
+in APPPATH\Models\UserModel.php on line 74.
+ 1 APPPATH\Models\UserModel.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $input', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\UserModel.php', 74)
+ 2 APPPATH\Controllers\User.php(108): App\Models\UserModel->updateinfo()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-05-17 05:58:01 --> Error: Call to undefined function App\Models\set()
+[Method: POST, Route: updateinfo]
+in APPPATH\Models\UserModel.php on line 78.
+ 1 APPPATH\Controllers\User.php(108): App\Models\UserModel->updateinfo()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-05-17 05:58:52 --> Error: Call to undefined function App\Models\passwordHash()
+[Method: POST, Route: updateinfo]
+in APPPATH\Models\UserModel.php on line 29.
+ 1 SYSTEMPATH\BaseModel.php(1698): App\Models\UserModel->beforeUpdate([...])
+ 2 SYSTEMPATH\BaseModel.php(1022): CodeIgniter\BaseModel->trigger('beforeUpdate', [...])
+ 3 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [...])
+ 4 APPPATH\Models\UserModel.php(80): CodeIgniter\Model->update()
+ 5 APPPATH\Controllers\User.php(108): App\Models\UserModel->updateinfo()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-05-17 06:01:28 --> Error: Call to undefined function App\Models\passwordHash()
+[Method: POST, Route: updateinfo]
+in APPPATH\Models\UserModel.php on line 29.
+ 1 SYSTEMPATH\BaseModel.php(1698): App\Models\UserModel->beforeUpdate([...])
+ 2 SYSTEMPATH\BaseModel.php(1022): CodeIgniter\BaseModel->trigger('beforeUpdate', [...])
+ 3 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [...])
+ 4 APPPATH\Models\UserModel.php(80): CodeIgniter\Model->update()
+ 5 APPPATH\Controllers\User.php(108): App\Models\UserModel->updateinfo()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-05-17 06:22:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-05-17 06:25:09 --> Error: Call to undefined function App\Models\passwordHash()
+[Method: PUT, Route: updateinfo]
+in APPPATH\Models\UserModel.php on line 29.
+ 1 SYSTEMPATH\BaseModel.php(1698): App\Models\UserModel->beforeUpdate([...])
+ 2 SYSTEMPATH\BaseModel.php(1022): CodeIgniter\BaseModel->trigger('beforeUpdate', [...])
+ 3 SYSTEMPATH\Model.php(854): CodeIgniter\BaseModel->update(null, [...])
+ 4 APPPATH\Models\UserModel.php(80): CodeIgniter\Model->update()
+ 5 APPPATH\Controllers\User.php(114): App\Models\UserModel->updateinfo()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->updateinfo()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-05-17 06:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:41:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:44:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:44:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-05-17 06:52:33 --> Error connecting to the database: mysqli_sql_exception: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:187
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php(187): mysqli->real_connect('localhost', 'root', '', 'newmarket', 3306, '', 0)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#3 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 Z:\CodeIgniter\newmarketplace\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#5 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 Z:\CodeIgniter\newmarketplace\app\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+#7 Z:\CodeIgniter\newmarketplace\app\Controllers\User.php(75): App\Models\UserModel->connectme()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\User->connectme()
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#10 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#12 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée in Z:\CodeIgniter\newmarketplace\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 Z:\CodeIgniter\newmarketplace\system\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+#2 Z:\CodeIgniter\newmarketplace\system\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 Z:\CodeIgniter\newmarketplace\system\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+#4 Z:\CodeIgniter\newmarketplace\system\BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 Z:\CodeIgniter\newmarketplace\app\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+#6 Z:\CodeIgniter\newmarketplace\app\Controllers\User.php(75): App\Models\UserModel->connectme()
+#7 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(933): App\Controllers\User->connectme()
+#8 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#9 Z:\CodeIgniter\newmarketplace\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 Z:\CodeIgniter\newmarketplace\system\Boot.php(312): CodeIgniter\CodeIgniter->run()
+#11 Z:\CodeIgniter\newmarketplace\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 Z:\CodeIgniter\newmarketplace\public\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 Z:\CodeIgniter\newmarketplace\system\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\...')
+#14 {main}
+CRITICAL - 2024-05-17 06:52:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+[Method: POST, Route: connectme]
+in SYSTEMPATH\Database\BaseConnection.php on line 457.
+ 1 SYSTEMPATH\Database\BaseConnection.php(604): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1629): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(319): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Models\UserModel.php(64): CodeIgniter\BaseModel->first()
+ 6 APPPATH\Controllers\User.php(75): App\Models\UserModel->connectme()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-05-17 06:52:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:53:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 06:53:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:22:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 12:22:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 13:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 15:40:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 16:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 16:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-05-17 19:04:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

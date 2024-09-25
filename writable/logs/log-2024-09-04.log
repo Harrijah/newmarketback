@@ -1,0 +1,169 @@
+INFO - 2024-09-04 07:40:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-04 07:41:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-04 18:38:39 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 18:40:49 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 18:42:31 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 18:48:47 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 18:50:56 --> ErrorException: Undefined array key "image02"
+[Method: POST, Route: addproduct]
+in APPPATH\Models\ProduitModel.php on line 33.
+ 1 APPPATH\Models\ProduitModel.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image02"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 33)
+ 2 APPPATH\Controllers\Produit.php(42): App\Models\ProduitModel->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 18:56:22 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 18:59:42 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Models\ProduitModel.php on line 19.
+ 1 APPPATH\Models\ProduitModel.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 19)
+ 2 APPPATH\Controllers\Produit.php(42): App\Models\ProduitModel->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:09:09 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:12:30 --> Error: Call to a member function isValid() on array
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:20:12 --> ErrorException: Undefined array key "name"
+[Method: POST, Route: addproduct]
+in APPPATH\Models\ProduitModel.php on line 33.
+ 1 APPPATH\Models\ProduitModel.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "name"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 33)
+ 2 APPPATH\Controllers\Produit.php(42): App\Models\ProduitModel->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:22:59 --> Error: Undefined constant "App\Models\name"
+[Method: POST, Route: addproduct]
+in APPPATH\Models\ProduitModel.php on line 33.
+ 1 APPPATH\Controllers\Produit.php(42): App\Models\ProduitModel->addproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:23:51 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Models\ProduitModel.php on line 33.
+ 1 APPPATH\Models\ProduitModel.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\ProduitModel.php', 33)
+ 2 APPPATH\Controllers\Produit.php(42): App\Models\ProduitModel->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:27:53 --> Error: Call to a member function isValid() on array
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:28:57 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-09-04 19:36:52 --> ErrorException: Undefined array key "image01"
+[Method: POST, Route: addproduct]
+in APPPATH\Controllers\Produit.php on line 39.
+ 1 APPPATH\Controllers\Produit.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "image01"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Produit.php', 39)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Produit->addproduct()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produit))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
