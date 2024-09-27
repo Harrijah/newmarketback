@@ -6,7 +6,7 @@ import draftToHtml from "draftjs-to-html";
 import { showMyproduct } from "../action/showproduct.action";
 
 let defaultimage = "./image/imageicon.png";
-const Showproductmodal = ({ myproductdetails }) => {
+const Showproductmodal = ({ myproductdetails, e }) => {
 
     // ----------------------- Variables ---------------------------------
     const dispatch = useDispatch();
@@ -32,6 +32,11 @@ const Showproductmodal = ({ myproductdetails }) => {
             }
         }
     }
+
+    // useEffect(() => {
+    //     console.log(e);
+        
+    // }, []);
 
     // gestion des classes des images dans le grid : 1 à 6
     const imggridfunction = () => {
@@ -116,11 +121,11 @@ const Showproductmodal = ({ myproductdetails }) => {
               
         
       </div>
-      {/* <div className="modal-footer">
+      <div className="modal-footer">
         <button>Ajouter au panier</button>
         <button>Acheter plus tard</button>
         <button>Voir les détails</button>
-      </div> */}
+      </div>
     </div>
   );
 };

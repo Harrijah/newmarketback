@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "../Assets/Utils";
 import { showMyproduct } from "../action/showproduct.action";
+import { modalposition } from "../action/position.action";
+import { searchinfo } from "../Assets/Functions";
 
 // css : './components/_slideshow.scss'
 const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
@@ -29,19 +31,12 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
         // console.log(filteredlist);
         
     }
-    // Ouvrir le modal aperçu de produit
-    const openmodal = (id) => {
+
+    // communiquer la position-Y pour le modal et Ouvrir le modal aperçu de produit
+    const showaproduct = (e, id) => {
         dispatch(showMyproduct(id));
-    }
-    // chercher une info sur le magasin
-    const infomagasin = (id, request) => {
-        const findone = !isEmpty(magasins) && Array.from(magasins).find((magasin) => magasin.id == id);         
-        if (findone && request in findone) {
-            return findone[request];
-       } else {
-           return 'aucun magasin trouvé';
-       }
-    }
+        dispatch(modalposition(e.pageY - e.clientY));  
+      }
 
     // générer liste de produits séléctionnés
     const listofproduct = async () => {
@@ -51,8 +46,10 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
                     <img src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/'+ product.image01 : ''} alt="Aucune image trouvée" />
                 </div>
                 <div className="productinfos">
-                    <div className="productname"><b><button onClick={() => openmodal(product.id)}>{product.nomproduit}</button></b></div>
-                    <div className="prixproduit">{infomagasin(product.storeid, 'nommagasin') }</div>
+                    <div className="productname"><b>
+                        <button onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button></b>
+                    </div>
+                    <div className="prixproduit">{searchinfo(magasins, product.storeid, 'nommagasin') }</div>
                     <div className="prixproduit">{product.prix} Ar</div>
                 </div>
             </div>
@@ -74,7 +71,9 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
         const templist = !isEmpty(filteredlist) && Array.from(filteredlist)
             .map((product, index) => (
             <div key={product.id} className={(index != sliderindex) ? 'slidebox' : 'showme'}>
-                <img src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
+                <img onClick={(e) => showaproduct(e, product.id)} src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
+                <button className="slidebtn01" onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button>
+                <button className="slidebtn02">{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
             </div>
         ));
             setSlidercontent(templist);
@@ -117,21 +116,26 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
 
     return (
         <div className="slideshowcontainer">
+            
             <div className="imgpart">
-                <div className="leftchevron"><button onClick={() => removeindex()}><i className="fa fa-chevron-left"></i></button></div>
+                <div className="leftchevron">
+                    <button onClick={() => removeindex()}><i className="fa fa-chevron-left"></i></button>
+                </div>
                 <div className="mainimage">
                     {slidercontent}
                 </div>
-                <div className="rightchevron"><button onClick={() => addindex()}><i className="fa fa-chevron-right"></i></button></div>
+                <div className="rightchevron">
+                    <button onClick={() => addindex()}><i className="fa fa-chevron-right"></i></button>
+                </div>
             </div>
+
+
             <div className="productpart">
                     <div className="listcontainer02">
-                    <div className="infoblock">
-                        <select name="" id="" onChange={(e) => setRayon(e.target.value)}>
-                            <option value="">Tous les rayons</option>
-                            {listederayons}
-                        </select>
-                    </div>
+                            <select name="" id="" onChange={(e) => setRayon(e.target.value)}>
+                                <option value="">Tous les rayons</option>
+                                {listederayons}
+                            </select>
                     </div>
                 <div className="listcontainer">
                     <div className="infoblock">                        

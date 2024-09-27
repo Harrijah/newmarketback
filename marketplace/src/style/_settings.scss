@@ -27,9 +27,10 @@ $defaultvalue : 0.3rem;
 $defaultvalue02: 0.5rem;
 $defaultvalue03: 1rem;
 $defaultvalue04: 2rem;
-$defaultradius : 5px;
+$defaultradius : 3px;
 $defaultshadow : 0 0 15px rgba(0, 0, 0, 0.6);
-$defaultshadow02 : 0 0 15px rgba(0, 0, 0, 0.1);
+$defaultshadow02 : 0 0 10px rgba(0, 0, 0, 0.05);
+$defaultshadow03 : 0 0 25px rgba(0, 0, 0, 0.05);
 $defaultdarkbg : radial-gradient(circle at center, $mydark, $darker);
 $defaultborder : solid 1px $mylight;
 $white : whitesmoke;
@@ -100,7 +101,8 @@ $extraHeight: 100px;
 @mixin titleafter{
   content: "";
   position: absolute;
-  height: 1px;
+  height: 5px;
+  border-radius: $defaultradius;
   width: 30%;
   background-color: $color07;
   left: 0;
@@ -146,14 +148,15 @@ $extraHeight: 100px;
 
 @mixin myinput{
   display: block;
-  max-width: 400px;
-  width: 50%;
-  // min-width: 300px;
-  
+  min-width: 100px;
+  width: 100%;
+  max-width: 350px;
+  box-shadow: $defaultshadow02;
   padding: $defaultvalue02;
   margin: $defaultvalue;
-  // border-radius: $defaultradius;
+  border-radius: $defaultradius;
   border: solid 1px $mylight;
+  height: 35px;
 }
 
 @mixin flexbarr{
@@ -172,6 +175,8 @@ $extraHeight: 100px;
   // transition: 1s;
 }
 body{
+  // height: 100vh;
+  // overflow-y: hidden;
   // background-color: $color06;
   font-family: nunito;
   color: $mydark;
@@ -346,7 +351,8 @@ body{
     .col02{
       @include stdparams;
       .modaldescript{
-        max-width: 33vw;
+        min-width: 33vw;
+        width: 40%;
         // background-color: red;
         padding: $defaultvalue03;
         border-top: solid 1px $mylight;
@@ -392,8 +398,8 @@ body{
     position: relative;
     width: 33vw;
     display: grid;
-    grid-template-columns: 1FR 1FR 1FR 1FR 1FR 1FR;
-    grid-template-rows: 1FR 1FR;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
     grid-template-areas: 
     "bp bp bp bp bp bp"
     "ap01 ap02 ap03 ap04 ap05 ap06"
@@ -498,6 +504,9 @@ body{
       align-items: center;
       justify-content: center;
       margin: auto;
+      border-radius: $defaultradius;
+      background-color: #fff;
+      padding: $defaultvalue03;
       .productscontainer{
         @include stdparams;
         display: flex;
@@ -507,16 +516,19 @@ body{
         .productbox{
           position: relative;
           max-width: 245px;
-          background-color: #fff;
+          background-color: rgba(245, 245, 245, 0.562);
           box-shadow: $defaultshadow02;
           margin: $defaultvalue02;
           border: solid 1px $mylight;
+          border-radius: $defaultradius;
+          overflow: hidden;
           .elementscontainer{
             position: relative;
             .imgsection {
               position: relative;
               overflow: hidden;
               max-height: 200px;
+              border-bottom: solid 3px $mylight;
               &:hover {
                 .apercu {
                   top: -20px;
@@ -630,23 +642,19 @@ body{
               .quantityproduit{
                 position: relative;
                 display: flex;
-                // border-bottom: solid 1px $mylight;
                 padding: 0 $defaultvalue02 $defaultvalue02;
-                // margin-bottom: $defaultvalue02;
                   .quantityinput{
-                    display: inline-block;
                     width: 50%;
-                    margin: 0;
                   }
                   button{
                     border: solid 1px $mylight;
                     border-radius: $defaultradius;
                     background: $white;
-                    height: 40px;
+                    height: 35px;
                     width: 50%;
                     font-size: 0.7rem;
                     background-color: $mylight;
-                    border: solid 2px $coolgreen02;
+                    border: solid 2px $coolgreen;
                     box-shadow: $defaultshadow02;
                     margin: $defaultvalue;
                     cursor: pointer;

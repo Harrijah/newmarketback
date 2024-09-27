@@ -4,48 +4,24 @@
     .firstbarr{
         @include flexbarr;
         justify-content: space-between;
-        min-height: 40px;
+        min-height: 70px;
         .leftpart{
             display: flex;
-            height: 100%;
+            align-items: center;
             width: 50%;
-            padding: $defaultvalue02;
-            // form{
-            //     margin: $defaultvalue;
-            //     height: 30px;
-            //     select{
-            //         display: block;
-            //         height: 30px;
-            //         border: none;
-            //         box-shadow: none;
-            //         padding: $defaultvalue;
-            //         background-color: $white;
-            //         color: $color08;
-            //         cursor: pointer;
-            //         &:hover{
-            //             color: $darker;
-            //         }
-            //     }
-            // }
             button{
                 @include softbutton;
-                height: 30px;
+                // height: 30px;
                 &:hover{
                     color: $darker;
                 }
             }
         }
         .rightpart{
-            width: 50%;
             display: flex;
             justify-content: right;
-            input{
-                margin: $defaultvalue;
-                min-width: 200px;
-                width: 100%;
-                max-width: 350px;
-                box-shadow: $defaultshadow02;
-            }
+            align-items: center;
+            width: 50%;
         }
     }
     .secondbarr{

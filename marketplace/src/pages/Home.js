@@ -7,19 +7,25 @@ import { isEmpty } from '../Assets/Utils';
 import { all } from 'axios';
 import { categorygen, filteredcategorygen, finalsouscatgen, rayongen, souscatgen } from '../Assets/Functions';
 import Productslister from '../Components/Productslister';
+import { positionReducer } from '../reducers/position.reducer';
 
 
 // CSS : pages/_home.scss
 const Home = () => {
     // --------------------------------- Variables
+    const [bodyheight, setBodyheight] = useState('100vh');
+    const [bodyoverflow, setBodyoverflow] = useState('hidden');
+    const bodyposition = useSelector((state) => state.positionReducer.position)
     const allproductslist = useSelector((state) => state.productReducer.products);
     const magasins = useSelector((state) => state.storeReducer.allstore);
-    const [onfocus, setOnfocus] = useState(false);
     const [enavant, setEnavant] = useState('enavant');
     const [rayonselect, setRayonselect] = useState(0);
     const [categorieselect, setCategorieselect] = useState(0);
     const [souscategorieselect, setSouscategorieselect] = useState(0);
 
+
+
+  
     // --------------------------------- Fonctions
     // afficher la liste de rayons avec des produits
     const rayonlist = rayongen();
@@ -50,6 +56,14 @@ const Home = () => {
     const souscatlist = souscatgen(rayonselect, rayonlist, categorielist, categorieselect);
     const souscatlist02 = finalsouscatgen(rayonselect, rayonlist, categorielist, categorieselect, souscatlist, filteredcategory);
 
+    
+    // Position modal
+    // const modaly = useSelector((state) => state.positionReducer.position);
+    // const [myy, setMyy] = useState(0);
+    
+    // useEffect(() => {
+    //     setMyy(modaly);
+    // }, [modaly]);
 
     // --------------------------------- Logiques
     // Générer la liste de rayons disponibles

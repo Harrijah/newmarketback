@@ -75,6 +75,7 @@ const Navigation = () => {
         setAccountcreated(true);
     }
 
+
     // Intérieur du modal
     let contenttodisplay;
     const [accountcreated, setAccountcreated] = useState(false);
@@ -158,15 +159,24 @@ const Navigation = () => {
     const producttoshow = useSelector((state) => state.showproductReducer.producttoshow);
     const [dispatchproductdetails, setDispatchproductdetails] = useState(null);
     const productdetails = useSelector((state) => state.productReducer.myproduct);
+    
+    // Position modal
+    const modaly = useSelector((state) => state.positionReducer.position);
+    const [myy, setMyy] = useState(0);
     const hideproductmodal = (e) => {
         e.target.className == "modal" && dispatch(showMyproduct(0));
     }    
+    
+    useEffect(() => {
+        setMyy(modaly);
+    }, [modaly]);
     
     useEffect(() => {
         if (producttoshow) {
             if(productdetails){
                 setDispatchproductdetails(productdetails);
                 setProductpreview(true);
+                document.body.style.overflow= 'hidden'
             } else {
                 dispatch(getOneproduct(producttoshow));
             }
@@ -176,10 +186,12 @@ const Navigation = () => {
                 dispatch(getOneproduct(0));
                 dispatch(showMyproduct(0));
                 setDispatchproductdetails("");
+                document.body.style.overflow = 'auto';
             } else {
                 setProductpreview(false);
                 dispatch(showMyproduct(0));
                 setDispatchproductdetails("");
+                document.body.style.overflow = 'auto';
             }
         }
     }, [producttoshow, productdetails]);
@@ -206,7 +218,10 @@ const Navigation = () => {
                 </div>
             </div>
             <div id="productpreview" className="modal"
-                style={{ display: productpreview && "flex" }} onClick={(e) => hideproductmodal(e)}>
+                style={{
+                    display: productpreview && "flex",
+                    top: (myy) ? myy+'px' : ''
+                }} onClick={(e) => hideproductmodal(e)}>
                 <Showproductmodal myproductdetails={dispatchproductdetails} />
             </div>
         </div>

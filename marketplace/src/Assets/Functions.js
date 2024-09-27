@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { isEmpty } from "./Utils";
+import { showMyproduct } from "../action/showproduct.action";
+import { modalposition } from "../action/position.action";
+
+
 
 
 // join un par un
@@ -133,48 +137,48 @@ export const categorygen = (rayonselect) => {
 
 // retourne la liste des catégories où il y a des produits
 export const filteredcategorygen = (rayonselect) => {
-    const allproductslist = useSelector((state) => state.productReducer.products);
-    const allcategories = useSelector((state) => state.categorieReducer.categorie);
-    const [filteredcategory, setFilteredcategory] = useState([]);
-    const [categorylist, setCategorylist] = useState([]);
-    const [tableauid, setTableauid] = useState([]);
-    const categorieid = [];
-    const temptableau = [];
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const allcategories = useSelector((state) => state.categorieReducer.categorie);
+  const [filteredcategory, setFilteredcategory] = useState([]);
+  const [categorylist, setCategorylist] = useState([]);
+  const [tableauid, setTableauid] = useState([]);
+  const categorieid = [];
+  const temptableau = [];
 
-    // Sortir un tableau d'id de catégories sans les doublons => ceux qui contiennent uniquement un produit
-    useEffect(() => {
-        if (allproductslist != '') {
-            for (let i = 0; i < allproductslist.length; i++) {
-                let doublon = false;
+  // Sortir un tableau d'id de catégories sans les doublons => ceux qui contiennent uniquement un produit
+  useEffect(() => {
+      if (allproductslist != '') {
+          for (let i = 0; i < allproductslist.length; i++) {
+              let doublon = false;
 
-                for (let j = 0; j < categorieid.length; j++) {
-                    if (allproductslist[i].categorie == categorieid[j]) {
-                        doublon = true;
-                        break;
-                    }
-                }
-                if (!doublon) {
-                    categorieid.push(allproductslist[i].categorie);
-                }
-            }
-            setTableauid(categorieid);
-        }
-        if (tableauid != '') {
-            tableauid.forEach(cat => {
-                temptableau.push(allcategories.find((categorie) => (categorie.id == cat)));
-            });
-            setCategorylist(temptableau);
-            // console.log(temptableau);
-        }
-    }, [allproductslist, allcategories, rayonselect]);
-    
-    useEffect(() => {
-        const templist = Array.from(categorylist).filter((category) => category.idrayon == rayonselect).map((cat) => (
-            <option key={cat.id} value={cat.id}>{cat.categorie}</option>
-        ))
-        setFilteredcategory(templist);
-    }, [categorylist]);
-    return filteredcategory;
+              for (let j = 0; j < categorieid.length; j++) {
+                  if (allproductslist[i].categorie == categorieid[j]) {
+                      doublon = true;
+                      break;
+                  }
+              }
+              if (!doublon) {
+                  categorieid.push(allproductslist[i].categorie);
+              }
+          }
+          setTableauid(categorieid);
+      }
+      if (tableauid != '') {
+          tableauid.forEach(cat => {
+              temptableau.push(allcategories.find((categorie) => (categorie.id == cat)));
+          });
+          setCategorylist(temptableau);
+          // console.log(temptableau);
+      }
+  }, [allproductslist, allcategories, rayonselect]);
+  
+  useEffect(() => {
+      const templist = Array.from(categorylist).filter((category) => category.idrayon == rayonselect).map((cat) => (
+          <option key={cat.id} value={cat.id}>{cat.categorie}</option>
+      ))
+      setFilteredcategory(templist);
+  }, [categorylist]);
+  return filteredcategory;
 }
 
 // retourne la liste des sous-catégories
@@ -203,47 +207,47 @@ export const souscatgen = (rayonselect, rayonlist, categorielist, categorieselec
 
 // retourne la liste des sous-catégories dans lesquelles il y a un produit
 export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorieselect, filteredcategory) => {
-    const allproductslist = useSelector((state) => state.productReducer.products);
-    const allsouscat = useSelector((state) => state.souscatReducer.souscat);
-    const [souscat02, setSouscat02] = useState([]);
-    const [finalsouscat, setFinalsoucat] = useState();
-    const idlist01 = [];
-    const malistesouscat = [];
-    
-    // lister les sous-catégories dans un tableau en enlevant les doublons
-    useEffect(() => {
-        if(allproductslist != ''){
-            for (let i = 0; i < allproductslist.length; i++){
-                let doublon = false;
-                for (let j = 0; j < idlist01.length; j++){
-                    if (allproductslist[i].souscategorie == idlist01[j]) {
-                        doublon = true;
-                        break;
-                    }
-                }
-                if (!doublon && allproductslist[i].souscategorie != '0') {
-                    idlist01.push(allproductslist[i].souscategorie);
-                    
-                }
-            }
-        }
-        const tempsouscat = [];
-        if (idlist01 != '' && allsouscat) {
-            idlist01.forEach(idtrouve => {
-                tempsouscat.push(allsouscat.find((souscat) => (souscat.id == idtrouve)));
-            });
-            setSouscat02(tempsouscat);            
-        }
-    }, [allproductslist, filteredcategory]);
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const allsouscat = useSelector((state) => state.souscatReducer.souscat);
+  const [souscat02, setSouscat02] = useState([]);
+  const [finalsouscat, setFinalsoucat] = useState();
+  const idlist01 = [];
+  const malistesouscat = [];
+  
+  // lister les sous-catégories dans un tableau en enlevant les doublons
+  useEffect(() => {
+      if(allproductslist != ''){
+          for (let i = 0; i < allproductslist.length; i++){
+              let doublon = false;
+              for (let j = 0; j < idlist01.length; j++){
+                  if (allproductslist[i].souscategorie == idlist01[j]) {
+                      doublon = true;
+                      break;
+                  }
+              }
+              if (!doublon && allproductslist[i].souscategorie != '0') {
+                  idlist01.push(allproductslist[i].souscategorie);
+                  
+              }
+          }
+      }
+      const tempsouscat = [];
+      if (idlist01 != '' && allsouscat) {
+          idlist01.forEach(idtrouve => {
+              tempsouscat.push(allsouscat.find((souscat) => (souscat.id == idtrouve)));
+          });
+          setSouscat02(tempsouscat);            
+      }
+  }, [allproductslist, filteredcategory]);
 
-    useEffect(() => {
-        if (souscat02 != '') {
-            setFinalsoucat(
-                souscat02.filter((cat) => cat.idcategorie == categorieselect).map((souscat) => (
-                    <option key={souscat.id} value={souscat.id}>{souscat.souscategorie}</option>
-                ))
-            );
-        }
-    }, [categorieselect]);
-    return finalsouscat;
+  useEffect(() => {
+      if (souscat02 != '') {
+          setFinalsoucat(
+              souscat02.filter((cat) => cat.idcategorie == categorieselect).map((souscat) => (
+                  <option key={souscat.id} value={souscat.id}>{souscat.souscategorie}</option>
+              ))
+          );
+      }
+  }, [categorieselect]);
+  return finalsouscat;
 }

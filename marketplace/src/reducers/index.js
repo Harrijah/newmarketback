@@ -7,6 +7,7 @@ import souscatReducer from "./souscat.reducer";
 import marqueReducer from "./marque.reducer";
 import productReducer from "./produit.reducer";
 import showproductReducer from "./showproduct.reducer";
+import { positionReducer } from "./position.reducer";
 
 
 export default combineReducers({
@@ -18,4 +19,5 @@ export default combineReducers({
     marqueReducer,
     productReducer,
     showproductReducer,
+    positionReducer,
 });

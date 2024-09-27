@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { isEmpty } from "../Assets/Utils";
 import { useDispatch, useSelector } from "react-redux";
 import { showMyproduct } from "../action/showproduct.action";
-import { searchinfo } from "../Assets/Functions";
+import { searchinfo, showaproduct } from "../Assets/Functions";
+import { modalposition } from "../action/position.action";
 
 const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoice, rayonselect, categorychoice, categorieselect, souscategorychoice, souscategorieselect }) => {
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
     const [filteredproductlist, setFilteredproductlist] = useState([]);
-    const [producttoshow, setProducttoshow] = useState([]);
     const defaultimage = './image/imageicon.png';
     const [keyword, setKeyword] = useState('');
     const dispatch = useDispatch();
@@ -17,6 +17,12 @@ const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoic
       return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     };
 
+    // communiquer la position-Y pour le modal
+    const showaproduct = (e, id) => {
+        dispatch(showMyproduct(id));
+        dispatch(modalposition(e.pageY - e.clientY));  
+      }
+ 
     useEffect(() => {
         if (typeof(allproductslist) == 'object') {
             const templist = (allproductslist)
@@ -36,13 +42,13 @@ const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoic
                                         <button>Pour plus tard</button>
                                         <button>Voir en détails</button>
                                     </div>
-                                    <button onClick={() => dispatch(showMyproduct(product.id))}>
-                                    <span className="apercu" >Aperçu</span>
-                                    <img src={product.image01 ? 'http://localhost:8080/uploads/' + product.image01 : defaultimage} alt="" />
+                                    <button onClick={(e) => showaproduct(e, product.id)}>
+                                        <span className="apercu" >Aperçu</span>
+                                        <img src={product.image01 ? 'http://localhost:8080/uploads/' + product.image01 : defaultimage} alt="" />
                                     </button>
                                 </div>
                                 <div className="txtsection">
-                                    <a onClick={() => dispatch(showMyproduct(product.id)) }><h3>{product.nomproduit}</h3></a>
+                                    <a onClick={(e) => showaproduct(e, product.id)}><h3>{product.nomproduit}</h3></a>
                                     <div className="otherdetails">
                                         <span><b> {!isEmpty(product.marque) && searchinfo(marques, product.marque, 'marque')}</b></span>
                                         <span>{!isEmpty(product.storeid) && searchinfo(magasins, product.storeid, 'nommagasin')}</span>
