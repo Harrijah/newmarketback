@@ -8,6 +8,7 @@
         .leftpart{
             display: flex;
             height: 100%;
+            width: 50%;
             padding: $defaultvalue02;
             // form{
             //     margin: $defaultvalue;
@@ -35,15 +36,22 @@
             }
         }
         .rightpart{
+            width: 50%;
+            display: flex;
+            justify-content: right;
             input{
                 margin: $defaultvalue;
+                min-width: 200px;
+                width: 100%;
+                max-width: 350px;
+                box-shadow: $defaultshadow02;
             }
         }
     }
     .secondbarr{
         @include flexbarr;
         .leftpart{
-            width: 77%;
+            width: 75%;
             .carouselheader{
                 h2{
                     text-decoration: none;
@@ -56,10 +64,11 @@
                     display: flex;
                     .first{
                         display: flex;
-                        width: fit-content;
+                        width: 50%;
                         button{
                             display: block;
                             height: 40px;
+                            min-width: 33.3%;
                             border: none;
                             box-shadow: none;
                             padding: $defaultvalue;
@@ -94,7 +103,10 @@
                 }
                 .pplcarousel{
                     @include stdparams;
-                    padding: $defaultvalue02;
+                    border-right: solid 1px $mylight;
+                    border-left: solid 1px $mylight;
+                    border-bottom: solid 1px $mylight;
+                    box-shadow: $defaultshadow02  $defaultshadow02 $defaultshadow02;
                 }
             }
         }

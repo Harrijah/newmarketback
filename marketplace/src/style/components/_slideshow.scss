@@ -1,6 +1,8 @@
 .slideshowcontainer{
     display: flex;
     position: relative;
+    background-color: #fff;
+    padding: $defaultvalue02;
     .imgpart{
         @include stdparams;
         display: flex;

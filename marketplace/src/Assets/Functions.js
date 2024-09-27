@@ -13,19 +13,18 @@ export const searchinfo = (base, id, request) => {
   }
 } 
 
-
 // retourne la liste de tous les rayons
 export const rayonsgen = () => {
   const [myrayons, setMyrayons] = useState([]);
   const rayonlist = useSelector((state) => state.rayonReducer.rayon);
 
   useEffect(() => {
-    const templist = Array.from(rayonlist).map((rayon) => (
-      <option key={rayon.id} value={rayon.id}>
+    if (typeof(rayonlist) == 'object') {
+    const templist = rayonlist.map((rayon, index) => (
+      <option key={rayon.id || index} value={rayon.id}>
         {rayon.rayon}
       </option>
     ));
-    if (rayonlist) {
       setMyrayons(templist);
     }
   }, [rayonlist]);
@@ -34,51 +33,73 @@ export const rayonsgen = () => {
 
 // retourne les rayons auxquels des produits sont rattachés
 export const rayongen = () => {
+  // variables
+  const allproductslist = useSelector((state) => state.productReducer.products);
   const rayonlist = useSelector((state) => state.rayonReducer.rayon);
-  const [finalrays, setFinalrays] = useState([]);
+
   const [temprayonsliste, setTemprayonsliste] = useState([]);
   const [temprayons, setTemprayons] = useState([]);
-  const allproductslist = useSelector((state) => state.productReducer.products);
+  const [finalrays, setFinalrays] = useState([]);
   const templist = [];
   const secondrayon = [];
 
-  useEffect(() => {
-    for (let i = 0; i < allproductslist.length; i++) {
-      let foundDuplicate = false;
-      for (let j = 0; j < templist.length; j++) {
-        if (allproductslist[i].rayon === templist[j]) {
-          foundDuplicate = true;
-          break; // On sort de la boucle si un doublon est trouvé
+  // fonctions
+  // Créer un tableau des id de rayons liés à des produits
+  const placerays = () => {
+    if (allproductslist) {
+      // Sélectionner les rayons sans doublons
+      for (let i = 0; i < allproductslist.length; i++) {
+        let foundDuplicate = false;
+        for (let j = 0; j < templist.length; j++) {
+          if (allproductslist[i].rayon === templist[j]) {
+            foundDuplicate = true;
+            break; // On sort de la boucle si un doublon est trouvé
+          }
+        }
+        if (!foundDuplicate) {
+          templist.push(allproductslist[i].rayon);
         }
       }
-      if (!foundDuplicate) {
-        templist.push(allproductslist[i].rayon);
-      }
+      // Placer la liste des rayons dans le tableau "Temprayonsliste"
+      setTemprayonsliste(templist);
     }
-    setTemprayonsliste(templist);
-    if (temprayonsliste) {
+  }
+
+  // Créer un array de rayons à partir de la liste des id trouvés dans le tableau "Temprayonslist"
+  const createraylist = () => {
+    if (temprayonsliste && rayonlist) {
       temprayonsliste.forEach((id) => {
         const testray = rayonlist.find((rayon) => rayon.id == id);
         secondrayon.push(testray);
       });
       setTemprayons(secondrayon);
     }
-  }, [allproductslist, rayonlist]);
+  }
+
+  // mapper le tableau de rayons dans un array d'<option></option>
+  const rayshortlist = () => {
+    if (temprayons != "") {
+      const listtemp = temprayons && Array.from(temprayons).map((item, index) => (
+            <option key={item.id || index} value={item.id}>
+              {item.rayon}
+            </option>
+          )
+        );
+        setFinalrays(listtemp);
+      }
+  }
 
   useEffect(() => {
-    if (temprayons != "") {
-      const listtemp =
-        temprayons &&
-        Array.from(temprayons).map((item) => (
-          <option key={item.id} value={item.id}>
-            {item.rayon}
-          </option>
-        ));
-      setFinalrays(listtemp);
-    }
+    placerays();
+  }, [allproductslist]);
+  useEffect(() => {
+    createraylist();
+  }, [temprayonsliste]);
+  useEffect(() => {
+    rayshortlist();
   }, [temprayons]);
-
-  return finalrays;
+  
+    return finalrays;
 };
 
 // choisir un rayon
@@ -180,7 +201,6 @@ export const souscatgen = (rayonselect, rayonlist, categorielist, categorieselec
   return souscatlist;
 };
 
-
 // retourne la liste des sous-catégories dans lesquelles il y a un produit
 export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorieselect, filteredcategory) => {
     const allproductslist = useSelector((state) => state.productReducer.products);
@@ -208,7 +228,7 @@ export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorie
             }
         }
         const tempsouscat = [];
-        if (idlist01 != '') {
+        if (idlist01 != '' && allsouscat) {
             idlist01.forEach(idtrouve => {
                 tempsouscat.push(allsouscat.find((souscat) => (souscat.id == idtrouve)));
             });

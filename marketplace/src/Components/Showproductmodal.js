@@ -84,7 +84,6 @@ const Showproductmodal = ({ myproductdetails }) => {
             <div className="separatecol">
                 <div className="col01">
                     <div className="imagegrid">
-                        {imglist}
                         <div className="pplimage">
                             <img
                             src={
@@ -100,6 +99,7 @@ const Showproductmodal = ({ myproductdetails }) => {
                             }
                         />
                         </div> 
+                        {imglist}
                     </div>
                 </div>
                   <div className="col02" >
@@ -116,11 +116,11 @@ const Showproductmodal = ({ myproductdetails }) => {
               
         
       </div>
-      <div className="modal-footer">
+      {/* <div className="modal-footer">
         <button>Ajouter au panier</button>
         <button>Acheter plus tard</button>
         <button>Voir les détails</button>
-      </div>
+      </div> */}
     </div>
   );
 };

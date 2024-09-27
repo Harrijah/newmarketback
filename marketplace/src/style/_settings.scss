@@ -223,9 +223,18 @@ body{
   
   .modalleftcol{
     background: $color08;
+    min-width: 350px;
+    width: 30%;
+    max-width: 35vwpx;
     margin: 1%;
     padding: 1%;
+    select, input{
+      width: 90% !important;
+      // margin: auto !important;
+    }
   }
+
+  // ----------------------- Briques d'images
   .bricks{
     @include stdparams;
     // max-width: 60%;
@@ -239,7 +248,9 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     justify-content: center;
-    // max-width: 60%;
+    // min-width: 400px;
+    // width: 70%;
+    // max-width: 70%;
     .blockbrick{
       display: inline-block;
       position: relative;
@@ -253,18 +264,21 @@ body{
       padding: 0;
       // background: $neutre;
       // border: solid 2px $sabledore;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: $defaultradius;
+      box-shadow: $defaultshadow02;
       transition: all 0.3s ease-in-out;
+      // overflow: hidden;
       div{
         display: flex;
         align-items: flex-start; /* Aligner l'image et la croix en haut */
-        max-width: 150px;
+        width: 150px;
+        max-width: 250px;
         img{
           display: block;
           margin: auto;
           height: auto;
-          max-width: 150px;
+          width: 100%;
+          // max-width: 150px;
         }
         .todeleteme{
           margin: auto;
@@ -301,7 +315,10 @@ body{
           height: auto;
           max-width: 150px;
         }
-
+      }
+      input{
+        border: none;
+        width: 50px !important;
       }
     }
   }
@@ -313,17 +330,24 @@ body{
     max-width: 95%;
     .col01{
       @include stdparams;
+      padding : $defaultvalue02;
       img{
         display: block;
         margin: auto;
         height: auto;
         // max-width: 150px;
       }
+      input{
+        width: 30% !important;
+        max-width: 300px !important;
+        margin: 0 !important;
+      }
     }
     .col02{
       @include stdparams;
       .modaldescript{
-        max-width: 30vw;
+        max-width: 33vw;
+        // background-color: red;
         padding: $defaultvalue03;
         border-top: solid 1px $mylight;
         p{
@@ -362,25 +386,23 @@ body{
     padding: $defaultvalue $defaultvalue02 !important;
     margin: $defaultvalue !important;
   }
+
+  // --------------------------- MODAL : Aperçu - Grid image
   .imagegrid{
     position: relative;
-    width: 100%;
+    width: 33vw;
     display: grid;
-    grid-template-columns: 15% 85%;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 1FR 1FR 1FR 1FR 1FR 1FR;
+    grid-template-rows: 1FR 1FR;
     grid-template-areas: 
-    "ap01 bp"
-    "ap02 bp"
-    "ap03 bp"
-    "ap04 bp"
-    "ap05 bp"
-    "ap06 bp"
+    "bp bp bp bp bp bp"
+    "ap01 ap02 ap03 ap04 ap05 ap06"
     ;
     .gridimage01, .gridimage02, .gridimage03, .gridimage04, .gridimage05, .gridimage06{
       position: relative;
       display: flex;
       width: 100%;
-      height: 50px;
+      height: 40px;
       background-color: $white;
       padding: 0 !important;
       button{
@@ -443,6 +465,7 @@ body{
     }
   }
 
+  // --------------------------- Section liste de produits : avec filtre
   .productslister{
     @include stdparams;
     margin: auto;
@@ -452,20 +475,23 @@ body{
       position: relative;
       display: flex;
       width: 80%;
-      margin: auto;
-      padding: $defaultvalue02;
-      // background-color: $mylight;
+      padding: $defaultvalue02 0;
       align-items: center;
-      justify-content: center;
+      // justify-content: center;
       select{
-        margin: $defaultvalue02;
-        padding: $defaultvalue03 $defaultvalue04;
+        margin: 0 $defaultvalue02;
+        padding: $defaultvalue02;
         border: solid 1px $mylight;
         border-radius: $defaultradius;
         width: 30%;
+        background-color: #fff;
+        box-shadow: $defaultshadow02;
+      }
+      input{
         box-shadow: $defaultshadow02;
       }
     }
+  // ---------------------------  Briques d'images
     .filteredproducts{
       @include stdparams;
       display: flex;
@@ -484,6 +510,7 @@ body{
           background-color: #fff;
           box-shadow: $defaultshadow02;
           margin: $defaultvalue02;
+          border: solid 1px $mylight;
           .elementscontainer{
             position: relative;
             .imgsection {
@@ -603,7 +630,7 @@ body{
               .quantityproduit{
                 position: relative;
                 display: flex;
-                border-bottom: solid 1px $mylight;
+                // border-bottom: solid 1px $mylight;
                 padding: 0 $defaultvalue02 $defaultvalue02;
                 // margin-bottom: $defaultvalue02;
                   .quantityinput{
@@ -617,9 +644,11 @@ body{
                     background: $white;
                     height: 40px;
                     width: 50%;
-                    box-shadow: $defaultshadow02;
                     font-size: 0.7rem;
                     background-color: $mylight;
+                    border: solid 2px $coolgreen02;
+                    box-shadow: $defaultshadow02;
+                    margin: $defaultvalue;
                     cursor: pointer;
                     &:hover{
                       background-color: #fff;

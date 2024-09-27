@@ -14,6 +14,7 @@ const Home = () => {
     // --------------------------------- Variables
     const allproductslist = useSelector((state) => state.productReducer.products);
     const magasins = useSelector((state) => state.storeReducer.allstore);
+    const [onfocus, setOnfocus] = useState(false);
     const [enavant, setEnavant] = useState('enavant');
     const [rayonselect, setRayonselect] = useState(0);
     const [categorieselect, setCategorieselect] = useState(0);
@@ -27,6 +28,7 @@ const Home = () => {
     const rayonchoice = (e) => {
         setRayonselect(e.target.value);
         setCategorieselect(0);
+        setSouscategorieselect(0);
     };
 
     // obtenir une liste de catégories
@@ -66,7 +68,7 @@ const Home = () => {
                         <button>Services</button>
                     </div>
                     <div className="rightpart">
-                        <input type="text" name="" id="" placeholder='Entrez un mot-clé' />
+                        <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' />
                     </div>
                 </div>
                 <div className="secondbarr">
@@ -75,9 +77,9 @@ const Home = () => {
                             <h2>Articles en avant</h2>
                             <div className="buttonline">
                                 <div className="first">
-                                    <button onClick={() => setEnavant('enavant')} className={(enavant == 'enavant' ? 'highlightme' : '')}>Coups de coeur</button>
-                                    <button onClick={() => setEnavant('special')} className={(enavant == 'special' ? 'highlightme' : '')}>Les nouveautés</button>
-                                    <button onClick={() => setEnavant('promo')} className={(enavant == 'promo' ? 'highlightme' : '')} >Promos</button>
+                                    <button onClick={() => setEnavant('enavant')} className={(enavant == 'enavant' ? 'highlightme' : '')} style={{backgroundColor: enavant == 'enavant' ? '#fff' : ''}}>Coups de coeur</button>
+                                    <button onClick={() => setEnavant('special')} className={(enavant == 'special' ? 'highlightme' : '')} style={{backgroundColor: enavant == 'special' ? '#fff' : ''}}>Les nouveautés</button>
+                                    <button onClick={() => setEnavant('promo')} className={(enavant == 'promo' ? 'highlightme' : '')} style={{backgroundColor: enavant == 'promo' ? '#fff' : ''}}>Promos</button>
                                 </div>
                                 <div className="last"></div>
 
@@ -120,7 +122,7 @@ const Home = () => {
                 <div className="productfilter">
                     <div className="filtercontainer">
                         <h2>Trouvez un produit en 3 clics</h2>
-                        <Productslister allproductslist={allproductslist} rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} />
+                        <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} />
                     </div>
                 </div>
             </div>

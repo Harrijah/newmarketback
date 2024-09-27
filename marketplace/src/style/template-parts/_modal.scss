@@ -18,7 +18,7 @@
     position: relative;
     padding: $defaultvalue04;
     width: fit-content;
-    min-width: 75%;
+    min-width: 40%;
     max-width: 85%;
     margin: 45px auto;
     background-color: $white;
@@ -72,10 +72,18 @@
           color: $mydark;
         }
         form {
-          // width: max-content;
+          min-width: 350px;
+          width: 100%;
+          max-width: 80vw;
           text-align: left;
           select {
             @include myinput;
+          }
+          input{
+            min-width: 200px;
+            width: 100%;
+            max-width: 350px;
+            margin: $defaultvalue02 auto;
           }
         }
       }

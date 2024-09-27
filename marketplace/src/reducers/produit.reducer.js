@@ -25,7 +25,8 @@ export default function productReducer(state = initialState, action){
             sessionStorage.setItem('products', JSON.stringify(action.payload));
             return {
                 products: JSON.parse(sessionStorage.getItem('products')),
-                myproduct: JSON.parse(sessionStorage.getItem('myproduct'))
+                myproduct: JSON.parse(sessionStorage.getItem('myproduct')),
+                // products: action.payload,
             }
         case GET_ONEPRODUCT:
             sessionStorage.setItem('myproduct', JSON.stringify(action.payload));
