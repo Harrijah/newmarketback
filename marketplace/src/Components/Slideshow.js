@@ -131,13 +131,13 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
 
 
             <div className="productpart">
-                    <div className="listcontainer02">
-                            <select name="" id="" onChange={(e) => setRayon(e.target.value)}>
-                                <option value="">Tous les rayons</option>
-                                {listederayons}
-                            </select>
-                    </div>
                 <div className="listcontainer">
+                    {/* <select name="" id="" onChange={(e) => setRayon(e.target.value)}>
+                        <option value="">Tous les rayons</option>
+                        {listederayons}
+                    </select> */}
+                </div>
+                <div className="listcontainer02">
                     <div className="infoblock">                        
                         {displaylist}
                     </div>

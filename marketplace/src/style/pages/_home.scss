@@ -79,6 +79,8 @@
                 }
                 .pplcarousel{
                     @include stdparams;
+                    height: 70vh;
+                    // overflow: hidden;
                     border-right: solid 1px $mylight;
                     border-left: solid 1px $mylight;
                     border-bottom: solid 1px $mylight;
