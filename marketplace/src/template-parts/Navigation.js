@@ -7,13 +7,16 @@ import Showproductmodal from '../Components/Showproductmodal';
 import { showMyproduct } from '../action/showproduct.action';
 import { getOneproduct } from '../action/produit.action';
 import { isEmpty } from '../Assets/Utils';
+import { modalposition } from '../action/position.action';
+import { rapidsearchmodal, searchinfo, searchresult } from '../Assets/Functions';
 
 
 // CSS : template-parts/_navigation.scss
-const Navigation = () => {
+const Navigation = ({allproductslist, magasins, marques}) => {
+    
+    
     // Redux => Session connectée ou non
     const isConnected = useSelector((state) => state.createaccountReducer.isConnected);
-    const dispatch = useDispatch();
 
     const navigate = useNavigate();
     const closeSession = () => {
@@ -154,6 +157,7 @@ const Navigation = () => {
             )
         );
     
+    
     // ------------------------------------------  Montrer modal produit
     const [productpreview, setProductpreview] = useState(false);
     const producttoshow = useSelector((state) => state.showproductReducer.producttoshow);
@@ -167,6 +171,9 @@ const Navigation = () => {
         e.target.className == "modal" && dispatch(showMyproduct(0));
     }    
     
+
+    
+
     useEffect(() => {
         setMyy(modaly);
     }, [modaly]);
@@ -195,6 +202,66 @@ const Navigation = () => {
             }
         }
     }, [producttoshow, productdetails]);
+
+    // variables
+    const [filteredproductlist, setFilteredproductlist] = useState([]);
+    const defaultimage = './image/imageicon.png';
+    
+    const [rapidsearch, setRapidsearch] = useState(false);
+    const [clientsearchvalue, setClientsearchvalue] = useState('');
+    const dispatch = useDispatch();
+    const removeAccents = (str) => {
+      return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    };
+
+    // communiquer la position-Y pour le modal
+    const showaproduct = (e, id) => {
+        setClientsearchvalue('');
+        dispatch(showMyproduct(id));
+        dispatch(modalposition(e.pageY - e.clientY));  
+      }
+
+    // afficher le résultat de recherche avec la liste des produits
+    useEffect(() => {
+        if (typeof(allproductslist) == 'object') {
+            const templist = (allproductslist)
+                .filter((product) => clientsearchvalue ? removeAccents(product.nomproduit.toLowerCase()).includes(clientsearchvalue)
+                    // || removeAccents(product.courtdescript.toLowerCase()).includes(clientsearchvalue)
+                    : true)
+                
+                    .map((product, index) => (    
+                        <div className="productbox" key={product.id || index}>
+                            <div className="elementscontainer"> 
+                                <div className="imgsection">
+                                    <div className="productactions">
+                                        <button>Pour plus tard</button>
+                                        <button>Voir en détails</button>
+                                    </div>
+                                    <button onClick={(e) => showaproduct(e, product.id)}>
+                                        <span className="apercu" >Aperçu</span>
+                                        <img src={product.image01 ? 'http://localhost:8080/uploads/' + product.image01 : defaultimage} alt="" />
+                                    </button>
+                                </div>
+                                <div className="txtsection">
+                                    <a onClick={(e) => showaproduct(e, product.id)}><h3>{product.nomproduit}</h3></a>
+                                    <div className="otherdetails">
+                                        <span><b> {!isEmpty(product.marque) && searchinfo(marques, product.marque, 'marque')}</b></span>
+                                        <span>{!isEmpty(product.storeid) && searchinfo(magasins, product.storeid, 'nommagasin')}</span>
+                                    </div>
+                                    <div className="prixproduit">
+                                        <span>{product.prix} Ar</span>
+                                    </div>
+                                </div>        
+                            </div>
+                        </div>
+                        ) 
+                    );             
+          setFilteredproductlist(templist);
+        }
+        rapidsearchmodal(clientsearchvalue, setRapidsearch);
+    }, [clientsearchvalue]);
+
+
     
     return (
         <div id="navigation">
@@ -204,7 +271,9 @@ const Navigation = () => {
                     <span><i className='fa fa-store'></i></span>
                 </div>
                 <div className="linkcontainer">
+                <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} />
                     <NavLink to='/'>Accueil</NavLink>
+                    <NavLink to='/magasin'>Magasins</NavLink>
                     { isConnected && <NavLink to='/moncompte'>Moncompte</NavLink> } 
                     { !isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button> } 
                 </div>
@@ -224,6 +293,46 @@ const Navigation = () => {
                 }} onClick={(e) => hideproductmodal(e)}>
                 <Showproductmodal myproductdetails={dispatchproductdetails} />
             </div>
+
+            {/* Modal de recherche rapide */}
+            <div className="modal" style={{ display: rapidsearch && "flex"}}>          
+                {
+                    (filteredproductlist != '') ?
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h3>Résultats de recherche pour " { clientsearchvalue } "</h3>
+                        </div>
+                        <div className="modal-body">
+                            <div className="productslister">
+                                <div className="filteredproducts">
+                                    <div className="productscontainer">
+                                        {filteredproductlist}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div className="modal-footer">
+                            <button onClick={() => setClientsearchvalue('')}>Fermer</button>    
+                        </div>
+                    </div>
+                    : (
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h3>Résultats de recherche pour { clientsearchvalue }</h3>
+                            </div>
+                            <div className="modal-body">
+                                Aucun résultat, essayez un autre mot-clé svp.
+                            </div>
+                            <div className="modal-footer">
+                                <button onClick={() => setClientsearchvalue('')}>Fermer</button>    
+                            </div>
+                        </div>
+                    
+                    )
+                }             
+            </div>
+            
         </div>
     )
 }

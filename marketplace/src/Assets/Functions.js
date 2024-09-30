@@ -4,12 +4,20 @@ import { isEmpty } from "./Utils";
 import { showMyproduct } from "../action/showproduct.action";
 import { modalposition } from "../action/position.action";
 
-
-
+// Rapidsearch modal
+export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
+  if (clientsearchvalue != '') {
+      setRapidsearch(true);
+      document.body.style.overflow = 'hidden';
+  } else {
+      setRapidsearch(false);
+      document.body.style.overflow = 'auto';
+  }
+}
 
 // join un par un
 export const searchinfo = (base, id, request) => {
-  const tempinfo = !isEmpty(base) && Array.from(base).find((info) => info.id == id);
+  const tempinfo = (typeof(base) == "object") && base.find((info) => info.id == id);
   if (tempinfo && request in tempinfo) {
       return (<span>{tempinfo[request]}</span>)
   } else {

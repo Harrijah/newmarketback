@@ -477,6 +477,7 @@ body{
     margin: auto;
     position: relative;
     width: 100%;
+    z-index: 2;
     .barfilter{
       position: relative;
       display: flex;
@@ -507,12 +508,14 @@ body{
       border-radius: $defaultradius;
       background-color: #fff;
       padding: $defaultvalue03;
+      z-index: 3;
       .productscontainer{
         @include stdparams;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
+        z-index: 4;
         .productbox{
           position: relative;
           max-width: 245px;

@@ -24,6 +24,9 @@ const Moncompte = () => {
     const User = useSelector((state) => state.createaccountReducer.user);
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const allproductslist = useSelector((state) => state.productReducer.products);
+    const magasins = useSelector((state) => state.storeReducer.allstore);
+    const marques = useSelector((state) => state.marqueReducer.marques);
     
 
     // const User = sessionStorage.getItem('user') ? JSON.parse(sessionStorage.getItem('user')) : '';
@@ -72,7 +75,7 @@ const Moncompte = () => {
 
     return (
         <div className="container">
-            <Navigation />
+            <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques}  />
             <Topban user={User} />
             <Leftlateralcolumn leftColumnRef={leftColumnRef} button={ <Mccol setMychoice={setMychoice} mychoice={mychoice} /> } />
             <Rightmaincontent rightContentRef={rightContentRef} content={content} />

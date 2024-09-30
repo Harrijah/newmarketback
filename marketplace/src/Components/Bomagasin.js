@@ -6,6 +6,7 @@ import { updatestore } from "../action/store.action";
 
 
 
+// css :  './components/_bomagasin.scss'
 const Bomagasin = ({ userdata, storedata }) => {
     const dispatch = useDispatch();
 

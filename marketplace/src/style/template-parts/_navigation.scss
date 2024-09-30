@@ -16,6 +16,7 @@
         .linkcontainer{
             position: relative;
             display: flex;
+            align-items: center;
             a, button{
                 padding: $defaultvalue;
                 @include stdbtncolor;

@@ -21,6 +21,9 @@ const Backoffice = () => {
     const userdata = useSelector((state) => state.createaccountReducer.user);
     const storedata = useSelector((state) => state.storeReducer.store);
     const Products = useSelector((state) => state.productReducer.products);
+    const allproductslist = useSelector((state) => state.productReducer.products);
+    const magasins = useSelector((state) => state.storeReducer.allstore);
+    const marques = useSelector((state) => state.marqueReducer.marques);
 
     /* ********************************************
     **** Afficher les produits dans Backoffice ****
@@ -84,7 +87,7 @@ const Backoffice = () => {
 
     return (
         <div className="container">
-            <Navigation />
+            <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
             <Boban />
             <Leftlateralcolumn leftColumnRef={leftColumnRef} button={ <Bocol setMychoice={setMychoice} mychoice={mychoice} /> } />
             <Rightmaincontent rightContentRef={rightContentRef}  content={content}/>

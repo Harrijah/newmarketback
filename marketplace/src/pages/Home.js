@@ -2,22 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Navigation from '../template-parts/Navigation';
 import Footer from '../template-parts/Footer';
 import Slideshow from '../Components/Slideshow';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { isEmpty } from '../Assets/Utils';
 import { all } from 'axios';
-import { categorygen, filteredcategorygen, finalsouscatgen, rayongen, souscatgen } from '../Assets/Functions';
+import { categorygen, filteredcategorygen, finalsouscatgen, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
 import Productslister from '../Components/Productslister';
 import { positionReducer } from '../reducers/position.reducer';
+import { showMyproduct } from '../action/showproduct.action';
+import { modalposition } from '../action/position.action';
 
 
 // CSS : pages/_home.scss
 const Home = () => {
     // --------------------------------- Variables
-    const [bodyheight, setBodyheight] = useState('100vh');
-    const [bodyoverflow, setBodyoverflow] = useState('hidden');
-    const bodyposition = useSelector((state) => state.positionReducer.position)
+    const defaultimage = './image/imageicon.png';
     const allproductslist = useSelector((state) => state.productReducer.products);
     const magasins = useSelector((state) => state.storeReducer.allstore);
+    const marques = useSelector((state) => state.marqueReducer.marques);
     const [enavant, setEnavant] = useState('enavant');
     const [rayonselect, setRayonselect] = useState(0);
     const [categorieselect, setCategorieselect] = useState(0);
@@ -56,25 +57,15 @@ const Home = () => {
     const souscatlist = souscatgen(rayonselect, rayonlist, categorielist, categorieselect);
     const souscatlist02 = finalsouscatgen(rayonselect, rayonlist, categorielist, categorieselect, souscatlist, filteredcategory);
 
-    
-    // Position modal
-    // const modaly = useSelector((state) => state.positionReducer.position);
-    // const [myy, setMyy] = useState(0);
-    
-    // useEffect(() => {
-    //     setMyy(modaly);
-    // }, [modaly]);
-
     // --------------------------------- Logiques
     // Générer la liste de rayons disponibles
     useEffect(() => {
         rayonlist;
     }, [allproductslist]);
-    
 
     return (
         <div className="container">
-            <Navigation />
+            <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
             <div className="mphome">
                 <div className="firstbarr">
                     <div className="leftpart">
@@ -82,7 +73,9 @@ const Home = () => {
                         <button>Services</button>
                     </div>
                     <div className="rightpart">
-                        <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' />
+                        {/* <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} /> */}
+                        
+                       
                     </div>
                 </div>
                 <div className="secondbarr">
@@ -96,7 +89,6 @@ const Home = () => {
                                     <button onClick={() => setEnavant('promo')} className={(enavant == 'promo' ? 'highlightme' : '')} style={{backgroundColor: enavant == 'promo' ? '#fff' : ''}}>Promos</button>
                                 </div>
                                 <div className="last"></div>
-
                             </div>
                             <div className="pplcarousel">
                                 <Slideshow listederayons={rayonlist} allproductslist={allproductslist} magasins={magasins} enavant={enavant} />

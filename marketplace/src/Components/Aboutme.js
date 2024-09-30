@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Editbutton from "./Editbutton";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from "../action/createaccount.action";
+import { showMyproduct } from "../action/showproduct.action";
+import { modalposition } from "../action/position.action";
+import { rapidsearchmodal, searchresult } from "../Assets/Functions";
 
 
 
 // import './_aboutme.scss';
 const Aboutme = ({ aboutUser }) => {
+    // variables
     const dispatch = useDispatch();
+
+    
 
     const champs = [aboutUser.nom, aboutUser.prenom, aboutUser.adresse, aboutUser.ville, aboutUser.codepostal, aboutUser.pays, aboutUser.telephone, aboutUser.email];
 
@@ -23,6 +29,7 @@ const Aboutme = ({ aboutUser }) => {
     ];
 
 
+    // fonctions 
     function submitedit(i, newValue) {
         const data = {
             id: aboutUser.id,
@@ -42,7 +49,9 @@ const Aboutme = ({ aboutUser }) => {
             );
         }
         setUserList(list);
-    },[]);
+    }, []);
+    
+
 
     return (
         <div className="monmagasin">
