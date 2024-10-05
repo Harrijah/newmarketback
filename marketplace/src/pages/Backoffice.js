@@ -47,10 +47,7 @@ const Backoffice = () => {
     useEffect(() => { 
         if (!isEmpty(Products)) {
             myproducts();
-        } 
-        // if (!Products) {
-        //     myproducts();
-        // } 
+        }
     }, [Products]);
     
 

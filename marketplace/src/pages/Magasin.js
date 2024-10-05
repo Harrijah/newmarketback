@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import Navigation from "../template-parts/Navigation";
 import { useDispatch, useSelector } from "react-redux";
-import Boban from "./Boban";
-import Leftlateralcolumn from "./Leftlateralcolumn";
-import Rightmaincontent from "./Rightmaincontent";
+import Boban from "../Components/Boban";
+import Leftlateralcolumn from "../Components/Leftlateralcolumn";
+import Rightmaincontent from "../Components/Rightmaincontent";
 import { searchinfo } from "../Assets/Functions";
+import Magasincol from "../Components/Magasincol";
+import { isEmpty } from "../Assets/Utils";
 
 // css : './pages/_magasin.scss'
 const Magasin = () => {
@@ -15,6 +17,8 @@ const Magasin = () => {
     const magasins = useSelector((state) => state.storeReducer.allstore);
     const marques = useSelector((state) => state.marqueReducer.marques);
     const categories = useSelector((state) => state.categorieReducer.categorie);
+    const rayons = useSelector((state) => state.rayonReducer.rayon);
+    const [monrayon, setMonrayon] = useState('');
     const leftColumnRef = useRef(null);
     const rightContentRef = useRef(null);
     const [tableaumagasin, setTableaumagasin] = useState([]);
@@ -29,9 +33,9 @@ const Magasin = () => {
 
     // sortir la liste des magasins
     const listemagasins = () => {
-        const templist = [];
-        if (magasins && typeof (magasins == 'object')) {
-            templist.push(magasins.map((magasin) => (
+        const templist = !isEmpty(rayons) && magasins
+            .filter((magasin) => monrayon == 0 || magasin.categorie == monrayon)
+            .map((magasin) => (
                 <div key={magasin.id} className="productbox">
                     <div className="elementscontainer">
 
@@ -43,19 +47,22 @@ const Magasin = () => {
                                 <a href=""><h3>{magasin.nommagasin}</h3></a>
                             </div>
                             <div className="otherdetails">
-                                <div> {(magasin.categorie != 0) && 'Catégorie: ' } { (magasin.categorie != 0) ?  searchinfo(categories, magasin.categorie, 'categorie') : '' }</div>
+                                <div>
+                                    {(magasin.categorie != 0) && 'Catégorie: '}
+                                    {(magasin.categorie != 0) ? searchinfo(rayons, magasin.categorie, 'rayon') : ''}
+                                </div>
                                 <div>Adresse : { magasin.adresse }</div>
                                 <div>Tél :{ magasin.phone }</div>
                             </div>
                         </div>
                     </div>
                 </div>
-            )));
+            ));
+        
             setTableaumagasin(templist);
-        }
-        return tableaumagasin;
+        // return tableaumagasin;
     }
-
+    // mettre la liste de magasin dans un div
     let content = (
         <div className="productslister">
             <h1 className="magasin">Liste des magasins</h1>
@@ -72,13 +79,13 @@ const Magasin = () => {
     // -------------------------------- logiques
     useEffect(() => {
         listemagasins();
-    }, []);
+    }, [rayons, magasins, monrayon]);
 
     return (
         <div className="container">
             <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
             <Boban />
-            <Leftlateralcolumn leftColumnRef={leftColumnRef} />
+            <Leftlateralcolumn leftColumnRef={leftColumnRef} button={<Magasincol setMonrayon={setMonrayon} />} />
             <Rightmaincontent rightContentRef={rightContentRef} content={content} />
             
 

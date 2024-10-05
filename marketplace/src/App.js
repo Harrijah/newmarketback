@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Moncompte from './pages/Moncompte';
 import Backoffice from './pages/Backoffice';
-import Magasin from './Components/Magasin';
+import Magasin from './pages/Magasin';
 
 const App = () => {
 

@@ -4,10 +4,14 @@ import { Editor } from 'react-draft-wysiwyg';
 import { useDispatch, useSelector } from "react-redux";
 import { createstore } from "../action/store.action";
 import { createuserstore, updateUser } from "../action/createaccount.action";
+import { isEmpty } from "../Assets/Utils";
 
 // css : './components/_espacepro.scss'
 const Espacepro = ({ products }) => {
     const user = useSelector((state) => state.createaccountReducer.user);
+    const rayons = useSelector((state) => state.rayonReducer.rayon);
+    const [listerayon, setListrayon] = useState([]);
+    
     // Dispose déjà d'un magasin ou non
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -22,6 +26,16 @@ const Espacepro = ({ products }) => {
     const menonumber = () => {
         displayformpart > 1 && setDisplayformpart(displayformpart -1);
     }
+
+    // vue liste de rayon
+
+    const afficherayon = () => {
+        const templist = !isEmpty(rayons) && rayons.map((rayon) => (
+            <option key={rayon.id} value={rayon.id}>{rayon.rayon}</option>
+        ));
+        setListrayon(templist);
+    }
+    useEffect(() => { afficherayon() }, [rayons]);
 
 
     const storeref = useRef();
@@ -88,10 +102,7 @@ const Espacepro = ({ products }) => {
                         <h3>Etape {displayformpart}/3 : A propos de la boutique</h3>
                         <label htmlFor="categorie">Catégorie</label>
                         <select name='categorie' id='categorie' defaultValue='1' >
-                            <option value="1">Electronique</option>
-                            <option value="2">Informatique</option>
-                            <option value="3">Maison</option>
-                            <option value="4">Jardin</option>
+                            {listerayon}
                         </select>
                         <label htmlFor="description">Description</label>
                         {/* <textarea name='description' rows={4} > </textarea> */}
