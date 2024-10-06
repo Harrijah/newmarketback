@@ -8,6 +8,7 @@ import marqueReducer from "./marque.reducer";
 import productReducer from "./produit.reducer";
 import showproductReducer from "./showproduct.reducer";
 import { positionReducer } from "./position.reducer";
+import boutiqueReducer from "./boutique.reducer";
 
 
 export default combineReducers({
@@ -20,4 +21,5 @@ export default combineReducers({
     productReducer,
     showproductReducer,
     positionReducer,
+    boutiqueReducer
 });

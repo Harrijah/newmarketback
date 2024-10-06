@@ -7,6 +7,7 @@ import Rightmaincontent from "../Components/Rightmaincontent";
 import { searchinfo } from "../Assets/Functions";
 import Magasincol from "../Components/Magasincol";
 import { isEmpty } from "../Assets/Utils";
+import { getboutique } from "../action/boutique.action";
 
 // css : './pages/_magasin.scss'
 const Magasin = () => {
@@ -16,20 +17,25 @@ const Magasin = () => {
     const allproductslist = useSelector((state) => state.productReducer.products);
     const magasins = useSelector((state) => state.storeReducer.allstore);
     const marques = useSelector((state) => state.marqueReducer.marques);
-    const categories = useSelector((state) => state.categorieReducer.categorie);
     const rayons = useSelector((state) => state.rayonReducer.rayon);
     const [monrayon, setMonrayon] = useState('');
     const leftColumnRef = useRef(null);
     const rightContentRef = useRef(null);
     const [tableaumagasin, setTableaumagasin] = useState([]);
     const defaultimage = './image/imageicon.png';
+    const [idboutique, setIdboutique] = useState('');
 
     // -------------------------------- fonctions
-    
+    // calculer hauteur colonne latérale gauche
     useEffect(() => {
         const leftColumnHeight = rightContentRef.current.getBoundingClientRect().height;
         leftColumnRef.current.style.minHeight = `${leftColumnHeight}px`;
     }, []);
+
+    // sélectionner l'id d'une boutique
+    const selectboutique = (id) => {
+        dispatch(getboutique(id));
+    }
 
     // sortir la liste des magasins
     const listemagasins = () => {
@@ -44,7 +50,7 @@ const Magasin = () => {
                         </div>
                         <div className="txtsection">
                             <div>
-                                <a href=""><h3>{magasin.nommagasin}</h3></a>
+                                <a href={`/boutique/${magasin.id}`}><h3>{magasin.nommagasin}</h3></a>
                             </div>
                             <div className="otherdetails">
                                 <div>
@@ -58,9 +64,7 @@ const Magasin = () => {
                     </div>
                 </div>
             ));
-        
-            setTableaumagasin(templist);
-        // return tableaumagasin;
+        setTableaumagasin(templist);
     }
     // mettre la liste de magasin dans un div
     let content = (

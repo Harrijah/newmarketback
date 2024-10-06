@@ -127,8 +127,24 @@ const Home = () => {
                 </div>
                 <div className="productfilter">
                     <div className="filtercontainer">
+                        <div className="productlister"><div className="barfilter">
+                <select name="" id="" onChange={(e) => rayonchoice(e)}>
+                    <option key={'0'} value='0'>{'Tous les rayons'}</option>
+                    {rayonlist}
+                </select>
+                <select name="" id="" onChange={(e) => categorychoice(e)}>
+                    <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
+                    {filteredcategory}
+                </select>
+                <select name="" id="" onChange={(e) => souscategorychoice(e)}>
+                    <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
+                    {souscatlist02}
+                </select>    
+                <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
+                        </div>
+                        </div>
                         <h2>Trouvez un produit en 3 clics</h2>
-                        <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} />
+                        <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} id={0} />
                     </div>
                 </div>
             </div>

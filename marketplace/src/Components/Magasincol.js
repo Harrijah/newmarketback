@@ -11,8 +11,6 @@ const Magasincol = ({setMonrayon}) => {
     // fonctions
     const choisirunrayon = (id) => {
         setMonrayon(id);
-        console.log(id);
-        
     }
     
 

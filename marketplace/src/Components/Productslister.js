@@ -5,7 +5,7 @@ import { showMyproduct } from "../action/showproduct.action";
 import { searchinfo, showaproduct } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
 
-const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoice, rayonselect, categorychoice, categorieselect, souscategorychoice, souscategorieselect }) => {
+const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoice, rayonselect, categorychoice, categorieselect, souscategorychoice, souscategorieselect, id }) => {
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
@@ -26,6 +26,7 @@ const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoic
     useEffect(() => {
         if (typeof(allproductslist) == 'object') {
             const templist = (allproductslist)
+                .filter((product) => id == 0 || product.storeid == id)
                 .filter((product) => rayonselect == 0 || product.rayon == rayonselect)
                 .filter((product) => categorieselect == 0 || product.categorie == categorieselect)
                 .filter((product) => souscategorieselect == 0 || product.souscategorie == souscategorieselect)
@@ -34,7 +35,6 @@ const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoic
                     : true)
                 
                     .map((product, index) => (    
-                        // <span>coucou</span>
                         <div className="productbox" key={product.id || index}>
                             <div className="elementscontainer"> 
                                 <div className="imgsection">
@@ -68,25 +68,10 @@ const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoic
                     );             
             setFilteredproductlist(templist);
         }
-    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword]);
+    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword, id]);
 
     return (
         <div className="productslister">
-            <div className="barfilter">
-                <select name="" id="" onChange={(e) => rayonchoice(e)}>
-                    <option key={'0'} value='0'>{'Tous les rayons'}</option>
-                    {rayonlist}
-                </select>
-                <select name="" id="" onChange={(e) => categorychoice(e)}>
-                    <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
-                    {filteredcategory}
-                </select>
-                <select name="" id="" onChange={(e) => souscategorychoice(e)}>
-                    <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
-                    {souscatlist02}
-                </select>    
-                <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
-            </div>
             <div className="filteredproducts">
                 <div className="productscontainer">
                     {filteredproductlist}

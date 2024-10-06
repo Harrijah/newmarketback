@@ -13,6 +13,9 @@
   float: left;
   height: 100%;
   .block01 {
+    select{
+      @include lateralbobtn;
+    }
     button {
       @include lateralbobtn;
     }

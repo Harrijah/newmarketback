@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Moncompte from './pages/Moncompte';
 import Backoffice from './pages/Backoffice';
 import Magasin from './pages/Magasin';
+import Boutique from './pages/Boutique';
 
 const App = () => {
 
@@ -13,7 +14,8 @@ const App = () => {
                 <Route path='/' element={<Home/>}></Route>
                 <Route path='/moncompte' element={ <Moncompte /> }></Route>
                 <Route path='/backoffice' element={<Backoffice />}></Route>
-                <Route path='/magasin' element={<Magasin />}></Route>
+                <Route path='/boutiques' element={<Magasin />}></Route>
+                <Route path='/boutique/:id' element={<Boutique />}></Route>
             </Routes>
         </BrowserRouter>
     )

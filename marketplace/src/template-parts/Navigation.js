@@ -14,7 +14,6 @@ import { rapidsearchmodal, searchinfo, searchresult } from '../Assets/Functions'
 // CSS : template-parts/_navigation.scss
 const Navigation = ({allproductslist, magasins, marques}) => {
     
-    
     // Redux => Session connectée ou non
     const isConnected = useSelector((state) => state.createaccountReducer.isConnected);
 
@@ -259,7 +258,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
           setFilteredproductlist(templist);
         }
         rapidsearchmodal(clientsearchvalue, setRapidsearch);
-    }, [clientsearchvalue]);
+    }, [allproductslist, clientsearchvalue]);
 
 
     
@@ -273,7 +272,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                 <div className="linkcontainer">
                 <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} />
                     <NavLink to='/'>Accueil</NavLink>
-                    <NavLink to='/magasin'>Magasins</NavLink>
+                    <NavLink to='/boutiques'>Boutiques</NavLink>
                     { isConnected && <NavLink to='/moncompte'>Moncompte</NavLink> } 
                     { !isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button> } 
                 </div>
