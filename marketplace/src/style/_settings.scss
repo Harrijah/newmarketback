@@ -472,37 +472,46 @@ body{
   }
 
   // --------------------------- Section liste de produits : avec filtre
+  
+  .barfilter{
+    position: relative;
+    display: flex;
+    width: 90%;
+    padding: $defaultvalue02 0;
+    align-items: center;
+    // justify-content: center;
+    select{
+      margin: 0 $defaultvalue02;
+      padding: $defaultvalue02;
+      border: solid 1px $mylight;
+      border-radius: $defaultradius;
+      width: 20%;
+      background-color: #fff;
+      box-shadow: $defaultshadow02;
+    }
+    input[type='text']{
+      box-shadow: $defaultshadow02;
+      width: 20%;
+    }
+    .pricerange{
+      width: 20%;
+      overflow: visible;
+      input[type='range']{
+        box-shadow: $defaultshadow02;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 10px;
+        overflow: visible;
+      }
+    }
+  }
   .productslister{
     @include stdparams;
     margin: auto;
     position: relative;
     width: 100%;
     z-index: 2;
-    .barfilter{
-      position: relative;
-      display: flex;
-      width: 80%;
-      padding: $defaultvalue02 0;
-      align-items: center;
-      // justify-content: center;
-      select{
-        margin: 0 $defaultvalue02;
-        padding: $defaultvalue02;
-        border: solid 1px $mylight;
-        border-radius: $defaultradius;
-        width: 30%;
-        background-color: #fff;
-        box-shadow: $defaultshadow02;
-      }
-      input{
-        box-shadow: $defaultshadow02;
-      }
-    }
-  
-  
-  
-  
-  
    // ---------------------------  Briques d'images
   .filteredproducts{
     @include stdparams;

@@ -5,13 +5,12 @@ import { showMyproduct } from "../action/showproduct.action";
 import { searchinfo, showaproduct } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
 
-const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoice, rayonselect, categorychoice, categorieselect, souscategorychoice, souscategorieselect, id }) => {
+const Productslister = ({ rayonselect, categorieselect, souscategorieselect, keyword, id }) => {
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
     const [filteredproductlist, setFilteredproductlist] = useState([]);
     const defaultimage = './image/imageicon.png';
-    const [keyword, setKeyword] = useState('');
     const dispatch = useDispatch();
     const removeAccents = (str) => {
       return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -50,7 +49,7 @@ const Productslister = ({ rayonlist, filteredcategory, souscatlist02, rayonchoic
                                 <div className="txtsection">
                                     <a onClick={(e) => showaproduct(e, product.id)}><h3>{product.nomproduit}</h3></a>
                                     <div className="otherdetails">
-                                        <span><b> {!isEmpty(product.marque) && searchinfo(marques, product.marque, 'marque')}</b></span>
+                                        <span><b> {(typeof(marques) == 'object') && searchinfo(marques, product.marque, 'marque')}</b></span>
                                         <span>{!isEmpty(product.storeid) && searchinfo(magasins, product.storeid, 'nommagasin')}</span>
                                     </div>
                                     <div className="prixproduit">

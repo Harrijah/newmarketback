@@ -17,7 +17,7 @@ export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
 
 // join un par un
 export const searchinfo = (base, id, request) => {
-  const tempinfo = (typeof(base) == "object") && base.find((info) => info.id == id);
+  const tempinfo = (!isEmpty(base) && typeof(base) == "object") && base.find((info) => info.id == id);
   if (tempinfo && request in tempinfo) {
       return (<span>{tempinfo[request]}</span>)
   } else {
@@ -258,4 +258,53 @@ export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorie
       }
   }, [categorieselect]);
   return finalsouscat;
+}
+
+// chercher le prix le plus élevé dans une sélection
+export const findmaxprice = () => {
+  const [pricearray, setPricearray] = useState([]);
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  // sortir un array de liste de prix
+  const listedeprix = () => {
+    const templist = [];
+    if (!isEmpty(allproductslist) && typeof(allproductslist) != 'string') {
+      allproductslist.forEach(product => {
+          templist.push(product.prix);
+      });
+      setPricearray(templist);
+    }
+  }
+  useEffect(() => { 
+    listedeprix();
+  }, [allproductslist]);
+
+  // sélectionner le prix le plus haut
+  const [mylist, setMylist] = useState([]);
+  
+  const selectmax = () => {
+    setMylist(pricearray);
+    
+    if (!isEmpty(pricearray) && typeof (pricearray) == 'object') {
+
+      const templist = pricearray;
+      // tour de boucle global
+      for (let i = 0; i < mylist.length; i++){
+        console.log(mylist);
+        if (Number(mylist[i]) > Number(mylist[i+1])) {
+          templist[i+1] = mylist[i];
+          templist[i] = mylist[i+1];
+          setMylist(templist);
+        }
+      }
+    };
+  }
+  useEffect(() => {
+    selectmax();
+   }, []);
+  
+
+
+
+
+
 }

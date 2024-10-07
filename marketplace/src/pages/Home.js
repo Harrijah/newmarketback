@@ -5,7 +5,7 @@ import Slideshow from '../Components/Slideshow';
 import { useDispatch, useSelector } from 'react-redux';
 import { isEmpty } from '../Assets/Utils';
 import { all } from 'axios';
-import { categorygen, filteredcategorygen, finalsouscatgen, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
+import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
 import Productslister from '../Components/Productslister';
 import { positionReducer } from '../reducers/position.reducer';
 import { showMyproduct } from '../action/showproduct.action';
@@ -23,6 +23,8 @@ const Home = () => {
     const [rayonselect, setRayonselect] = useState(0);
     const [categorieselect, setCategorieselect] = useState(0);
     const [souscategorieselect, setSouscategorieselect] = useState(0);
+    const [keyword, setKeyword] = useState('');
+    const [maxprice, setMaxprice] = useState(0); 
 
 
 
@@ -52,16 +54,28 @@ const Home = () => {
         setSouscategorieselect(e.target.value);
     }
 
+    // changer la rangée de prix
+    useState(() => {
+
+     }, [maxprice]);
+
 
     // obtenir une liste de sous-catégories
     const souscatlist = souscatgen(rayonselect, rayonlist, categorielist, categorieselect);
     const souscatlist02 = finalsouscatgen(rayonselect, rayonlist, categorielist, categorieselect, souscatlist, filteredcategory);
 
     // --------------------------------- Logiques
+    
+    // trouver le prix maximal
+    const currentmaxprice = findmaxprice();
+
     // Générer la liste de rayons disponibles
     useEffect(() => {
         rayonlist;
+        currentmaxprice;
     }, [allproductslist]);
+
+    
 
     return (
         <div className="container">
@@ -127,24 +141,28 @@ const Home = () => {
                 </div>
                 <div className="productfilter">
                     <div className="filtercontainer">
-                        <div className="productlister"><div className="barfilter">
-                <select name="" id="" onChange={(e) => rayonchoice(e)}>
-                    <option key={'0'} value='0'>{'Tous les rayons'}</option>
-                    {rayonlist}
-                </select>
-                <select name="" id="" onChange={(e) => categorychoice(e)}>
-                    <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
-                    {filteredcategory}
-                </select>
-                <select name="" id="" onChange={(e) => souscategorychoice(e)}>
-                    <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
-                    {souscatlist02}
-                </select>    
-                <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
-                        </div>
-                        </div>
                         <h2>Trouvez un produit en 3 clics</h2>
-                        <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} id={0} />
+                            <div className="barfilter">
+                                <select name="" id="" onChange={(e) => rayonchoice(e)}>
+                                    <option key={'0'} value='0'>{'Tous les rayons'}</option>
+                                    {rayonlist}
+                                </select>
+                                <select name="" id="" onChange={(e) => categorychoice(e)}>
+                                    <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
+                                    {filteredcategory}
+                                </select>
+                                <select name="" id="" onChange={(e) => souscategorychoice(e)}>
+                                    <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
+                                    {souscatlist02}
+                                </select>
+                                <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
+                                <div className='pricerange'>
+                                    <label htmlFor="prix">Prix max</label>
+                                <input type="range" name="prix" value={maxprice} onChange={(e) => setMaxprice(e.target.value)} />
+                                <span>{maxprice} Ar</span>
+                                </div>
+                            </div>
+                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} id={0} />
                     </div>
                 </div>
             </div>

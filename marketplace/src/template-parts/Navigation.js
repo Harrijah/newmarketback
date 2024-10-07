@@ -222,7 +222,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
 
     // afficher le résultat de recherche avec la liste des produits
     useEffect(() => {
-        if (typeof(allproductslist) == 'object') {
+        if (!isEmpty(typeof(allproductslist)) == 'object') {
             const templist = (allproductslist)
                 .filter((product) => clientsearchvalue ? removeAccents(product.nomproduit.toLowerCase()).includes(clientsearchvalue)
                     // || removeAccents(product.courtdescript.toLowerCase()).includes(clientsearchvalue)
