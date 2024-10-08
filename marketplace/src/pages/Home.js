@@ -24,9 +24,9 @@ const Home = () => {
     const [categorieselect, setCategorieselect] = useState(0);
     const [souscategorieselect, setSouscategorieselect] = useState(0);
     const [keyword, setKeyword] = useState('');
-    const [maxprice, setMaxprice] = useState(0); 
-
-
+    // trouver le prix maximal
+    const currentmaxprice = findmaxprice();
+    const [maxprice, setMaxprice] = useState(currentmaxprice); 
 
   
     // --------------------------------- Fonctions
@@ -55,27 +55,34 @@ const Home = () => {
     }
 
     // changer la rangée de prix
-    useState(() => {
-
-     }, [maxprice]);
+    const changeprice = (e) => {
+        setMaxprice(e.target.value);
+    }
+    // useState(() => {
+    //     setMaxprice(Number(currentmaxprice));
+    //  }, [maxprice]);
 
 
     // obtenir une liste de sous-catégories
     const souscatlist = souscatgen(rayonselect, rayonlist, categorielist, categorieselect);
     const souscatlist02 = finalsouscatgen(rayonselect, rayonlist, categorielist, categorieselect, souscatlist, filteredcategory);
 
-    // --------------------------------- Logiques
     
-    // trouver le prix maximal
-    const currentmaxprice = findmaxprice();
-
+    // --------------------------------- Logiques
     // Générer la liste de rayons disponibles
     useEffect(() => {
         rayonlist;
-        currentmaxprice;
     }, [allproductslist]);
 
-    
+    // mettre à jour le prix maximal, à son chargement
+    useEffect(() => {
+        setMaxprice(currentmaxprice);
+    }, [currentmaxprice]);
+
+
+
+
+
 
     return (
         <div className="container">
@@ -158,11 +165,11 @@ const Home = () => {
                                 <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
                                 <div className='pricerange'>
                                     <label htmlFor="prix">Prix max</label>
-                                <input type="range" name="prix" value={maxprice} onChange={(e) => setMaxprice(e.target.value)} />
+                                <input type="range" name="prix" value={maxprice} max={Number(currentmaxprice)} onChange={(e) => changeprice(e)} />
                                 <span>{maxprice} Ar</span>
                                 </div>
                             </div>
-                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} id={0} />
+                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} id={0} />
                     </div>
                 </div>
             </div>

@@ -171,18 +171,15 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     }    
     
 
-    
-
     useEffect(() => {
         setMyy(modaly);
     }, [modaly]);
     
     useEffect(() => {
         if (producttoshow) {
-            if(productdetails){
+            if (productdetails) {
                 setDispatchproductdetails(productdetails);
                 setProductpreview(true);
-                document.body.style.overflow= 'hidden'
             } else {
                 dispatch(getOneproduct(producttoshow));
             }
@@ -222,8 +219,8 @@ const Navigation = ({allproductslist, magasins, marques}) => {
 
     // afficher le résultat de recherche avec la liste des produits
     useEffect(() => {
-        if (!isEmpty(typeof(allproductslist)) == 'object') {
-            const templist = (allproductslist)
+        if (typeof(allproductslist) == 'object') {
+            const templist = allproductslist && allproductslist
                 .filter((product) => clientsearchvalue ? removeAccents(product.nomproduit.toLowerCase()).includes(clientsearchvalue)
                     // || removeAccents(product.courtdescript.toLowerCase()).includes(clientsearchvalue)
                     : true)
@@ -261,6 +258,13 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     }, [allproductslist, clientsearchvalue]);
 
 
+    // ------------------------------------ logiques
+    useEffect(() => {
+        if (productpreview) {
+            document.body.style.overflow = 'hidden';
+        }
+    }, [productpreview])
+
     
     return (
         <div id="navigation">
@@ -285,6 +289,8 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                     { contenttodisplay }
                 </div>
             </div>
+
+            {/* Modal de prévisualisation de produit */}
             <div id="productpreview" className="modal"
                 style={{
                     display: productpreview && "flex",

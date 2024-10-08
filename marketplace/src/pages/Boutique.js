@@ -6,7 +6,7 @@ import Leftlateralcolumn from "../Components/Leftlateralcolumn";
 import Rightmaincontent from "../Components/Rightmaincontent";
 import { useParams } from "react-router-dom";
 import Productslister from "../Components/Productslister";
-import { categorygen, filteredcategorygen, finalsouscatgen, rayongen, souscatgen } from "../Assets/Functions";
+import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, rayongen, souscatgen } from "../Assets/Functions";
 import Boutiquecol from "../Components/Boutiquecol";
 
 
@@ -39,8 +39,9 @@ const Boutique = () => {
     const id = useParams();
     // --------------------
 
-
-
+    // prix max
+    const currentmaxprice = findmaxprice();
+    const [maxprice, setMaxprice] = useState(currentmaxprice);
 
     
     // ----------------------------------------- fonctions    
@@ -61,6 +62,10 @@ const Boutique = () => {
         setSouscategorieselect(e.target.value);
     }
 
+    // changer la rangée de prix
+    const changeprice = (e) => {
+        setMaxprice(e.target.value);
+    }
 
     // ----------------------------------------- logiques
     // calcul hauteur colonnes
@@ -69,13 +74,23 @@ const Boutique = () => {
         leftColumnRef.current.style.minHeight = `${leftColumnHeight}px`; 
     }, [rightContentRef]);
 
+
+    useEffect(() => {
+        setMaxprice(currentmaxprice);
+    }, [currentmaxprice]);
+
+    useEffect(() => {
+        setMaxprice(maxprice);
+        console.log(maxprice);
+    }, [maxprice]);
+
     return (
         <div>
             <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
             <Boban />
-            <Leftlateralcolumn leftColumnRef={leftColumnRef} button={<Boutiquecol rayonchoice={rayonchoice} rayonlist={rayonlist} categorychoice={categorychoice} filteredcategory={filteredcategory} souscategorychoice={souscategorychoice} souscatlist02={souscatlist02} />}/>
+            <Leftlateralcolumn leftColumnRef={leftColumnRef} button={<Boutiquecol rayonchoice={rayonchoice} rayonlist={rayonlist} categorychoice={categorychoice} filteredcategory={filteredcategory} souscategorychoice={souscategorychoice} souscatlist02={souscatlist02} maxprice={maxprice} changeprice={changeprice} currentmaxprice={currentmaxprice} />}/>
             <Rightmaincontent content={
-                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} id={id.id} />} rightContentRef={rightContentRef} />
+                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect}  maxprice={maxprice} id={id.id} />} rightContentRef={rightContentRef} />
         </div>
     )
 }

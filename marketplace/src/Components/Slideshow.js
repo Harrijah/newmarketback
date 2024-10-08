@@ -4,6 +4,7 @@ import { isEmpty } from "../Assets/Utils";
 import { showMyproduct } from "../action/showproduct.action";
 import { modalposition } from "../action/position.action";
 import { searchinfo } from "../Assets/Functions";
+import { useNavigate } from "react-router-dom";
 
 // css : './components/_slideshow.scss'
 const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
@@ -14,6 +15,7 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
     const [sliderindex, setSliderindex] = useState(0);
     const [slidercontent, setSlidercontent] = useState([]);
     const [selectedrayon, setSelectedRayon] = useState(0);
+    const mylink = useNavigate();
 
 
     // -------------------- Fonctions
@@ -34,9 +36,19 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
 
     // communiquer la position-Y pour le modal et Ouvrir le modal aperçu de produit
     const showaproduct = (e, id) => {
+        document.body.style.overflow = 'hidden';
         dispatch(showMyproduct(id));
         dispatch(modalposition(e.pageY - e.clientY));  
-      }
+    }
+    
+    // aller à un magasin
+    const goto = (id) => {
+        mylink(id);
+    }
+    const openstore = (id) => {
+        goto('/boutique/' + id);
+    }
+
 
     // générer liste de produits séléctionnés
     const listofproduct = async () => {
@@ -73,7 +85,7 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
             <div key={product.id} className={(index != sliderindex) ? 'slidebox' : 'showme'}>
                 <img onClick={(e) => showaproduct(e, product.id)} src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
                 <button className="slidebtn01" onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button>
-                <button className="slidebtn02">{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
+                <button className="slidebtn02" onClick={() => openstore(product.storeid)}>{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
             </div>
         ));
             setSlidercontent(templist);

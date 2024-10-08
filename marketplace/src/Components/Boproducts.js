@@ -11,6 +11,7 @@ import Productformulaire from "./Productformulaire";
 //-----------------------------EDITOR
 import { EditorState } from "draft-js";
 import { showMyproduct } from "../action/showproduct.action";
+import { modalposition } from "../action/position.action";
 
 // css :  './components/_bomagasin.scss'
 const Boproducts = ({ userdata, storedata, productslist }) => {
@@ -44,8 +45,10 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
   
   // ------------------------------ Fonctions  ----------------------------------
   // Ouvrir aperçu de produit 
-  const openmymodal = (id) => {
+  const openmymodal = (e, id) => {
+    document.body.style.overflow = 'hidden';
     dispatch(showMyproduct(id));
+    dispatch(modalposition(e.pageY - e.clientY));
   } 
   // Charger un produit
   const chargeproduct = (id) => {
@@ -94,7 +97,7 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
       !isEmpty(productslist) &&
       productslist.map((produit) => (
         <li key={produit.id}>
-          <b> {''} </b> <button onClick={() => openmymodal(produit.id)}>{produit.nomproduit}</button>
+          <b> {''} </b> <button onClick={(e) => openmymodal(e, produit.id)}>{produit.nomproduit}</button>
           <button
             className="myfontawesome"
             onClick={() => showproductmodal(produit.id)}

@@ -1,16 +1,17 @@
 .modal {
-  @include stdparams;
+  // @include stdparams;
+  display: block;
   position: absolute;
   left: 0;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
   background: rgba(0, 0, 0, 0.8);
-  box-shadow: $defaultshadow;
   z-index: 3;
   text-align: center;
   display: none;
   flex-direction: column;
+  box-shadow: $defaultshadow;
   
   .modal-content {
     position: relative;

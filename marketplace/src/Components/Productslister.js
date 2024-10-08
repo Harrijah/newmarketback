@@ -5,7 +5,7 @@ import { showMyproduct } from "../action/showproduct.action";
 import { searchinfo, showaproduct } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
 
-const Productslister = ({ rayonselect, categorieselect, souscategorieselect, keyword, id }) => {
+const Productslister = ({ rayonselect, categorieselect, souscategorieselect, maxprice, keyword, id }) => {
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
@@ -18,17 +18,21 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, key
 
     // communiquer la position-Y pour le modal
     const showaproduct = (e, id) => {
+        document.body.style.overflow = 'hidden';
         dispatch(showMyproduct(id));
         dispatch(modalposition(e.pageY - e.clientY));  
-      }
+    }
+    
  
     useEffect(() => {
+        
         if (typeof(allproductslist) == 'object') {
             const templist = (allproductslist)
                 .filter((product) => id == 0 || product.storeid == id)
                 .filter((product) => rayonselect == 0 || product.rayon == rayonselect)
                 .filter((product) => categorieselect == 0 || product.categorie == categorieselect)
                 .filter((product) => souscategorieselect == 0 || product.souscategorie == souscategorieselect)
+                .filter((product) => maxprice == 0 || Number(product.prix) <= Number(maxprice))
                 .filter((product) => keyword ? removeAccents(product.nomproduit.toLowerCase()).includes(keyword)
                     // || removeAccents(product.courtdescript.toLowerCase()).includes(keyword)
                     : true)
@@ -67,7 +71,7 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, key
                     );             
             setFilteredproductlist(templist);
         }
-    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword, id]);
+    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword, maxprice, id]);
 
     return (
         <div className="productslister">

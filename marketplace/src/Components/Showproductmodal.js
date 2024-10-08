@@ -4,9 +4,10 @@ import { isEmpty } from "../Assets/Utils";
 import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import { showMyproduct } from "../action/showproduct.action";
+import { useNavigate } from "react-router-dom";
 
-let defaultimage = "./image/imageicon.png";
 const Showproductmodal = ({ myproductdetails, e }) => {
+    let defaultimage = "./image/imageicon.png";
 
     // ----------------------- Variables ---------------------------------
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Showproductmodal = ({ myproductdetails, e }) => {
     const [imagetoshow, setImagetoshow] = useState(!isEmpty(myproductdetails) && myproductdetails.image01 ? myproductdetails.image01 : defaultimage);
     const nomdemarque = useSelector((state) => state.marqueReducer.marque);
     const marqueproduit = !isEmpty(nomdemarque) && !isEmpty(myproductdetails) ? nomdemarque.find((marque) => marque.id == myproductdetails.marque) : null;
-
+    const mylink = useNavigate();
     // ----------------------- Fonctions ---------------------------------
     // Ouvrir le texte WYSIWYG de Editor
     const convertDraftToHtml = (rawContentSate) => {
@@ -32,11 +33,6 @@ const Showproductmodal = ({ myproductdetails, e }) => {
             }
         }
     }
-
-    // useEffect(() => {
-    //     console.log(e);
-        
-    // }, []);
 
     // gestion des classes des images dans le grid : 1 à 6
     const imggridfunction = () => {
@@ -71,6 +67,16 @@ const Showproductmodal = ({ myproductdetails, e }) => {
         }
     }
 
+    // créer un lien
+    const goto = (id) => {
+        mylink(id);
+    }
+
+    // aller à un produit
+    const openproduct = (id) => {
+        dispatch(showMyproduct(0));
+        goto('/product/' + id);
+    }
     // ----------------------- Logique ---------------------------------
     useEffect(() => {
         if (myproductdetails) {
@@ -124,7 +130,7 @@ const Showproductmodal = ({ myproductdetails, e }) => {
       <div className="modal-footer">
         <button>Ajouter au panier</button>
         <button>Acheter plus tard</button>
-        <button>Voir les détails</button>
+        <button onClick={() => openproduct(myproductdetails.id)}>Voir les détails</button>
       </div>
     </div>
   );

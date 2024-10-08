@@ -274,37 +274,42 @@ export const findmaxprice = () => {
       setPricearray(templist);
     }
   }
+
+  // sélectionner le prix le plus haut
+  const [myresponse, setMyresponse] = useState('');
+  
+  const selectmax = () => {
+    
+    if (!isEmpty(pricearray) && typeof (pricearray) == 'object') {
+      const templist = [...pricearray];
+      for (let i = 0; i < pricearray.length; i++){
+        // console.log('tour de boucle "I" numéro : ' + i);
+
+        for (let j = 0; j < pricearray.length; j++){
+          // console.log('------tour de boucle "J" numéro : ' + j)
+          if (Number(pricearray[i]) > Number(pricearray[j])) {
+            // console.log("pricearray[i] : " + pricearray[i] + " et pricearray[j] : " + pricearray[j]);
+            templist[j] = pricearray[i];
+            templist[i] = pricearray[j];
+            pricearray[i] = templist[i];
+            pricearray[j] = templist[j];
+            // console.log(templist);
+          }
+        }
+      }
+      setMyresponse(Number(pricearray[0]));
+    };
+    // console.log(myresponse);
+    
+  }
+
   useEffect(() => { 
     listedeprix();
   }, [allproductslist]);
 
-  // sélectionner le prix le plus haut
-  const [mylist, setMylist] = useState([]);
-  
-  const selectmax = () => {
-    setMylist(pricearray);
-    
-    if (!isEmpty(pricearray) && typeof (pricearray) == 'object') {
-
-      const templist = pricearray;
-      // tour de boucle global
-      for (let i = 0; i < mylist.length; i++){
-        console.log(mylist);
-        if (Number(mylist[i]) > Number(mylist[i+1])) {
-          templist[i+1] = mylist[i];
-          templist[i] = mylist[i+1];
-          setMylist(templist);
-        }
-      }
-    };
-  }
   useEffect(() => {
     selectmax();
-   }, []);
+  }, [pricearray]);
   
-
-
-
-
-
+   return myresponse;
 }
