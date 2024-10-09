@@ -4,8 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { showMyproduct } from "../action/showproduct.action";
 import { searchinfo, showaproduct } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
+import { useNavigate } from "react-router-dom";
 
 const Productslister = ({ rayonselect, categorieselect, souscategorieselect, maxprice, keyword, id }) => {
+    // ------------------------------- variables
+    const mylink = useNavigate();
+    const goto = (id) => {
+        mylink(id);
+    }
+    // ------------ ------------------- fonctions
+    // ------------------------------- logiques
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
@@ -43,7 +51,7 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, max
                                 <div className="imgsection">
                                     <div className="productactions">
                                         <button>Pour plus tard</button>
-                                        <button>Voir en détails</button>
+                                        <button onClick={() => goto('/product/' + product.id)} >Voir en détails</button>
                                     </div>
                                     <button onClick={(e) => showaproduct(e, product.id)}>
                                         <span className="apercu" >Aperçu</span>

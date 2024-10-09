@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import Footer from "../template-parts/Footer";
 import { isEmpty } from "../Assets/Utils";
 import { useParams } from "react-router-dom";
+import { productfirstban } from "../Assets/Functions";
 
 
 // css : 'style/pages/_productpage.scss
@@ -22,7 +23,8 @@ const Productpage = () => {
 
 
     // ----------------------- fonctions
-    
+    // récupérer la bannière Numéro 01
+    const firstban = productfirstban(id.id);
 
 
 
@@ -30,11 +32,16 @@ const Productpage = () => {
     useEffect(() => {
         console.log(myproductdetails);
     }, [allproductslist]);
+    useEffect(() => {
+        firstban;
+    }, [myproductdetails])
 
     return (
         <div className="container">
             <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
-            <div><h1>{ myproductdetails.nomproduit }</h1></div>
+            <div className="container">
+                {firstban}
+            </div>
 
             <Footer />
 

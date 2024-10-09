@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { isEmpty } from "./Utils";
-import { showMyproduct } from "../action/showproduct.action";
-import { modalposition } from "../action/position.action";
 
 // Rapidsearch modal
 export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
@@ -282,25 +280,23 @@ export const findmaxprice = () => {
     
     if (!isEmpty(pricearray) && typeof (pricearray) == 'object') {
       const templist = [...pricearray];
-      for (let i = 0; i < pricearray.length; i++){
-        // console.log('tour de boucle "I" numéro : ' + i);
+      // for (let i = 0; i < pricearray.length; i++){
+      //   // console.log('tour de boucle "I" numéro : ' + i);
 
-        for (let j = 0; j < pricearray.length; j++){
-          // console.log('------tour de boucle "J" numéro : ' + j)
-          if (Number(pricearray[i]) > Number(pricearray[j])) {
-            // console.log("pricearray[i] : " + pricearray[i] + " et pricearray[j] : " + pricearray[j]);
-            templist[j] = pricearray[i];
-            templist[i] = pricearray[j];
-            pricearray[i] = templist[i];
-            pricearray[j] = templist[j];
-            // console.log(templist);
-          }
-        }
-      }
-      setMyresponse(Number(pricearray[0]));
+      //   for (let j = 0; j < pricearray.length; j++){
+      //     // console.log('------tour de boucle "J" numéro : ' + j)
+      //     if (Number(pricearray[i]) > Number(pricearray[j])) {
+      //       // console.log("pricearray[i] : " + pricearray[i] + " et pricearray[j] : " + pricearray[j]);
+      //       templist[j] = pricearray[i];
+      //       templist[i] = pricearray[j];
+      //       pricearray[i] = templist[i];
+      //       pricearray[j] = templist[j];
+      //       // console.log(templist);
+      //     }
+      //   }
+      // }
+      setMyresponse(Math.max(...pricearray));
     };
-    // console.log(myresponse);
-    
   }
 
   useEffect(() => { 
@@ -313,3 +309,72 @@ export const findmaxprice = () => {
   
    return myresponse;
 }
+
+// afficher première partie - fiche produit
+
+export const productfirstban = (id) => {
+  // ---------------------- variables
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const magasins = useSelector((state) => state.souscatReducer.allstore);
+  const marques = useSelector((state) => state.marqueReducer.marque);
+  const [imglist, setImglist] = useState([]);
+  const [imageindex, setImageindex] = useState(Number(1));
+  const defaultimage = '../image/imageicon.png';
+  // récupérer le produit sélectionné par son id
+  const myproductdetails = !isEmpty(allproductslist) && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id); 
+  // récupérer la première image
+  const [imagetoshow, setImagetoshow] = useState(!isEmpty(myproductdetails) && myproductdetails.image01 ? myproductdetails.image01 : defaultimage);
+
+  // ---------------------- fonctions
+  // afficher le grid
+  const imggridfunction = () => {
+    const templist = [];
+    for (let i = 1; i < 7; i++){
+      templist.push(
+        myproductdetails?.['image0'+i] && <div key={i} className={"gridimage0" + i}>
+          <button onClick={() => changeimage(i)}><img src={'http://localhost:8080/uploads/'+ myproductdetails?.['image0'+i]} alt="pas d'image" /></button>
+        </div>
+      )
+    }
+    setImglist(templist);
+  }
+  // changer l'image
+  const changeimage = (id) => {
+    setImagetoshow(myproductdetails?.['image0'+id]);
+  }
+ 
+ 
+  // ---------------------- logiques
+  useEffect(() => {
+    imggridfunction();
+  }, [myproductdetails]);
+  
+
+  return (
+    <div className="separatecol">
+      <div className="col01">
+        <div className="imagegrid">
+          <div className="pplimage">
+            <img src={myproductdetails && !isEmpty(myproductdetails.image01) ? 'http://localhost:8080/uploads/' + imagetoshow : ''} alt={(myproductdetails) && !isEmpty(myproductdetails.nomproduit) ? myproductdetails.nomproduit : 'image non trouvée'} />
+          </div>
+          {imglist}
+        </div>
+      </div>
+
+      <div className="col02">
+        <h2>{ myproductdetails && !isEmpty(myproductdetails.nomproduit) ? myproductdetails.nomproduit : ''}</h2>
+            <div className="modaldescript">
+              {
+                !isEmpty(marques) && (myproductdetails.marque != 0) && <p><b> Marque : </b> {searchinfo(marques, myproductdetails.marque, 'marque')} </p> 
+              }
+              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sequi iste neque suscipit! Quasi itaque adipisci sapiente sunt! Velit mollitia non facere temporibus corrupti fuga incidunt nisi repellendus nihil voluptas.</span>
+            </div>
+            <div className="modaldescript">
+              {!isEmpty(myproductdetails.prix) ? <p>Prix : {myproductdetails.prix} Ar</p> : ''}
+            </div>
+      </div>
+    </div>
+  );
+}
+
+

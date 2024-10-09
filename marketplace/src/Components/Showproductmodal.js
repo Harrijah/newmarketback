@@ -5,17 +5,19 @@ import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import { showMyproduct } from "../action/showproduct.action";
 import { useNavigate } from "react-router-dom";
+import { productfirstban } from "../Assets/Functions";
 
-const Showproductmodal = ({ myproductdetails, e }) => {
-    let defaultimage = "./image/imageicon.png";
-
+const Showproductmodal = ({ id }) => {
     // ----------------------- Variables ---------------------------------
     const dispatch = useDispatch();
-    const [imglist, setImglist] = useState([]);
-    const [imagetoshow, setImagetoshow] = useState(!isEmpty(myproductdetails) && myproductdetails.image01 ? myproductdetails.image01 : defaultimage);
-    const nomdemarque = useSelector((state) => state.marqueReducer.marque);
-    const marqueproduit = !isEmpty(nomdemarque) && !isEmpty(myproductdetails) ? nomdemarque.find((marque) => marque.id == myproductdetails.marque) : null;
+    // const [imglist, setImglist] = useState([]);
+    // const [imagetoshow, setImagetoshow] = useState(!isEmpty(myproductdetails) && myproductdetails.image01 ? myproductdetails.image01 : defaultimage);
+    // HEHE => utilise => searchinfo() // au lieu de cela
+    // const nomdemarque = useSelector((state) => state.marqueReducer.marque);
+    // const marqueproduit = !isEmpty(nomdemarque) && !isEmpty(myproductdetails) ? nomdemarque.find((marque) => marque.id == myproductdetails.marque) : null;
     const mylink = useNavigate();
+    const firstban = productfirstban(id);
+
     // ----------------------- Fonctions ---------------------------------
     // Ouvrir le texte WYSIWYG de Editor
     const convertDraftToHtml = (rawContentSate) => {
@@ -25,47 +27,47 @@ const Showproductmodal = ({ myproductdetails, e }) => {
     };
     
     // Switch des images à afficher dans l'aperçu principal
-    const changeimage = (myimage) => {
-        for (let i = 1; i < 7; i++){
-            if (myimage == i) {
-                setImagetoshow(myproductdetails?.[`image0${i}`] || defaultimage);
-                return;
-            }
-        }
-    }
+    // const changeimage = (myimage) => {
+    //     for (let i = 1; i < 7; i++){
+    //         if (myimage == i) {
+    //             setImagetoshow(myproductdetails?.[`image0${i}`] || defaultimage);
+    //             return;
+    //         }
+    //     }
+    // }
 
     // gestion des classes des images dans le grid : 1 à 6
-    const imggridfunction = () => {
-        const templist = [];
-        let pinknumber = 0;
-        if (myproductdetails) {
-            for (let i = 1; i < 7; i++){
-                if(myproductdetails?.[`image0${i}`])
-                {
-                    pinknumber++;
-                    templist.push(
-                    <div key={i} className={'gridimage0' + pinknumber}>
-                        <button onClick={() => changeimage(i)}>
-                            <img
-                                src={
-                                !isEmpty(myproductdetails?.[`image0${i}`])
-                                    ? "http://localhost:8080/uploads/" +
-                                    myproductdetails?.[`image0${i}`]
-                                    : defaultimage
-                                }
-                                alt={
-                                !isEmpty(myproductdetails)
-                                    ? myproductdetails.nomproduit
-                                    : "Aucune image trouvée"
-                                }
-                            />
-                        </button>  
-                        </div>);
-                    setImglist(templist);
-                }
-            }
-        }
-    }
+    // const imggridfunction = () => {
+    //     const templist = [];
+    //     let pinknumber = 0;
+    //     if (myproductdetails) {
+    //         for (let i = 1; i < 7; i++){
+    //             if(myproductdetails?.[`image0${i}`])
+    //             {
+    //                 pinknumber++;
+    //                 templist.push(
+    //                 <div key={i} className={'gridimage0' + pinknumber}>
+    //                     <button onClick={() => changeimage(i)}>
+    //                         <img
+    //                             src={
+    //                             !isEmpty(myproductdetails?.[`image0${i}`])
+    //                                 ? "http://localhost:8080/uploads/" +
+    //                                 myproductdetails?.[`image0${i}`]
+    //                                 : defaultimage
+    //                             }
+    //                             alt={
+    //                             !isEmpty(myproductdetails)
+    //                                 ? myproductdetails.nomproduit
+    //                                 : "Aucune image trouvée"
+    //                             }
+    //                         />
+    //                     </button>  
+    //                     </div>);
+    //                 setImglist(templist);
+    //             }
+    //         }
+    //     }
+    // }
 
     // créer un lien
     const goto = (id) => {
@@ -78,21 +80,25 @@ const Showproductmodal = ({ myproductdetails, e }) => {
         goto('/product/' + id);
     }
     // ----------------------- Logique ---------------------------------
+    // useEffect(() => {
+    //     if (myproductdetails) {
+    //         changeimage(1);
+    //         imggridfunction();
+    //     }
+    // }, [myproductdetails]);
+
     useEffect(() => {
-        if (myproductdetails) {
-            changeimage(1);
-            imggridfunction();
-        }
-    }, [myproductdetails])
+        firstban;
+    }, []);
     
   return (
     <div className="modal-content">
         <div className="modal-header">
-              <span className="closemodal" onClick={() => dispatch(showMyproduct(0))}></span>
+            <span className="closemodal" onClick={() => dispatch(showMyproduct(0))}></span>
             
-      </div>
+        </div>
         <div className="modal-body">
-            <div className="separatecol">
+            {/* <div className="separatecol">
                 <div className="col01">
                     <div className="imagegrid">
                         <div className="pplimage">
@@ -123,9 +129,7 @@ const Showproductmodal = ({ myproductdetails, e }) => {
                     {!isEmpty(myproductdetails) && <p>Prix : {myproductdetails.prix} Ar</p>}
                     </div>
                   </div>
-            </div>
-              
-        
+            </div> */}
       </div>
       <div className="modal-footer">
         <button>Ajouter au panier</button>
