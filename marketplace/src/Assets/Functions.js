@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { isEmpty } from "./Utils";
+import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
+import draftToHtml from "draftjs-to-html";
 
 // Rapidsearch modal
 export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
@@ -258,6 +260,32 @@ export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorie
   return finalsouscat;
 }
 
+// Retourner la liste de marques
+export const marqueselect = () => {
+  // variables
+  const marques = useSelector((state) => state.marqueReducer.marque);
+  const [brandlist, setBrandlist] = useState([]);
+
+  // fonctions
+  const marqueliste = () => {
+    const templist = [];
+    marques.forEach(marque => {
+      templist.push(
+        <option key={marque.id} value={marque.id}>{marque.marque}</option>
+      );
+    });
+    setBrandlist(templist);
+  }
+
+  // logiques
+  useEffect(() => {
+    marqueliste();
+  }, [marques]);
+
+  return brandlist;
+
+}
+
 // chercher le prix le plus élevé dans une sélection
 export const findmaxprice = () => {
   const [pricearray, setPricearray] = useState([]);
@@ -315,26 +343,31 @@ export const findmaxprice = () => {
 export const productfirstban = (id) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
-  const magasins = useSelector((state) => state.souscatReducer.allstore);
+  const magasins = useSelector((state) => state.storeReducer.allstore);
   const marques = useSelector((state) => state.marqueReducer.marque);
   const [imglist, setImglist] = useState([]);
-  const [imageindex, setImageindex] = useState(Number(1));
   const defaultimage = '../image/imageicon.png';
   // récupérer le produit sélectionné par son id
-  const myproductdetails = !isEmpty(allproductslist) && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id); 
+  const myproductdetails = !isEmpty(id) && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id); 
   // récupérer la première image
-  const [imagetoshow, setImagetoshow] = useState(!isEmpty(myproductdetails) && myproductdetails.image01 ? myproductdetails.image01 : defaultimage);
+  const [imagetoshow, setImagetoshow] = useState(myproductdetails && myproductdetails.image01 && myproductdetails.image01);
 
   // ---------------------- fonctions
   // afficher le grid
   const imggridfunction = () => {
     const templist = [];
+    let pinknumber = 0;
     for (let i = 1; i < 7; i++){
-      templist.push(
-        myproductdetails?.['image0'+i] && <div key={i} className={"gridimage0" + i}>
-          <button onClick={() => changeimage(i)}><img src={'http://localhost:8080/uploads/'+ myproductdetails?.['image0'+i]} alt="pas d'image" /></button>
-        </div>
-      )
+      if (myproductdetails?.['image0' + i]) {
+        pinknumber++;
+        templist.push(
+          myproductdetails?.['image0'+i] && <div key={i} className={"gridimage0" + pinknumber}>
+            <button onClick={() => changeimage(i)}>
+              <img src={'http://localhost:8080/uploads/' + myproductdetails?.['image0' + i]} alt="pas d'image" />
+            </button>
+          </div>
+        )
+      }
     }
     setImglist(templist);
   }
@@ -342,20 +375,33 @@ export const productfirstban = (id) => {
   const changeimage = (id) => {
     setImagetoshow(myproductdetails?.['image0'+id]);
   }
+
+  // Ouvrir le texte WYSIWYG de Editor
+  const convertDraftToHtml = (rawContentSate) => {
+      const contentState = convertFromRaw(rawContentSate);
+      const editorState = EditorState.createWithContent(contentState);
+      return draftToHtml(convertToRaw(editorState.getCurrentContent()));
+  };
  
  
   // ---------------------- logiques
   useEffect(() => {
+    changeimage(1);
     imggridfunction();
   }, [myproductdetails]);
   
 
   return (
-    <div className="separatecol">
+    <div className="separatecol productfirstban">
       <div className="col01">
         <div className="imagegrid">
           <div className="pplimage">
-            <img src={myproductdetails && !isEmpty(myproductdetails.image01) ? 'http://localhost:8080/uploads/' + imagetoshow : ''} alt={(myproductdetails) && !isEmpty(myproductdetails.nomproduit) ? myproductdetails.nomproduit : 'image non trouvée'} />
+            <img src={
+              myproductdetails && myproductdetails.image01 ? ('http://localhost:8080/uploads/' + imagetoshow) :
+              defaultimage
+            }
+              alt={myproductdetails && !isEmpty(myproductdetails.nomproduit) ? myproductdetails.nomproduit : 'coucou je suis là'
+              } />
           </div>
           {imglist}
         </div>
@@ -363,15 +409,18 @@ export const productfirstban = (id) => {
 
       <div className="col02">
         <h2>{ myproductdetails && !isEmpty(myproductdetails.nomproduit) ? myproductdetails.nomproduit : ''}</h2>
-            <div className="modaldescript">
-              {
-                !isEmpty(marques) && (myproductdetails.marque != 0) && <p><b> Marque : </b> {searchinfo(marques, myproductdetails.marque, 'marque')} </p> 
-              }
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sequi iste neque suscipit! Quasi itaque adipisci sapiente sunt! Velit mollitia non facere temporibus corrupti fuga incidunt nisi repellendus nihil voluptas.</span>
-            </div>
-            <div className="modaldescript">
-              {!isEmpty(myproductdetails.prix) ? <p>Prix : {myproductdetails.prix} Ar</p> : ''}
-            </div>
+        <div className="modaldescript">
+          {
+            myproductdetails && !isEmpty(marques) && (myproductdetails.marque != 0) && <p><b> Marque : </b> {searchinfo(marques, myproductdetails.marque, 'marque')} </p> 
+          }
+          <div>{myproductdetails && !isEmpty(myproductdetails.courtdescript) ? <div dangerouslySetInnerHTML={{ __html: convertDraftToHtml(JSON.parse(myproductdetails.courtdescript)) }} /> : ''}</div>
+        </div>
+        <div className="modaldescript">
+          {myproductdetails && !isEmpty(myproductdetails.prix) ? <p>Prix : {myproductdetails.prix} Ar</p> : ''}
+          {
+            myproductdetails && !isEmpty(magasins) && (myproductdetails.storeid != 0) && <p><b> Chez </b> {searchinfo(magasins, myproductdetails.storeid, 'nommagasin')} </p> 
+          }
+        </div>
       </div>
     </div>
   );

@@ -81,7 +81,6 @@ const Boutique = () => {
 
     useEffect(() => {
         setMaxprice(maxprice);
-        console.log(maxprice);
     }, [maxprice]);
 
     return (

@@ -398,7 +398,7 @@ body{
     position: relative;
     width: 33vw;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: 1FR 1FR 1FR 1FR 1FR 1FR;
     grid-template-rows: auto auto;
     grid-template-areas: 
     "bp bp bp bp bp bp"
@@ -407,7 +407,7 @@ body{
     .gridimage01, .gridimage02, .gridimage03, .gridimage04, .gridimage05, .gridimage06{
       position: relative;
       display: flex;
-      width: 100%;
+      width: fit-content;
       height: 40px;
       background-color: $white;
       padding: 0 !important;
@@ -417,7 +417,7 @@ body{
         margin: 0;
         cursor: pointer;
         height: 100%;
-        width: 100%;
+        width: auto;
         overflow: hidden;
         img{
           height: 100%;
@@ -425,11 +425,11 @@ body{
         }
       }
     }
-    img{
-      position: relative;
-      width: 100%;
-      height: max-content;
-    }
+    // img{
+    //   position: relative;
+    //   width: 100%;
+    //   height: max-content;
+    // }
     .pplimage{
       grid-area: bp;
       display: flex;
@@ -686,6 +686,15 @@ body{
         }
       }
     }
+    }
+  }
+
+  .productfirstban{
+    h2{
+      padding: $defaultvalue02;
+      font-size: 1.2rem;
+      text-decoration: none;
+      font-weight: bold;
     }
   }
 

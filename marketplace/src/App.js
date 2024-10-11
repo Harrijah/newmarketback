@@ -6,6 +6,7 @@ import Backoffice from "./pages/Backoffice";
 import Magasin from "./pages/Magasin";
 import Boutique from "./pages/Boutique";
 import Productpage from "./pages/Productpage";
+import Allproducts from "./pages/Allproducts";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/boutiques" element={<Magasin />}></Route>
         <Route path="/boutique/:id" element={<Boutique />}></Route>
         <Route path="/product/:id" element={<Productpage />}></Route>
+        <Route path="/allproducts" element={<Allproducts/>}></Route>
       </Routes>
     </BrowserRouter>
   );

@@ -271,14 +271,15 @@ const Navigation = ({allproductslist, magasins, marques}) => {
             {/* Menu */}
             <div className="mylinks">
                 <div className="logocontainer">
-                    <span><i className='fa fa-store'></i></span>
+                    <span><NavLink to='/'><i className='fa fa-store'></i></NavLink></span>
                 </div>
                 <div className="linkcontainer">
-                <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} />
+                    <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} />
                     <NavLink to='/'>Accueil</NavLink>
                     <NavLink to='/boutiques'>Boutiques</NavLink>
+                    <NavLink to='/allproducts'>Produits</NavLink>
                     { isConnected && <NavLink to='/moncompte'>Moncompte</NavLink> } 
-                    { !isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button> } 
+                    {!isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button>} 
                 </div>
             </div>
 

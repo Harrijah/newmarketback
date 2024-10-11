@@ -1,5 +1,7 @@
 .productpage{
-    height: 100vh;
-    width: 100vw;
-    background: blue;
+    @include stdparams;
+    width: 80%;
+    margin: $defaultvalue03 auto;
+    
+
 }

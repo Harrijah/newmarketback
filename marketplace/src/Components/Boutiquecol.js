@@ -1,8 +1,3 @@
-import React from 'react';
-
-
-
-
 const Boutiquecol = ({ rayonchoice, rayonlist, categorychoice, filteredcategory, souscategorychoice, souscatlist02, maxprice, changeprice, currentmaxprice }) => {
     
     return (

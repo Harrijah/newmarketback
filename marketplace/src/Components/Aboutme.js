@@ -50,12 +50,12 @@ const Aboutme = ({ aboutUser }) => {
         }
         setUserList(list);
     }, []);
-    
+
 
 
     return (
         <div className="monmagasin">
-            <h1>A propos de moi</h1>
+            <h1>A propos de moi </h1>
             <div className="infoblock">
                 <h2>Mes informations</h2>
                 <ul>

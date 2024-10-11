@@ -16,30 +16,21 @@ const Productpage = () => {
     const marques = useSelector((state) => state.marqueReducer.marque);
     let defaultimage = './image/imageicon.png';
     const id = useParams();
-    const myproductdetails = typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id.id);
-
-
-
-
+    // const myproductdetails = typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id.id);
 
     // ----------------------- fonctions
     // récupérer la bannière Numéro 01
     const firstban = productfirstban(id.id);
 
-
-
     // ----------------------- logiques
     useEffect(() => {
-        console.log(myproductdetails);
-    }, [allproductslist]);
-    useEffect(() => {
         firstban;
-    }, [myproductdetails])
+    }, [id])
 
     return (
         <div className="container">
             <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
-            <div className="container">
+            <div className="productpage">
                 {firstban}
             </div>
 

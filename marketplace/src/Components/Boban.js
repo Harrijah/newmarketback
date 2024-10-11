@@ -1,7 +1,10 @@
 import React from "react";
 
-export default function Boban() {
+const Boban = () => {
     return (
-        <div className="pplban"></div>
+        <div className="pplban"> </div>
     )
 }
+
+
+export default Boban;
