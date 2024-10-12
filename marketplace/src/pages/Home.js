@@ -5,11 +5,12 @@ import Slideshow from '../Components/Slideshow';
 import { useDispatch, useSelector } from 'react-redux';
 import { isEmpty } from '../Assets/Utils';
 import { all } from 'axios';
-import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
+import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, magasinselect, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
 import Productslister from '../Components/Productslister';
 import { positionReducer } from '../reducers/position.reducer';
 import { showMyproduct } from '../action/showproduct.action';
 import { modalposition } from '../action/position.action';
+import { useNavigate } from 'react-router-dom';
 
 
 // CSS : pages/_home.scss
@@ -27,9 +28,17 @@ const Home = () => {
     // trouver le prix maximal
     const currentmaxprice = findmaxprice();
     const [maxprice, setMaxprice] = useState(currentmaxprice); 
+    const rays = rayongen();
+    const [chooseothstr, setChooseothstr] = useState(0);
+    const stores = magasinselect(chooseothstr);
+    const mylink = useNavigate();
 
   
     // --------------------------------- Fonctions
+    // créer et aller sur un lien
+    const goto = (id) => {
+        mylink(id);
+    }
     // afficher la liste de rayons avec des produits
     const rayonlist = rayongen();
 
@@ -39,6 +48,7 @@ const Home = () => {
         setCategorieselect(0);
         setSouscategorieselect(0);
     };
+
 
     // obtenir une liste de catégories
     const categorielist = categorygen(rayonselect);
@@ -67,6 +77,17 @@ const Home = () => {
     const souscatlist = souscatgen(rayonselect, rayonlist, categorielist, categorieselect);
     const souscatlist02 = finalsouscatgen(rayonselect, rayonlist, categorielist, categorieselect, souscatlist, filteredcategory);
 
+
+    // ------------------ sélectionner une boutique spécialisée
+    // rayon
+    const slctothrstore = (e) => {
+        setChooseothstr(e.target.value);
+    }
+    //choix
+    const gotostore = (id) => {
+        goto('/boutique/' + id);
+    } 
+
     
     // --------------------------------- Logiques
     // Générer la liste de rayons disponibles
@@ -78,8 +99,6 @@ const Home = () => {
     useEffect(() => {
         setMaxprice(currentmaxprice);
     }, [currentmaxprice]);
-
-
 
 
 
@@ -126,20 +145,22 @@ const Home = () => {
                     <div className="banncontainer">
                         <div className="col01">
                             <div className="textcontainer">
-                                <h2>Trouver un magasin</h2>
+                                <h2>Trouver une boutique spécialisée</h2>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis alias, ipsum quia aliquid ullam assumenda perspiciatis laudantium consequuntur autem in maxime, qui quam exercitationem nihil illo dicta tempore earum pariatur!</p>
                             </div>
                         </div>
                         <div className="col02">
                             <div className="formcontainer">
                                 <form>
-                                    <select name="" id="">
+                                    <select onChange={(e) => slctothrstore(e)}>
                                         <option value="0">Sélectionner un rayon</option>
+                                        {rays}
+
                                     </select>
-                                    <select name="" id="">
+                                    <select onChange={(e) => gotostore(e.target.value)}>
                                         <option value="0">Sélectionner un magasin</option>
+                                        {stores}
                                     </select>
-                                    <button type='submit' value='Voir le magasin'>Voir le magasin</button>
                                 </form>
                             </div>
                         </div>
@@ -169,7 +190,7 @@ const Home = () => {
                                 <span>{maxprice} Ar</span>
                                 </div>
                             </div>
-                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} id={0} />
+                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} brandselect={0} idmagasin={0} />
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { searchinfo, showaproduct } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
 import { useNavigate } from "react-router-dom";
 
-const Productslister = ({ rayonselect, categorieselect, souscategorieselect, maxprice, keyword, id }) => {
+const Productslister = ({ rayonselect, categorieselect, souscategorieselect, brandselect, maxprice, keyword, idmagasin }) => {
     // ------------------------------- variables
     const mylink = useNavigate();
     const goto = (id) => {
@@ -34,13 +34,14 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, max
  
     useEffect(() => {
         
-        if (typeof(allproductslist) == 'object') {
+        if (typeof(allproductslist && allproductslist) == 'object') {
             const templist = (allproductslist)
-                .filter((product) => id == 0 || product.storeid == id)
+                .filter((product) => idmagasin == 0 || product.storeid == idmagasin)
                 .filter((product) => rayonselect == 0 || product.rayon == rayonselect)
                 .filter((product) => categorieselect == 0 || product.categorie == categorieselect)
                 .filter((product) => souscategorieselect == 0 || product.souscategorie == souscategorieselect)
                 .filter((product) => maxprice == 0 || Number(product.prix) <= Number(maxprice))
+                .filter((product) => brandselect == 0 || Number(product.marque) == Number(brandselect))
                 .filter((product) => keyword ? removeAccents(product.nomproduit.toLowerCase()).includes(keyword)
                     // || removeAccents(product.courtdescript.toLowerCase()).includes(keyword)
                     : true)
@@ -79,7 +80,7 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, max
                     );             
             setFilteredproductlist(templist);
         }
-    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword, maxprice, id]);
+    }, [allproductslist, rayonselect, categorieselect, souscategorieselect, keyword, maxprice, brandselect, idmagasin]);
 
     return (
         <div className="productslister">

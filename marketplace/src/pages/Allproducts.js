@@ -6,8 +6,9 @@ import Rightmaincontent from "../Components/Rightmaincontent";
 import Boban from "../Components/Boban";
 import { useSelector } from "react-redux";
 import Productslister from "../Components/Productslister";
-import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, rayongen, souscatgen } from "../Assets/Functions";
+import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, magasinselect, marqueselect, rayongen, souscatgen } from "../Assets/Functions";
 import Boutiquecol from "../Components/Boutiquecol";
+import { Otherfilters } from "../Components/Otherfilters";
 
 const Allproducts = () => {
     // ----------------------------------------- variables
@@ -38,6 +39,14 @@ const Allproducts = () => {
     const currentmaxprice = findmaxprice();
     const [maxprice, setMaxprice] = useState(currentmaxprice);
 
+    // liste marques
+    const [brandselect, setBrandselect] = useState(0);
+    const brands = marqueselect(rayonselect);
+
+    // liste magasins
+    const [storeselect, setStoreselect] = useState(0);
+    const stores = magasinselect(rayonselect);
+
 
     // ----------------------------------------- functions
     // choix rayon
@@ -45,6 +54,9 @@ const Allproducts = () => {
         setRayonselect(e.target.value);
         setCategorieselect(0);
         setSouscategorieselect(0);
+        setStoreselect(0);
+        setBrandselect(0);
+        
     }
 
     // choix catégorie
@@ -62,6 +74,16 @@ const Allproducts = () => {
         setMaxprice(e.target.value);
     }
 
+    // choix de la marque
+    const brandchoice = (e) => {
+        setBrandselect(e.target.value);        
+    }
+
+    // choix du magasin
+    const magasinchoice = (e) => {
+        setStoreselect(e.target.value);
+    }
+
 
     // ----------------------------------------- logiques
     // calcul hauteur colonnes
@@ -76,17 +98,23 @@ const Allproducts = () => {
 
     useEffect(() => {
         setMaxprice(maxprice);
-    }, [maxprice])
+    }, [maxprice]);
+
+    useEffect(() => {
+        console.log(brands);
+        console.log(stores);
+        
+    }, [rayonselect])
 
     return (
         <div className="container">
             <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
             <Boban />
             <Leftlateralcolumn leftColumnRef={leftColumnRef} button={
-                [<Boutiquecol rayonchoice={rayonchoice} rayonlist={rayonlist} categorychoice={categorychoice} filteredcategory={filteredcategory} souscategorychoice={souscategorychoice} souscatlist02={souscatlist02} maxprice={maxprice} changeprice={changeprice} currentmaxprice={currentmaxprice} />]
+                [<Boutiquecol key={0} rayonchoice={rayonchoice} rayonlist={rayonlist} categorychoice={categorychoice} filteredcategory={filteredcategory} souscategorychoice={souscategorychoice} souscatlist02={souscatlist02} maxprice={maxprice} changeprice={changeprice} currentmaxprice={currentmaxprice} />, <Otherfilters key={1} rayonselect={rayonselect} brands={brands} brandchoice={brandchoice} magasinchoice={magasinchoice} listofstore={stores} />]
             } />
             <Rightmaincontent content={
-                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect}  maxprice={maxprice} id={0} />} rightContentRef={rightContentRef} />
+                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect}  maxprice={maxprice} marque={0} idmagasin={storeselect} brandselect={brandselect} />} rightContentRef={rightContentRef} />
         </div>
     );
 }

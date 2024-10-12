@@ -261,29 +261,48 @@ export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorie
 }
 
 // Retourner la liste de marques
-export const marqueselect = () => {
+export const marqueselect = (rayonselect) => {
   // variables
   const marques = useSelector((state) => state.marqueReducer.marque);
   const [brandlist, setBrandlist] = useState([]);
 
   // fonctions
   const marqueliste = () => {
-    const templist = [];
-    marques.forEach(marque => {
-      templist.push(
-        <option key={marque.id} value={marque.id}>{marque.marque}</option>
-      );
-    });
+    const templist = marques && typeof (marques) == 'object' && marques.filter((marque) => marque.idrayon == rayonselect).map((marque) => (
+      <option key={marque.id} value={marque.id}>{marque.marque}</option>
+    ));
     setBrandlist(templist);
   }
 
   // logiques
   useEffect(() => {
     marqueliste();
-  }, [marques]);
+  }, [marques, rayonselect]);
 
   return brandlist;
+}
 
+export const magasinselect = (rayonselect) => {
+  // variables
+  const magasins = useSelector((state) => state.storeReducer.allstore);
+  const [magasinlist, setMagasinlist] = useState([]);
+
+  // fonctions
+  const storelist = () => {
+    const templist = magasins && typeof (magasins) == 'object' && magasins.filter((magasin) => Number(magasin.categorie) == Number(rayonselect)).map((magasin) => (
+      <option key={magasin.id} value={magasin.id}>{magasin.nommagasin}</option>
+    ));
+
+    setMagasinlist(templist);
+  }
+
+  // logiques
+  useEffect(() => {
+    storelist();
+    // console.log(magasinlist);
+  }, [magasins, rayonselect]);
+
+  return magasinlist;
 }
 
 // chercher le prix le plus élevé dans une sélection
@@ -348,7 +367,7 @@ export const productfirstban = (id) => {
   const [imglist, setImglist] = useState([]);
   const defaultimage = '../image/imageicon.png';
   // récupérer le produit sélectionné par son id
-  const myproductdetails = !isEmpty(id) && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id); 
+  const myproductdetails = !isEmpty(id) && allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id); 
   // récupérer la première image
   const [imagetoshow, setImagetoshow] = useState(myproductdetails && myproductdetails.image01 && myproductdetails.image01);
 

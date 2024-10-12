@@ -89,7 +89,7 @@ const Boutique = () => {
             <Boban />
             <Leftlateralcolumn leftColumnRef={leftColumnRef} button={<Boutiquecol rayonchoice={rayonchoice} rayonlist={rayonlist} categorychoice={categorychoice} filteredcategory={filteredcategory} souscategorychoice={souscategorychoice} souscatlist02={souscatlist02} maxprice={maxprice} changeprice={changeprice} currentmaxprice={currentmaxprice} />}/>
             <Rightmaincontent content={
-                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect}  maxprice={maxprice} id={id.id} />} rightContentRef={rightContentRef} />
+                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect}  maxprice={maxprice} idmagasin={id.id}  marque={0} brandselect={0}  />} rightContentRef={rightContentRef} />
         </div>
     )
 }
