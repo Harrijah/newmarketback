@@ -34,7 +34,7 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, bra
  
     useEffect(() => {
         
-        if (typeof(allproductslist && allproductslist) == 'object') {
+        if (allproductslist && typeof(allproductslist) == 'object') {
             const templist = (allproductslist)
                 .filter((product) => idmagasin == 0 || product.storeid == idmagasin)
                 .filter((product) => rayonselect == 0 || product.rayon == rayonselect)

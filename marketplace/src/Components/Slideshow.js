@@ -69,6 +69,10 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
         setDisplaylist(templist);
     }
 
+    // pour chevrons
+    const [myleft, setMyleft] = useState(200);
+    const [myright, setMyright] = useState(200);
+    
     // Images et contenus du slider principal
     const myslider = () => {
         if (filteredlist == []) {
@@ -80,9 +84,18 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
         ));
             setSlidercontent(templist);
         } else {
+            // version originale
+        // const templist = !isEmpty(filteredlist) && Array.from(filteredlist)
+        //     .map((product, index) => (
+        //     <div key={product.id} className={(index != sliderindex) ? 'slidebox' : 'showme'}>
+        //         <img onClick={(e) => showaproduct(e, product.id)} src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
+        //         <button className="slidebtn01" onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button>
+        //         <button className="slidebtn02" onClick={() => openstore(product.storeid)}>{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
+        //     </div>
+        // ));
         const templist = !isEmpty(filteredlist) && Array.from(filteredlist)
             .map((product, index) => (
-            <div key={product.id} className={(index != sliderindex) ? 'slidebox' : 'showme'}>
+            <div key={product.id} className={`showme image0${index}`} style={{left: `${myleft}px`}}>
                 <img onClick={(e) => showaproduct(e, product.id)} src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
                 <button className="slidebtn01" onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button>
                 <button className="slidebtn02" onClick={() => openstore(product.storeid)}>{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
@@ -94,12 +107,24 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
 
     // Décrémenter slider
     const removeindex = () => {
-        setSliderindex((((sliderindex - 1) + filteredlist.length ) % filteredlist.length));
+        setMyleft(myleft - 200);
+        setSliderindex(((sliderindex - 1) + filteredlist.length ) % filteredlist.length);
     }
     //Incrémenter slider
     const addindex = () => {
+        setMyleft(myleft + 200);
         setSliderindex((sliderindex + 1 ) % filteredlist.length);
     }
+
+    // Boucle auto slider
+    // useEffect(() => {
+    //     const imginterval = setInterval(() => {
+    //         addindex();
+    //     }, 2000);
+    //     return () => {
+    //         clearInterval(imginterval);
+    //     }
+    // }, [filteredlist, sliderindex]);
 
 
 
@@ -130,15 +155,14 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
         <div className="slideshowcontainer">
             
             <div className="imgpart">
-                <div className="leftchevron">
-                    <button onClick={() => removeindex()}><i className="fa fa-chevron-left"></i></button>
-                </div>
-                <div className="mainimage">
+                <span className="leftchevron" onClick={() => removeindex()}></span>
+                {/* <div className="mainimage">
                     {slidercontent}
+                </div> */}
+                <div className="mainimage02">
+                    {[slidercontent, slidercontent, slidercontent]}
                 </div>
-                <div className="rightchevron">
-                    <button onClick={() => addindex()}><i className="fa fa-chevron-right"></i></button>
-                </div>
+                <span className="rightchevron" onClick={() => addindex()}></span>
             </div>
 
 

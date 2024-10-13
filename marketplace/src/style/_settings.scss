@@ -108,6 +108,18 @@ $extraHeight: 100px;
   left: 0;
   top: 25px;
 }
+@mixin chevronafter{
+  position: absolute;
+  text-align: center;
+  font-size: 2.7rem;
+  font-weight: bold;
+  background-color: #23293d93;
+  color: $mylight;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
 @mixin backofficebtn01 {
   @include stdbtncolor;
   position: relative;

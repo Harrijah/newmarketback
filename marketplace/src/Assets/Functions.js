@@ -155,7 +155,7 @@ export const filteredcategorygen = (rayonselect) => {
 
   // Sortir un tableau d'id de catégories sans les doublons => ceux qui contiennent uniquement un produit
   useEffect(() => {
-      if (allproductslist != '') {
+      if (allproductslist && typeof(allproductslist) == 'object') {
           for (let i = 0; i < allproductslist.length; i++) {
               let doublon = false;
 
