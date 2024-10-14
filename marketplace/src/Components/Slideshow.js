@@ -14,6 +14,7 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
     const [displaylist, setDisplaylist] = useState([]);
     const [sliderindex, setSliderindex] = useState(0);
     const [slidercontent, setSlidercontent] = useState([]);
+    const [finalshow, setFinalshow] = useState([]);
     const [selectedrayon, setSelectedRayon] = useState(0);
     const mylink = useNavigate();
 
@@ -70,8 +71,7 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
     }
 
     // pour chevrons
-    const [myleft, setMyleft] = useState(200);
-    const [myright, setMyright] = useState(200);
+    const [myleft, setMyleft] = useState(0);
     
     // Images et contenus du slider principal
     const myslider = () => {
@@ -85,37 +85,42 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
             setSlidercontent(templist);
         } else {
             // version originale
-        // const templist = !isEmpty(filteredlist) && Array.from(filteredlist)
-        //     .map((product, index) => (
-        //     <div key={product.id} className={(index != sliderindex) ? 'slidebox' : 'showme'}>
-        //         <img onClick={(e) => showaproduct(e, product.id)} src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
-        //         <button className="slidebtn01" onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button>
-        //         <button className="slidebtn02" onClick={() => openstore(product.storeid)}>{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
-        //     </div>
-        // ));
         const templist = !isEmpty(filteredlist) && Array.from(filteredlist)
             .map((product, index) => (
-            <div key={product.id} className={`showme image0${index}`} style={{left: `${myleft}px`}}>
+            <div key={index} className={`showme image0${index}`} position={index}>
                 <img onClick={(e) => showaproduct(e, product.id)} src={!isEmpty(allproductslist) ? 'http://localhost:8080/uploads/' + product.image01 : ''} alt="" />
                 <button className="slidebtn01" onClick={(e) => showaproduct(e, product.id)}>{product.nomproduit}</button>
                 <button className="slidebtn02" onClick={() => openstore(product.storeid)}>{searchinfo(magasins, product.storeid, 'nommagasin')}</button>
             </div>
         ));
-            setSlidercontent(templist);
-        }
+        setSlidercontent(templist);
+       } 
     }
 
     // Décrémenter slider
     const removeindex = () => {
-        setMyleft(myleft - 200);
         setSliderindex(((sliderindex - 1) + filteredlist.length ) % filteredlist.length);
+        
     }
+    const [test, setTest] = useState([]);
     //Incrémenter slider
     const addindex = () => {
-        setMyleft(myleft + 200);
-        setSliderindex((sliderindex + 1 ) % filteredlist.length);
-    }
+        setSliderindex(((sliderindex + 1) + filteredlist.length) % filteredlist.length);
 
+        if (slidercontent && typeof(slidercontent) == 'object') {
+            const poulet = [...slidercontent];
+            for (let i = 0; i < slidercontent.length; i++){
+                slidercontent[i] = slidercontent[(slidercontent.length + i + 1) % slidercontent.length];
+                console.log('poulet de ' + i + ' = slidercontent de ' + (slidercontent.length + i + 1) % slidercontent.length);
+                // slidercontent[i] = poulet[i];
+            }
+            // setSlidercontent(poulet);
+            console.log(poulet);
+            console.log(slidercontent);
+            
+        }
+    }
+    
     // Boucle auto slider
     // useEffect(() => {
     //     const imginterval = setInterval(() => {
@@ -126,29 +131,51 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
     //     }
     // }, [filteredlist, sliderindex]);
 
-
+    const imggridfunction = () => {
+        if(slidercontent && typeof(slidercontent) == 'object'){
+            const templist = slidercontent
+                .filter((product, index) => (
+                    product.position > 0 && product.position < 4
+                ))
+                .map((product) => (
+                    <div className="imggrid00">hello
+                        {/* <img src={} alt="" /> */}
+                    </div>
+                ));
+            setFinalshow(templist);
+            console.log(templist);
+        }
+    }
 
     
     // -------------------- Logiques
     // Générer la liste de produits
+    // Filtrer la liste selon le critère "enavant"
     useEffect(() => {
-        // Filtrer la liste selon le critère "enavant"
         filtermylist(enavant);
     }, [allproductslist, enavant, selectedrayon]);
     
+    // Générer la liste de produits une fois que filteredlist est défini
     useEffect(() => {
-        // Générer la liste de produits une fois que filteredlist est défini
         if (!isEmpty(filteredlist)) {
             listofproduct();
             myslider();
         }
     }, [filteredlist, selectedrayon]);
     
+    // Mettre à jour le slider lorsque l'index change
     useEffect(() => {
-        // Mettre à jour le slider lorsque l'index change
         myslider();
     }, [sliderindex, selectedrayon]);
-    
+
+    // vue grid filtrée
+    // useEffect(() => {
+    //     imggridfunction();
+    //     console.log(finalshow);
+        
+    // }, [slidercontent]);
+
+
 
 
     return (
@@ -156,11 +183,8 @@ const Slideshow = ({listederayons, allproductslist, magasins, enavant}) => {
             
             <div className="imgpart">
                 <span className="leftchevron" onClick={() => removeindex()}></span>
-                {/* <div className="mainimage">
+                <div className="mainimage">
                     {slidercontent}
-                </div> */}
-                <div className="mainimage02">
-                    {[slidercontent, slidercontent, slidercontent]}
                 </div>
                 <span className="rightchevron" onClick={() => addindex()}></span>
             </div>

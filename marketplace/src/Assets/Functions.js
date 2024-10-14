@@ -224,7 +224,7 @@ export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorie
   
   // lister les sous-catégories dans un tableau en enlevant les doublons
   useEffect(() => {
-      if(allproductslist != ''){
+      if(allproductslist && typeof(allproductslist) == 'object'){
           for (let i = 0; i < allproductslist.length; i++){
               let doublon = false;
               for (let j = 0; j < idlist01.length; j++){
