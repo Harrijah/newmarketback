@@ -326,7 +326,7 @@ export const findmaxprice = () => {
   const selectmax = () => {
     
     if (!isEmpty(pricearray) && typeof (pricearray) == 'object') {
-      const templist = [...pricearray];
+      // const templist = [...pricearray];
       // for (let i = 0; i < pricearray.length; i++){
       //   // console.log('tour de boucle "I" numéro : ' + i);
 
