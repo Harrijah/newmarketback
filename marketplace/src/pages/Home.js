@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Navigation from '../template-parts/Navigation';
 import Footer from '../template-parts/Footer';
-import Slideshow from '../Components/Slideshow';
+import Slideshow from '../Modules/Slideshow';
 import { useDispatch, useSelector } from 'react-redux';
 import { isEmpty } from '../Assets/Utils';
 import { all } from 'axios';
 import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, magasinselect, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
-import Productslister from '../Components/Productslister';
+import Productslister from '../Modules/Productslister';
 import { positionReducer } from '../reducers/position.reducer';
 import { showMyproduct } from '../action/showproduct.action';
 import { modalposition } from '../action/position.action';
 import { useNavigate } from 'react-router-dom';
+import Homepub from '../Modules/Homepub';
 
 
 // CSS : pages/_home.scss
@@ -109,7 +110,7 @@ const Home = () => {
             <div className="mphome">
                 <div className="firstbarr">
                     <div className="leftpart">
-                        <button>Boutiques</button>
+                        <button onClick={() => goto('/boutiques')}>Boutiques</button>
                         <button>Services</button>
                     </div>
                     <div className="rightpart">
@@ -136,8 +137,8 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="rightpart">
-                        <div className="imgcontainer">
-                            <img src="./image/pub.jpg" alt="" />
+                        <div className="pubcontainer">
+                            <Homepub />
                         </div>
                     </div>
                 </div>

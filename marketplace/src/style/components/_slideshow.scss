@@ -47,12 +47,13 @@
                     position: absolute;
                     display: block;
                     width: 100%;
-                    top: 70%;
-                    transform: translateY(-30%);
+                    height: 20%;
+                    top: 75%;
+                    transform: translateY(-25%);
                     @include softbutton;
                     background-color: #ffffffa8;
                     color: $darker;
-                    font-size: 2.5rem;
+                    font-size: 2rem;
                     margin: 0;
                     padding: 0 $defaultvalue03;
                     &:hover{
@@ -63,8 +64,10 @@
                     position: absolute;
                     display: block;
                     width: 100%;
-                    top: 80%;
-                    transform: translateY(-20%);
+                    height: 10%;
+                    bottom: 0;
+                    // top: 80%;
+                    // transform: translateY(-20%);
                     @include softbutton;
                     background-color: #23293d93;
                     color: whitesmoke;

@@ -5,7 +5,7 @@ import Boban from "../Components/Boban";
 import Leftlateralcolumn from "../Components/Leftlateralcolumn";
 import Rightmaincontent from "../Components/Rightmaincontent";
 import { useParams } from "react-router-dom";
-import Productslister from "../Components/Productslister";
+import Productslister from "../Modules/Productslister";
 import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, rayongen, souscatgen } from "../Assets/Functions";
 import Boutiquecol from "../Components/Boutiquecol";
 

@@ -5,6 +5,13 @@ export const CONNEXION_STATUS = 'CONNEXION_STATUS';
 export const DISCONNECT_USER = 'DISCONNECT_USER';
 export const UPDATE_USER = 'UPDATE_USER';
 export const CREATE_USERSTORE = 'CREATE_USERSTORE';
+export const CONNECTUSER = 'CONNECTUSE';
+
+export const connectuseraction = (data) => {
+    return (dispatch) => {
+        return dispatch({ type: CONNECTUSER, payload: data });
+    }
+}
 
 export const createUser = (data) => {
     return (dispatch) => {

@@ -5,7 +5,7 @@ import Leftlateralcolumn from "../Components/Leftlateralcolumn";
 import Rightmaincontent from "../Components/Rightmaincontent";
 import Boban from "../Components/Boban";
 import { useSelector } from "react-redux";
-import Productslister from "../Components/Productslister";
+import Productslister from "../Modules/Productslister";
 import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, magasinselect, marqueselect, rayongen, souscatgen } from "../Assets/Functions";
 import Boutiquecol from "../Components/Boutiquecol";
 import { Otherfilters } from "../Components/Otherfilters";

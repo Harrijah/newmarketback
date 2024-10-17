@@ -1,5 +1,6 @@
 import {
-  CREATE_USER, CONNEXION_STATUS, DISCONNECT_USER, UPDATE_USER
+  CREATE_USER, CONNEXION_STATUS, DISCONNECT_USER, UPDATE_USER,
+  CONNECTUSER
 } from "../action/createaccount.action";
 
 const initialState = {
@@ -7,10 +8,14 @@ const initialState = {
   user: sessionStorage.getItem("user")
     ? JSON.parse(sessionStorage.getItem("user"))
     : "",
+  connectmyuser : false,
 };
 
 export default function createaccountReducer(state = initialState, action) {
   switch (action.type) {
+    case CONNECTUSER:
+      return {connectmyuser : action.payload};
+
     case CREATE_USER:
       return action.payload;
 

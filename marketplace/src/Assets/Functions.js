@@ -3,7 +3,11 @@ import { useSelector } from "react-redux";
 import { isEmpty } from "./Utils";
 import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
+import { useNavigate } from "react-router-dom";
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // Rapidsearch modal
 export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
   if (clientsearchvalue != '') {
@@ -15,6 +19,9 @@ export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
   }
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // join un par un
 export const searchinfo = (base, id, request) => {
   const tempinfo = (!isEmpty(base) && typeof(base) == "object") && base.find((info) => info.id == id);
@@ -25,6 +32,9 @@ export const searchinfo = (base, id, request) => {
   }
 } 
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // retourne la liste de tous les rayons
 export const rayonsgen = () => {
   const [myrayons, setMyrayons] = useState([]);
@@ -43,6 +53,9 @@ export const rayonsgen = () => {
   return myrayons;
 };
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // retourne les rayons auxquels des produits sont rattachés
 export const rayongen = () => {
   // variables
@@ -83,15 +96,16 @@ export const rayongen = () => {
       temprayonsliste.forEach((id) => {
         const testray = rayonlist.find((rayon) => rayon.id == id);
         secondrayon.push(testray);
+        setTemprayons(secondrayon);
       });
-      setTemprayons(secondrayon);
+      
     }
   }
 
   // mapper le tableau de rayons dans un array d'<option></option>
   const rayshortlist = () => {
-    if (temprayons != "") {
-      const listtemp = temprayons && Array.from(temprayons).map((item, index) => (
+    if (temprayons && typeof(temprayons == 'object')) {
+      const listtemp = temprayons && (temprayons).map((item, index) => (
             <option key={item.id || index} value={item.id}>
               {item.rayon}
             </option>
@@ -114,6 +128,9 @@ export const rayongen = () => {
     return finalrays;
 };
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // choisir un rayon
 export const rayonchoice = (e) => {
   const [rayonselect, setRayonselect] = useState(0);
@@ -121,6 +138,9 @@ export const rayonchoice = (e) => {
   return rayonselect;
 };
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // retourne la liste des catégories en fonction du choix de rayon
 export const categorygen = (rayonselect) => {
   const categorie = useSelector((state) => state.categorieReducer.categorie);
@@ -143,6 +163,9 @@ export const categorygen = (rayonselect) => {
   return categorielist;
 };
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // retourne la liste des catégories où il y a des produits
 export const filteredcategorygen = (rayonselect) => {
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -189,6 +212,9 @@ export const filteredcategorygen = (rayonselect) => {
   return filteredcategory;
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // retourne la liste des sous-catégories
 export const souscatgen = (rayonselect, rayonlist, categorielist, categorieselect) => {
   const souscategorie = useSelector((state) => state.souscatReducer.souscat);
@@ -213,6 +239,9 @@ export const souscatgen = (rayonselect, rayonlist, categorielist, categorieselec
   return souscatlist;
 };
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // retourne la liste des sous-catégories dans lesquelles il y a un produit
 export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorieselect, filteredcategory) => {
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -260,6 +289,9 @@ export const finalsouscatgen = (rayonselect, rayonlist, categorielist, categorie
   return finalsouscat;
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // Retourner la liste de marques
 export const marqueselect = (rayonselect) => {
   // variables
@@ -282,6 +314,9 @@ export const marqueselect = (rayonselect) => {
   return brandlist;
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 export const magasinselect = (rayonselect) => {
   // variables
   const magasins = useSelector((state) => state.storeReducer.allstore);
@@ -305,6 +340,9 @@ export const magasinselect = (rayonselect) => {
   return magasinlist;
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // chercher le prix le plus élevé dans une sélection
 export const findmaxprice = () => {
   const [pricearray, setPricearray] = useState([]);
@@ -357,8 +395,10 @@ export const findmaxprice = () => {
    return myresponse;
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
 // afficher première partie - fiche produit
-
 export const productfirstban = (id) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -437,7 +477,7 @@ export const productfirstban = (id) => {
         <div className="modaldescript">
           {myproductdetails && !isEmpty(myproductdetails.prix) ? <p>Prix : {myproductdetails.prix} Ar</p> : ''}
           {
-            myproductdetails && !isEmpty(magasins) && (myproductdetails.storeid != 0) && <p><b> Chez </b> {searchinfo(magasins, myproductdetails.storeid, 'nommagasin')} </p> 
+            myproductdetails && !isEmpty(magasins) && (myproductdetails.storeid != 0) && <p><b> Chez </b> <a href={`/boutique/${myproductdetails.storeid}`}>{searchinfo(magasins, myproductdetails.storeid, 'nommagasin')}</a> </p> 
           }
         </div>
       </div>
@@ -445,4 +485,136 @@ export const productfirstban = (id) => {
   );
 }
 
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
+// deuxième bannière de la page produit
+export const productsecondban = (id) => {
+  // ---------------------- variables
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const myproductdetails = !isEmpty(id) && allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id);
 
+  // ---------------------- fonctions
+  const convertDraftToHtml = (rawContentSate) => {
+    const contentState = convertFromRaw(rawContentSate);
+    const editorState = EditorState.createWithContent(contentState);
+    return draftToHtml(convertToRaw(editorState.getCurrentContent()));
+  }
+
+  return (
+    <div>
+      {
+        myproductdetails && !isEmpty(myproductdetails.longdescript) ? <div dangerouslySetInnerHTML={{__html: convertDraftToHtml(JSON.parse(myproductdetails.longdescript))}} /> : ''
+      }
+    </div>
+  )
+
+}
+
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
+// page produit : PRODUITS SIMILAIRES
+export const similarproducts = (id) => {
+  // ---------------------- variables
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const myproductdetails = allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id);
+  const [listofproducts, setListofproducts] = useState([]);
+  const mylink = useNavigate();
+  
+  // ---------------------- fonctions
+  const goto = (id) => {
+    mylink('/product/' + id);
+  }
+  const showtheproducts = () => {
+    if (allproductslist && typeof (allproductslist) == 'object')
+    {
+      const templist = allproductslist
+        .filter((product) => product.rayon == myproductdetails.rayon)
+        .filter((product) => product.id != myproductdetails.id) 
+        .splice(0, 10)
+        .map((product) => (
+        <div key={product.id} className="oneproduct">
+          <div className="elementscontainer">
+            <div className="imgsection">
+              <div className="productactions">
+                <button>Pour plus tard</button>
+                <button onClick={() => goto(product.id)}>Fiche produit</button>
+              </div>
+              <button>
+                <span className="apercu">Aperçu</span>
+                <img src={`http://localhost:8080/uploads/${product.image01}`} alt="" />
+              </button>
+            </div>
+            <div className="txtsection">
+              <a href={`/product/${product.id}`}><h3>{product.nomproduit}</h3></a>
+            </div>
+          </div>
+        </div>
+      ));
+    setListofproducts(templist);
+    }
+  }
+  // ---------------------- logiques
+  useEffect(() => {
+    showtheproducts();
+  }, [allproductslist, id])
+
+
+  return (
+      <div className="filteredproducts">
+        <div className="productscontainer02">
+          {listofproducts}
+        </div>
+      </div>
+
+  )
+}
+
+
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
+// Afficher un seul produit (PROMO ??)
+export const showpromo = (id) => {
+  // ---------------------- variables
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const myproductdetails = allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id);
+  const [producttoshow, setProducttoshow] = useState('');
+  const mylink = useNavigate();
+
+  // ---------------------- fonctions
+  const goto = (id) => {
+    mylink('/product/' + id);
+  }
+  const showmyprod = () => {
+    if (myproductdetails && typeof (myproductdetails) == 'object') {
+      setProducttoshow(
+        <div key={myproductdetails.id} className="oneproduct promo">
+          <div className="elementscontainer">
+            <div className="imgsection">
+              <div className="productactions">
+                <button>Pour plus tard</button>
+                <button onClick={() => goto(myproductdetails.id)}>Fiche produit</button>
+              </div>
+              <button>
+                <span className="apercu">Aperçu</span>
+                <img src={`http://localhost:8080/uploads/${myproductdetails.image01}`} alt="" />
+              </button>
+            </div>
+            <div className="txtsection" style={{textAlign: 'center'}}>
+              <a href={`/product/${myproductdetails.id}`}><h3>{myproductdetails.nomproduit}</h3></a>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+  // ---------------------- logiques
+  useEffect(() => {
+    showmyprod();
+    
+  }, [myproductdetails, id]);
+
+  return producttoshow;
+}

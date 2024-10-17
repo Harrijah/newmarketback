@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { connectUser, disconnectUser } from '../action/createaccount.action';
+import { connectUser, connectuseraction, disconnectUser } from '../action/createaccount.action';
 import { createUser } from '../action/createaccount.action';
 import Showproductmodal from '../Components/Showproductmodal';
 import { showMyproduct } from '../action/showproduct.action';
@@ -23,9 +23,10 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     }
 
     // Montrer le modal de connexion utilisateur
-    const [connectmyuser, setConnectmyuser] = useState(false);
+    const connectmyuser = useSelector((state) => state.createaccountReducer.connectmyuser);
+    
     const connectuser = () => {
-        setConnectmyuser(true);
+        dispatch(connectuseraction(true));
     }
 
     // Toggle modal-content : create ou connect
@@ -37,7 +38,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     // Cacher le modal de connexion utilisateur
     const hidemodal = (e) => {
         if (e.target.className == 'modal') {
-            setConnectmyuser(false);
+            dispatch(connectuseraction(false));
         }
     }
 
@@ -46,7 +47,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     // Future validation de formulaire de connexion
     const connectme = (e) => {
         e.preventDefault();
-        setConnectmyuser(false);
+        dispatch(connectuseraction(false));
         const data = {
             email: connectuserform.current[0].value,
             pwd: connectuserform.current[1].value,
@@ -276,8 +277,8 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                 <div className="linkcontainer">
                     <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} />
                     <NavLink to='/'>Accueil</NavLink>
-                    <NavLink to='/boutiques'>Boutiques</NavLink>
                     <NavLink to='/allproducts'>Produits</NavLink>
+                    <NavLink to='/boutiques'>Boutiques</NavLink>
                     { isConnected && <NavLink to='/moncompte'>Moncompte</NavLink> } 
                     {!isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button>} 
                 </div>
