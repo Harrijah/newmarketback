@@ -26,6 +26,7 @@
     }
     .secondbarr{
         @include flexbarr;
+        height: 100%;
         .leftpart{
             width: 75%;
             .carouselheader{
@@ -91,11 +92,13 @@
         .rightpart{
             width: 23%;
             background-color: $mylight;
+            height: 70vh;
             max-height: 80vh;
             overflow: hidden;
             margin: auto;
             .pubcontainer{
                 margin: auto;
+                height: 100%;
                 img{
                     margin: auto;
                     width: 100%;

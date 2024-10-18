@@ -22,6 +22,13 @@
 
         public function getrayon()
         {
+            
+            // --------------------- CORS : indispensable 14/05/24 ---------------------
+            // header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+            // header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+            // header('Access-Control-Allow-Headers: Content-Type');
+            // header('Access-Control-Allow-Credentials: true');
+
             $model = model(RayonModel::class);
             $response = $model->getrayon();
 

@@ -26,7 +26,7 @@ export const rapidsearchmodal = (clientsearchvalue, setRapidsearch) => {
 export const searchinfo = (base, id, request) => {
   const tempinfo = (!isEmpty(base) && typeof(base) == "object") && base.find((info) => info.id == id);
   if (tempinfo && request in tempinfo) {
-      return (<span>{tempinfo[request]}</span>)
+      return (tempinfo[request])
   } else {
       return ('');
   }
@@ -613,6 +613,34 @@ export const showpromo = (id) => {
   // ---------------------- logiques
   useEffect(() => {
     showmyprod();
+    
+  }, [myproductdetails, id]);
+
+  return producttoshow;
+}
+
+
+{/* *************************************************************************************************
+***********************************                               ***********************************
+*************************************************************************************************** */}
+// Objet - détails de produit mis en avant
+export const showpromotext = (id) => {
+  // ---------------------- variables
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const magasins = useSelector((state) => state.storeReducer.allstore)
+  const myproductdetails = allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id);
+  const [producttoshow, setProducttoshow] = useState([]);
+
+  // ---------------------- fonctions
+  const showmyprod = () => {
+    if (myproductdetails && typeof (myproductdetails) == 'object') {
+      setProducttoshow(['Notre coup de coeur : ', myproductdetails.nomproduit, 'disponible chez ' + searchinfo(magasins, myproductdetails.storeid, 'nommagasin')]);
+    }
+  }
+  // ---------------------- logiques
+  useEffect(() => {
+    showmyprod();
+    console.log(producttoshow);
     
   }, [myproductdetails, id]);
 
