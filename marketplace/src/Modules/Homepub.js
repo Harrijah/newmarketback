@@ -9,42 +9,53 @@ const Homepub = () => {
     // --------------------------- variables
     let time01 = 8000;
     let time02 = 16000;
-    let time03 = 32000;
+    let time03 = 24000;
     let time04 = 40000;
     const dispatch = useDispatch();
-    const imagepub01 = "./image/pub.jpg";
     const [todisplay, setTodisplay] = useState(null);
     const [loopindex, setLoopindex] = useState(0);
 
-    const hlproduct = showpromo(111);
-
-    // text 01
+    // Pub slide 01 || loopindex == 1
     const temptext = [];
-    const [texttoshow, setTexttoshow] = useState('');
     const [finaltext, setFinaltext] = useState([]);
-    let mytext = ['Créez votre compte en 1mn, ici '];
     const [letterindex, setLetterindex] = useState(0);
-
-    // text 02
-    const [finaltext02, setFinaltext02] = useState([]);
-    const temptext02 = [];
-    const producttext02 = showpromotext(1);
-    let mytext02 = producttext02;
-    const tralala = [mytext02[0]];
-    const [texttoshow02, setTexttoshow02] = useState('');
-    const hlproduct02 = showpromo(1);
-    const [letterindex02, setLetterindex02] = useState(0);
-    const [k, setK] = useState(0);
+    const [texttoshow, setTexttoshow] = useState('');
     const [btncolor, setBtncolor] = useState('homebutton');
+    let mytext = ['Créez votre compte en 1mn, ici '];
 
+
+    // Pub slide 02 || loopindex == 2
+    const hlproduct = showpromo(111, 'promo');
+
+
+    // Pub slide 03 || loopindex == 3
+    const imagepub01 = "./image/pub.jpg";
+
+
+    // Pub slide 04 || loopindex == 4
+    const hlproduct02 = showpromo(60);
+    const producttext02 = showpromotext(60);
+    const temptext02 = [];
+    const [k, setK] = useState(0);
+    const [finaltext02, setFinaltext02] = useState([]);
+    const [letterindex02, setLetterindex02] = useState(0);
+    const [loopindex02, setLoopindex02] = useState(0);
+    const [texttoshow02, setTexttoshow02] = useState('');
+
+
+   
 
     // --------------------------- fonctions
     // fonction pour afficher un produit dynamiquement
     const textloop = () => {
+        // console.log('tonga eto @point d\'entrée eto ve 01 01 01');
         if (loopindex == 1) {
             if (letterindex < mytext[0].length) {
                 temptext.push(mytext[0][letterindex]);
                 setLetterindex(letterindex + 1);
+                // setTimeout(() => {
+                    setBtncolor('homebutton02');
+                // }, 2000);
                 }
             setFinaltext(finaltext + temptext);
         } else {
@@ -53,49 +64,78 @@ const Homepub = () => {
             setBtncolor('homebutton');
         }
     }
-
+    // afficher le texte qui va avec le produit
     const textandproductloop = () => {
-        // if (loopindex == 4) {
-        if (k == 0) {
-            if (letterindex02 < mytext02[0].length) {
-                temptext02.push(mytext02[0][letterindex02]);
-                setLetterindex02(letterindex02 + 1);
-                console.log('le k est : ' + k + ', et je suis au niveau 01');
-                console.log(letterindex02);
-            } else {
-                setK(k + 1);
-                console.log(letterindex02);
-                console.log('k est égal à 1 maintenant');
+        
+        if (loopindex == 4) {
+            if (loopindex02 == 0 && k == 0) {
+                if (letterindex02 < producttext02[loopindex02].length) {
+                    temptext02.push(producttext02[loopindex02][letterindex02]);
+                    setLetterindex02(letterindex02 + 1);
+                } else {
+                    setK(k + 1);
+                }
+                setFinaltext02(finaltext02 + temptext02);
             }
-        }
-        if (k == 1) {
-            console.log('------------------- ' + finaltext02);
-            if (letterindex02 > 0) {
-                console.log('************************************'+ tralala);
+            if (loopindex02 == 0 && k == 2) {
+                const test = [...finaltext02];
+                if (letterindex02 > 0) {
+                    test.pop();              
+                    setLetterindex02(letterindex02 - 1);
+                } else {
+                    setLoopindex02(loopindex02 + 1);
+                    setK(0);
+                }
+                setFinaltext02(test);
+            }
+            if (loopindex02 == 1 && k == 0) {
+                if (letterindex02 < producttext02[loopindex02].length) {
+                    temptext02.push(producttext02[loopindex02][letterindex02]);
+                    setLetterindex02(letterindex02 + 1);
+                } else {
+                    setK(k + 1);
+                }
                 
-                temptext02 = tralala.map((_, letterindex02) => {
-                    return tralala.pop(letterindex02)
-                });
-                setLetterindex02(letterindex02 - 1);
-                // console.log('le k est : ' + k + ', et je suis au niveau 02');
-                console.log('le letterindex02 est : ' + letterindex02 + ', et je suis au niveau 02');
+                setFinaltext02(finaltext02 + temptext02);
             }
+            if (loopindex02 == 1 && k == 2) {
+                const test = [...finaltext02];
+                if (letterindex02 > 0) {
+                    test.pop();              
+                    setLetterindex02(letterindex02 - 1);
+                } else {
+                    setLoopindex02(loopindex02 + 1);
+                    setK(0);
+                }
+                setFinaltext02(test);
+            }
+            if (loopindex02 == 2 && k == 0) {
+                if (letterindex02 < producttext02[loopindex02].length) {
+                    temptext02.push(producttext02[loopindex02][letterindex02]);
+                    setLetterindex02(letterindex02 + 1);
+                } else {
+                    setK(k + 1);
+                }
+                
+                setFinaltext02(finaltext02 + temptext02);
+            }
+            if (loopindex02 == 2 && k == 2) {
+                const test = [...finaltext02];
+                if (letterindex02 > 0) {
+                    test.pop();              
+                    setLetterindex02(letterindex02 - 1);
+                } else {
+                    setLoopindex02(loopindex02 + 1);
+                    setK(0);
+                }
+                setFinaltext02(test);
+            }
+        } else {
+            setFinaltext02('');
+            setLetterindex02(0);
+            setK(0);
         }
-        setFinaltext02(finaltext02 + temptext02);
-        
-        
-        
-
-
-        // }
     }
-
-    useEffect(() => {
-        setTimeout(() => {
-            textandproductloop();
-        }, 150);
-    }, [k, mytext02, producttext02, letterindex02]);
-    
     // switch avec le contenu du loop setTimeout
     const calculatewithindex = () => {
         switch (loopindex) {
@@ -106,17 +146,17 @@ const Homepub = () => {
                 setTodisplay(hlproduct);
                 break;
             case 3:
-                setTodisplay(<img src={imagepub01} alt="" />);
+                setTodisplay(<a href='http://localhost:3000/boutique/19'><img src={imagepub01} alt="" /></a>);
                 break;
-            // case 4:
-            //     setTodisplay(texttoshow02);
-            //     break;
+            case 4:
+                setTodisplay(texttoshow02);
+                break;
             default:
                 setTodisplay(<img src={imagepub01} alt="" />);
         }
     }
 
-    // fonciton pour la boucle principale
+    // fonciton pour la boucle principale - avec les temps
     const displayme = () => {
         setTimeout(() => {
             setLoopindex(1);
@@ -127,19 +167,19 @@ const Homepub = () => {
         setTimeout(() => {
             setLoopindex(3);
         }, time02);
-        // setTimeout(() => {
-        //     setLoopindex(4);
-        // }, time03);
+        setTimeout(() => {
+            setLoopindex(4);
+        }, time03);
         setTimeout(() => {
             displayme();
-        }, time03);
+        }, time04);
     }
 
     // --------------------------- logiques
     // calculer le text à afficher avec setTimeout 01
     useEffect(() => {
         setTexttoshow(
-            <div style={{ fontSize: '1rem', backgroundColor: 'whitesmoke', textAlign: 'center', padding: '20px' }}>
+            <div className='productandtext' style={{ fontSize: '1rem', backgroundColor: 'whitesmoke', textAlign: 'center', padding: '20px' }}>
                 <p>{finaltext}|</p>
                 <button onClick={() => dispatch(connectuseraction(true))} className={btncolor}>Créer mon compte</button>
             </div>
@@ -152,19 +192,13 @@ const Homepub = () => {
             <div className='productandtext'>
                 <p>{finaltext02}|</p>
                 <div className="producttof">
-                    {/* {hlproduct02} */}
+                    {hlproduct02}
                 </div>
             </div>
         );
     }, [finaltext02, hlproduct02]);
     
 
-    // petit test de setTimeout
-    useEffect(() => {
-        setTimeout(() => {
-            setBtncolor('homebutton02');
-        }, 4000);
-    }, [btncolor]);
 
     useEffect(() => {
         setTimeout(() => {
@@ -172,19 +206,37 @@ const Homepub = () => {
         }, 60);
     }, [letterindex, loopindex]);
 
+    useEffect(() => {
+        if (loopindex02 == producttext02.length) {
+            setLoopindex02(0);
+        } else  if (producttext02[loopindex02]) {
+            setTimeout(() => {
+                textandproductloop();
+            }, 100);
+        }
+        
+    }, [letterindex02, loopindex, producttext02, k, loopindex02]);
+
+    useEffect(() => {
+        if (k == 1) {
+            setTimeout(() => {
+                setK(k + 1);
+            }, 1500);
+        }
+    }, [k]);
+    
 
     // calculer le contenu du loop avec un switch
     useEffect(() => {
         calculatewithindex();
-    }, [letterindex, loopindex]);
+    }, [letterindex, letterindex02, loopindex]);
 
      // lancer le loop setTimeout final
     useEffect(() => {
         displayme();
     }, []);
 
-    // return todisplay;
-    return texttoshow02;
+    return todisplay;
 }
 
 export default Homepub;

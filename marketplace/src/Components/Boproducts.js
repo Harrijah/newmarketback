@@ -97,19 +97,13 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
       !isEmpty(productslist) &&
       productslist.map((produit) => (
         <li key={produit.id}>
-          <b> {''} </b> <button onClick={(e) => openmymodal(e, produit.id)}>{produit.nomproduit}</button>
-          <button
-            className="myfontawesome"
-            onClick={() => showproductmodal(produit.id)}
-          >
+          <span className="modifyprod">
+            <b> {''} </b> <button className="nomproduit" onClick={(e) => openmymodal(e, produit.id)}>{produit.nomproduit}</button>
+          </span>
+          <button className="myfontawesome" onClick={() => showproductmodal(produit.id)}>
             <i className="fa fa-edit"></i>
           </button>
-          <button
-            className="myfontawesome"
-            onClick={() => {
-              deletemyproduct(produit.id);
-            }}
-          >
+          <button className="myfontawesome" onClick={() => { deletemyproduct(produit.id); }}>
             <i className="fa fa-trash-alt"></i>
           </button>
         </li>

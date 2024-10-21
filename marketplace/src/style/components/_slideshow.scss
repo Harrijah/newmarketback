@@ -53,7 +53,7 @@
                     @include softbutton;
                     background-color: #ffffffa8;
                     color: $darker;
-                    font-size: 2rem;
+                    font-size: 1.3rem;
                     margin: 0;
                     padding: 0 $defaultvalue03;
                     &:hover{
@@ -71,7 +71,7 @@
                     @include softbutton;
                     background-color: #23293d93;
                     color: whitesmoke;
-                    font-size: 1.5rem;
+                    font-size: 1.1rem;
                     margin: 0;
                     padding: 0 $defaultvalue03;
                 }

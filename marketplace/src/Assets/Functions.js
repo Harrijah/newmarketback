@@ -576,7 +576,7 @@ export const similarproducts = (id) => {
 ***********************************                               ***********************************
 *************************************************************************************************** */}
 // Afficher un seul produit (PROMO ??)
-export const showpromo = (id) => {
+export const showpromo = (id, type) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
   const myproductdetails = allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id);
@@ -590,7 +590,7 @@ export const showpromo = (id) => {
   const showmyprod = () => {
     if (myproductdetails && typeof (myproductdetails) == 'object') {
       setProducttoshow(
-        <div key={myproductdetails.id} className="oneproduct promo">
+        <div key={myproductdetails.id} className={"oneproduct " + type}>
           <div className="elementscontainer">
             <div className="imgsection">
               <div className="productactions">
@@ -627,22 +627,24 @@ export const showpromo = (id) => {
 export const showpromotext = (id) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
-  const magasins = useSelector((state) => state.storeReducer.allstore)
   const myproductdetails = allproductslist && typeof (allproductslist) == 'object' && allproductslist.find((product) => product.id == id);
-  const [producttoshow, setProducttoshow] = useState([]);
+  const magasins = useSelector((state) => state.storeReducer.allstore);
+  const [producttoshow02, setProducttoshow02] = useState([]);
 
   // ---------------------- fonctions
-  const showmyprod = () => {
+  const showmyprod02 = () => {
     if (myproductdetails && typeof (myproductdetails) == 'object') {
-      setProducttoshow(['Notre coup de coeur : ', myproductdetails.nomproduit, 'disponible chez ' + searchinfo(magasins, myproductdetails.storeid, 'nommagasin')]);
+      setProducttoshow02(
+        ['Notre coup de coeur : ', myproductdetails.nomproduit + ' ', 'disponible chez ' + searchinfo(magasins, myproductdetails.storeid, 'nommagasin') + ' ']
+      );
     }
   }
+  
   // ---------------------- logiques
   useEffect(() => {
-    showmyprod();
-    console.log(producttoshow);
+    showmyprod02();
     
   }, [myproductdetails, id]);
 
-  return producttoshow;
+  return producttoshow02;
 }

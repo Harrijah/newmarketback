@@ -175,6 +175,13 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     useEffect(() => {
         setMyy(modaly);
     }, [modaly]);
+    useEffect(() => {
+        if(connectmyuser){
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [connectmyuser])
     
     useEffect(() => {
         if (producttoshow) {

@@ -756,9 +756,9 @@ body{
       background-color: #fff;
       .productscontainer02{
         @include stdparams;
-        display: flex;
-        align-items: center;
-        justify-content: left;
+        // display: flex;
+        // align-items: center;
+        // justify-content: left;
         overflow: auto;
         scrollbar-width: thin;
         padding: 0 10px;
@@ -770,6 +770,7 @@ body{
           min-width: 200px;
           max-width: 245px;
           margin: 10px;
+          // width: 100%;
           h3{
             text-align: center;
           }
@@ -782,8 +783,6 @@ body{
   // Promo
   .promo{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     overflow: visible;
     z-index: 2;
     &::after{
@@ -841,17 +840,17 @@ body{
   }
   
   .productandtext{
+    @include stdparams;
     display: flex;
-    // position: relative;
-    height: 100%;
-    width: 100%;
     flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
     font-size: 1rem;
     background-color: whitesmoke; 
-    // background-color: greenyellow; 
     text-align: center;
     padding: 20px;
-}
+  }
 
 
 }
