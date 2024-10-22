@@ -41,7 +41,7 @@ export const rayonsgen = () => {
   const rayonlist = useSelector((state) => state.rayonReducer.rayon);
 
   useEffect(() => {
-    if (typeof(rayonlist) == 'object') {
+    if (rayonlist && typeof(rayonlist) == 'object') {
     const templist = rayonlist.map((rayon, index) => (
       <option key={rayon.id || index} value={rayon.id}>
         {rayon.rayon}
@@ -105,7 +105,7 @@ export const rayongen = () => {
   // mapper le tableau de rayons dans un array d'<option></option>
   const rayshortlist = () => {
     if (temprayons && typeof(temprayons == 'object')) {
-      const listtemp = temprayons && (temprayons).map((item, index) => (
+      const listtemp = temprayons && Array.from(temprayons).map((item, index) => (
             <option key={item.id || index} value={item.id}>
               {item.rayon}
             </option>
@@ -647,4 +647,36 @@ export const showpromotext = (id) => {
   }, [myproductdetails, id]);
 
   return producttoshow02;
+}
+
+
+
+{/* *************************************************************************************************
+***********************************           PANIER              ***********************************
+*************************************************************************************************** */}
+
+export const monpanier = (currentcart) => {
+  // ---------------------- variables
+  // const allproductslist = useSelector((state) => state.productReducer.products);
+  // const currentdata = useSelector((state) => state.sessionReducer.panier);
+  const [somevar, setSomevar] = useState('');
+  // ---------------------- fonctions
+
+  const getsmthg = (currentcart) => {
+    console.log(currentcart);
+    setSomevar('currentcart[0].nom')
+    console.log(somevar);
+    
+    
+  }
+
+  
+  // ---------------------- logiques
+  useEffect(() => {
+    getsmthg();
+  }, [currentcart]);
+
+  return somevar;
+
+
 }

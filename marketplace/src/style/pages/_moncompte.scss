@@ -1,5 +1,6 @@
 .pplban {
   @include principalban;
+  position: relative;
   background: url("../../../public/image/pdc.jpg") top/cover;
 }
 .prsnlban {

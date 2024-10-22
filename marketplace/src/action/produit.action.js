@@ -80,9 +80,7 @@ export const modifyProduct = (data) => {
 
 
 export const getProduct = () => {
-    return (dispatch) => {
-        console.log('ato @action');
-        
+    return (dispatch) => {        
         return axios.get('http://localhost:8080/getproduct').then((res) => {
              dispatch({ type: GET_PRODUCT, payload: res.data });
         });

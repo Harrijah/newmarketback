@@ -9,6 +9,7 @@ import productReducer from "./produit.reducer";
 import showproductReducer from "./showproduct.reducer";
 import { positionReducer } from "./position.reducer";
 import boutiqueReducer from "./boutique.reducer";
+import sessionReducer from "./session.reducer";
 
 
 export default combineReducers({
@@ -21,5 +22,6 @@ export default combineReducers({
     productReducer,
     showproductReducer,
     positionReducer,
-    boutiqueReducer
+    boutiqueReducer,
+    sessionReducer,
 });

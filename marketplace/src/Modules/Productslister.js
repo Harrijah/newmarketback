@@ -2,24 +2,28 @@ import React, { useEffect, useState } from "react";
 import { isEmpty } from "../Assets/Utils";
 import { useDispatch, useSelector } from "react-redux";
 import { showMyproduct } from "../action/showproduct.action";
-import { searchinfo, showaproduct } from "../Assets/Functions";
+import { monpanier, searchinfo, showaproduct } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
 import { useNavigate } from "react-router-dom";
+import { addtocart } from "../action/session.action";
 
 const Productslister = ({ rayonselect, categorieselect, souscategorieselect, brandselect, maxprice, keyword, idmagasin }) => {
     // ------------------------------- variables
-    const mylink = useNavigate();
-    const goto = (id) => {
-        mylink(id);
-    }
-    // ------------ ------------------- fonctions
-    // ------------------------------- logiques
+    const [filteredproductlist, setFilteredproductlist] = useState([]);
+    const [number, setNumber] = useState(1);
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
-    const [filteredproductlist, setFilteredproductlist] = useState([]);
+    const currentcart = useSelector((state) => state.sessionReducer.panier);
+    const analysemonpanier = monpanier();
     const defaultimage = './image/imageicon.png';
     const dispatch = useDispatch();
+    const mylink = useNavigate();
+    
+    // ------------ ------------------- fonctions
+    const goto = (id) => {
+        mylink(id);
+    }
     const removeAccents = (str) => {
       return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     };
@@ -30,7 +34,19 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, bra
         dispatch(showMyproduct(id));
         dispatch(modalposition(e.pageY - e.clientY));  
     }
-    
+    const addit = (id, nom, number, prix) => {
+        const data = {
+            productid: id,
+            nom: nom,
+            number: number,
+            prix: prix,
+        }
+        monpanier(data);
+        dispatch(addtocart(data));
+    }
+
+
+    // ------------------------------- logiques
  
     useEffect(() => {
         
@@ -45,8 +61,7 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, bra
                 .filter((product) => keyword ? removeAccents(product.nomproduit.toLowerCase()).includes(keyword)
                     // || removeAccents(product.courtdescript.toLowerCase()).includes(keyword)
                     : true)
-                
-                    .map((product, index) => (    
+                .map((product, index) => (    
                         <div className="productbox" key={product.id || index}>
                             <div className="elementscontainer"> 
                                 <div className="imgsection">
@@ -69,8 +84,13 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, bra
                                         <span>{product.prix} Ar</span>
                                     </div>
                                     <div className="quantityproduit">
-                                        <input type="number" name="" id="" className="quantityinput" min={0} defaultValue={'0'} />
-                                        <button>Ajouter au panier</button>
+                                        <input type="number" name="" id="" className="quantityinput" min={1} onChange={(e) => setNumber(e.target.value)} defaultValue={number} />
+                                        <button onClick={() => addit(
+                                            product.id,
+                                            product.nomproduit,
+                                            number,
+                                            product.prix,
+                                        )}>Ajouter au panier</button>
                                     </div>
                                 </div>
         

@@ -175,6 +175,8 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     useEffect(() => {
         setMyy(modaly);
     }, [modaly]);
+
+    // mettre le modal en pleine page
     useEffect(() => {
         if(connectmyuser){
             document.body.style.overflow = 'hidden';
@@ -273,24 +275,38 @@ const Navigation = ({allproductslist, magasins, marques}) => {
         }
     }, [productpreview])
 
-    
+    // /* --------------------------------------------------------------------------------------
+    // ------------------------------------------ JSX ------------------------------------------
+    // --------------------------------------------------------------------------------------- */
     return (
         <div id="navigation">
             {/* Menu */}
             <div className="mylinks">
+                {/* // ---------------------- LOGO */}
                 <div className="logocontainer">
                     <span><NavLink to='/'><i className='fa fa-store'></i></NavLink></span>
                 </div>
+
                 <div className="linkcontainer">
+                    {/* // ---------------------- BARRE DE RECHERCHE */}
                     <input type="text" name="" id="" className='otherinputs' placeholder='Recherche rapide ...' onChange={(e) => setClientsearchvalue(e.target.value)} value={clientsearchvalue} />
+
+                    {/* // ---------------------- DIVERS LIENS */}
                     <NavLink to='/'>Accueil</NavLink>
                     <NavLink to='/allproducts'>Produits</NavLink>
                     <NavLink to='/boutiques'>Boutiques</NavLink>
+
+                    {/* // ---------------------- COMPTE */}
                     { isConnected && <NavLink to='/moncompte'>Moncompte</NavLink> } 
                     {!isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button>} 
                 </div>
             </div>
 
+            {/* ---------------------------------------------------------------------
+            --------------------------------- MODALS -------------------------------
+            ---------------------------------------------------------------------- */}
+        
+            {/* // ---------------------- MODAL DE CONNEXION */}
             {/* Modal de connexion */}
             <div id="connexionmodal" className='modal'
                 style={{ display: connectmyuser && 'flex' }} onClick={ (e) => hidemodal(e) }>
@@ -299,6 +315,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                 </div>
             </div>
 
+            {/* // ---------------------- MODAL DE PREVISUALISATION - PRODUIT */}
             {/* Modal de prévisualisation de produit */}
             <div id="productpreview" className="modal"
                 style={{
@@ -308,6 +325,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                 <Showproductmodal myproductdetails={dispatchproductdetails} />
             </div>
 
+            {/* // ---------------------- MODAL DE RESULTATS - RECHERCHE RAPIDE */}
             {/* Modal de recherche rapide */}
             <div className="modal" style={{ display: rapidsearch && "flex"}}>          
                 {

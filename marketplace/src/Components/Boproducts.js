@@ -41,6 +41,8 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
   const [productmodal, setProductmodal] = useState(false);
   const [selectedproduct, setSelectedproduct] = useState(null);
   const [myproductlist, setMyproductlist] = useState([]);
+  // position du modal
+  const modaly = useSelector((state) => state.positionReducer.position);
   
   
   // ------------------------------ Fonctions  ----------------------------------
@@ -57,11 +59,13 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
   }
   
   // Ouvrir le modal de modification de produit
-  const showproductmodal = async (id) => {
+  const showproductmodal = async (e, id) => {
     chargeproduct(id);
     setProductmodal(true);
+    dispatch(modalposition(e.pageY - e.clientY));
     setDescricourt(EditorState.createEmpty());
     setDescrilong(EditorState.createEmpty());
+    document.body.style.overflow = 'hidden';
   };
 
   // Fonction pour supprimer les infos temporaires de produit
@@ -77,6 +81,7 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
   }
   const hidemodal = (e) => {
     e.target.className == "modal" && setProductmodal(false);
+    document.body.style.overflow = 'auto';
     // clearinfos();
   };
   const closeproductmodal = () => {
@@ -98,9 +103,9 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
       productslist.map((produit) => (
         <li key={produit.id}>
           <span className="modifyprod">
-            <b> {''} </b> <button className="nomproduit" onClick={(e) => openmymodal(e, produit.id)}>{produit.nomproduit}</button>
+            <button className="nomproduit" onClick={(e) => openmymodal(e, produit.id)}>{produit.nomproduit}</button>
           </span>
-          <button className="myfontawesome" onClick={() => showproductmodal(produit.id)}>
+          <button className="myfontawesome" onClick={(e) => showproductmodal(e, produit.id)}>
             <i className="fa fa-edit"></i>
           </button>
           <button className="myfontawesome" onClick={() => { deletemyproduct(produit.id); }}>
@@ -167,7 +172,7 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
       <div
         id="productmodal"
         className="modal"
-        style={{ display: productmodal && "flex" }} //
+        style={{top: modaly && modaly+'px', display: productmodal && "flex" }} //
         onClick={(e) => hidemodal(e)}
       >
         <Productformulaire

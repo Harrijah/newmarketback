@@ -371,6 +371,9 @@ body{
         p{
           text-align: left;
         }
+        li{
+          text-align: left;
+        }
       }
       img{
         display: block;
@@ -756,7 +759,7 @@ body{
       background-color: #fff;
       .productscontainer02{
         @include stdparams;
-        // display: flex;
+        display: flex;
         // align-items: center;
         // justify-content: left;
         overflow: auto;
