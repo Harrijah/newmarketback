@@ -115,6 +115,7 @@ export const rayongen = () => {
       }
   }
 
+  // logiques
   useEffect(() => {
     placerays();
   }, [allproductslist]);
@@ -654,29 +655,19 @@ export const showpromotext = (id) => {
 {/* *************************************************************************************************
 ***********************************           PANIER              ***********************************
 *************************************************************************************************** */}
+export const setalist = (id, listid) => {
+  // --------------------- variables
 
-export const monpanier = (currentcart) => {
-  // ---------------------- variables
-  // const allproductslist = useSelector((state) => state.productReducer.products);
-  // const currentdata = useSelector((state) => state.sessionReducer.panier);
-  const [somevar, setSomevar] = useState('');
-  // ---------------------- fonctions
-
-  const getsmthg = (currentcart) => {
-    console.log(currentcart);
-    setSomevar('currentcart[0].nom')
-    console.log(somevar);
-    
-    
-  }
-
+  // --------------------- fonctions
+    const templist = listid;
+    if (listid && listid != ['']) {
+      if (id in templist) {
+        console.log('rien à faire');
+      } else {
+        templist.push(Number(id));
+      }
+    } 
+  console.log(templist);
   
-  // ---------------------- logiques
-  useEffect(() => {
-    getsmthg();
-  }, [currentcart]);
-
-  return somevar;
-
-
+  return templist;
 }

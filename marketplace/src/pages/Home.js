@@ -33,8 +33,10 @@ const Home = () => {
     const [chooseothstr, setChooseothstr] = useState(0);
     const stores = magasinselect(chooseothstr);
     const mylink = useNavigate();
+    // panier
+    const currentcart = useSelector((state) => state.sessionReducer.panier);
+    const [listid, setListid] = useState([]);
 
-  
     // --------------------------------- Fonctions
     // créer et aller sur un lien
     const goto = (id) => {
@@ -89,6 +91,16 @@ const Home = () => {
         goto('/boutique/' + id);
     } 
 
+    const checkcart = () => {
+        const templist = [];
+        currentcart && typeof (currentcart) == 'object' && currentcart.forEach((product) => {
+            templist.push(Number(product.productid)); 
+        });
+        setListid(templist);
+        console.log(templist);
+        console.log(listid);
+    }
+
     
     // --------------------------------- Logiques
     // Générer la liste de rayons disponibles
@@ -102,6 +114,9 @@ const Home = () => {
     }, [currentmaxprice]);
 
 
+    useEffect(() => {
+        checkcart();
+    }, [currentcart]);
 
 
     return (
@@ -171,27 +186,27 @@ const Home = () => {
                 <div className="productfilter">
                     <div className="filtercontainer">
                         <h2>Trouvez un produit en 3 clics</h2>
-                            <div className="barfilter">
-                                <select name="" id="" onChange={(e) => rayonchoice(e)}>
-                                    <option key={'0'} value='0'>{'Tous les rayons'}</option>
-                                    {rayonlist}
-                                </select>
-                                <select name="" id="" onChange={(e) => categorychoice(e)}>
-                                    <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
-                                    {filteredcategory}
-                                </select>
-                                <select name="" id="" onChange={(e) => souscategorychoice(e)}>
-                                    <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
-                                    {souscatlist02}
-                                </select>
-                                <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
-                                <div className='pricerange'>
-                                    <label htmlFor="prix">Prix max</label>
-                                <input type="range" name="prix" value={maxprice} max={Number(currentmaxprice)} onChange={(e) => changeprice(e)} />
-                                <span>{maxprice} Ar</span>
-                                </div>
+                        <div className="barfilter">
+                            <select name="" id="" onChange={(e) => rayonchoice(e)}>
+                                <option key={'0'} value='0'>{'Tous les rayons'}</option>
+                                {rayonlist}
+                            </select>
+                            <select name="" id="" onChange={(e) => categorychoice(e)}>
+                                <option key={'0'} value={'0'}>{'Toutes les catégories'}</option>
+                                {filteredcategory}
+                            </select>
+                            <select name="" id="" onChange={(e) => souscategorychoice(e)}>
+                                <option key={'0'} value={'0'}>{'Toutes les sous-catégories'}</option>
+                                {souscatlist02}
+                            </select>
+                            <input type="text" name="" id="" onChange={(e) => setKeyword(e.target.value)} placeholder="Entrer un mot-clé" />
+                            <div className='pricerange'>
+                                <label htmlFor="prix">Prix max</label>
+                            <input type="range" name="prix" value={maxprice} max={Number(currentmaxprice)} onChange={(e) => changeprice(e)} />
+                            <span>{maxprice} Ar</span>
                             </div>
-                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} brandselect={0} idmagasin={0} />
+                        </div>
+                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} brandselect={0} idmagasin={0} currentcart={currentcart} listid={listid} setListid={setListid} />
                     </div>
                 </div>
             </div>

@@ -2,20 +2,19 @@ import React, { useEffect, useState } from "react";
 import { isEmpty } from "../Assets/Utils";
 import { useDispatch, useSelector } from "react-redux";
 import { showMyproduct } from "../action/showproduct.action";
-import { monpanier, searchinfo, showaproduct } from "../Assets/Functions";
+import { searchinfo, setalist } from "../Assets/Functions";
 import { modalposition } from "../action/position.action";
 import { useNavigate } from "react-router-dom";
 import { addtocart } from "../action/session.action";
 
-const Productslister = ({ rayonselect, categorieselect, souscategorieselect, brandselect, maxprice, keyword, idmagasin }) => {
+const Productslister = ({ rayonselect, categorieselect, souscategorieselect, brandselect, maxprice, keyword, idmagasin, currentcart, listid, setListid }) => {
     // ------------------------------- variables
     const [filteredproductlist, setFilteredproductlist] = useState([]);
     const [number, setNumber] = useState(1);
+    const [changed, setChanged] = useState(Number(0));
     const allproductslist = useSelector((state) => state.productReducer.products);
     const marques = useSelector((state) => state.marqueReducer.marque);
     const magasins = useSelector((state) => state.storeReducer.allstore);
-    const currentcart = useSelector((state) => state.sessionReducer.panier);
-    const analysemonpanier = monpanier();
     const defaultimage = './image/imageicon.png';
     const dispatch = useDispatch();
     const mylink = useNavigate();
@@ -34,22 +33,45 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, bra
         dispatch(showMyproduct(id));
         dispatch(modalposition(e.pageY - e.clientY));  
     }
-    const addit = (id, nom, number, prix) => {
-        const data = {
-            productid: id,
-            nom: nom,
-            number: number,
-            prix: prix,
+
+    const [temparray, setTemparray] = useState(listid);
+    useEffect(() => {
+        setTemparray(listid);
+        console.log(listid + ' : est ma listid');
+        console.log(temparray + ' : est ma temparray');
+     }, [listid]);
+
+    const addproduct = (id, number, bref) => {
+        console.log(bref);
+        if ( !isEmpty(bref) && bref.length > 0) {
+            if (bref.includes(Number(id))) {
+                console.log('efa ato');
+            } else {
+                addit(id, number);
+                console.log('bref ato ambony = ' + bref);
+            } 
+            
+        } else {
+            addit(id, number);
+            console.log('bref ato ambany = ' + bref);
         }
-        monpanier(data);
+    }
+ 
+
+    const addit = (id, number) => {
+        const oneproduct = allproductslist && allproductslist.find((product) => product.id == id);
+        const data = {
+            productid: oneproduct.id,
+            nom: oneproduct.nomproduit,
+            number: number,
+            prix: oneproduct.prix,
+        }
         dispatch(addtocart(data));
+        console.log('produit uploadé'); 
+        setChanged(!changed);
     }
 
-
-    // ------------------------------- logiques
- 
     useEffect(() => {
-        
         if (allproductslist && typeof(allproductslist) == 'object') {
             const templist = (allproductslist)
                 .filter((product) => idmagasin == 0 || product.storeid == idmagasin)
@@ -85,12 +107,7 @@ const Productslister = ({ rayonselect, categorieselect, souscategorieselect, bra
                                     </div>
                                     <div className="quantityproduit">
                                         <input type="number" name="" id="" className="quantityinput" min={1} onChange={(e) => setNumber(e.target.value)} defaultValue={number} />
-                                        <button onClick={() => addit(
-                                            product.id,
-                                            product.nomproduit,
-                                            number,
-                                            product.prix,
-                                        )}>Ajouter au panier</button>
+                                        <button onClick={() => addproduct(product.id, number, temparray)}>Ajouter au panier</button>
                                     </div>
                                 </div>
         
