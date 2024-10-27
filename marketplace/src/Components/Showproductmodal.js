@@ -40,9 +40,7 @@ const Showproductmodal = () => {
             {firstban}
         </div>
       <div className="modal-footer">
-        <button>Ajouter au panier</button>
-        <button>Acheter plus tard</button>
-        <button onClick={() => openproduct(productid)}>Voir les détails</button>
+        <button onClick={() => openproduct(productid)}>Plus de détails</button>
       </div>
     </div>
   );

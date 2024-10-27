@@ -220,7 +220,13 @@ body{
     padding: 0;
   }
 
-  input{
+  table, thead, tbody, th, tr, td{
+    border: solid 1px $mylight;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wishbutton, input{
       @include myinput;
   }
   .imginput{
@@ -250,6 +256,8 @@ body{
       // margin: auto !important;
     }
   }
+
+
 
   // ----------------------- Briques d'images
   .bricks{
@@ -682,7 +690,9 @@ body{
         padding: 0 $defaultvalue02 $defaultvalue02;
           .quantityinput{
             width: 50%;
+            max-width: 50px !important;
           }
+
           button{
             border: solid 1px $mylight;
             border-radius: $defaultradius;
@@ -705,6 +715,8 @@ body{
 
 
   }
+
+
 
   .productfirstban{
     h2{

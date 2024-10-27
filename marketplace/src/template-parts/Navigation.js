@@ -8,7 +8,8 @@ import { showMyproduct } from '../action/showproduct.action';
 import { getOneproduct } from '../action/produit.action';
 import { isEmpty } from '../Assets/Utils';
 import { modalposition } from '../action/position.action';
-import { rapidsearchmodal, searchinfo, searchresult } from '../Assets/Functions';
+import { rapidsearchmodal, searchinfo, addproduct, searchresult } from '../Assets/Functions';
+import Productbox from '../Components/Productbox';
 
 
 // CSS : template-parts/_navigation.scss
@@ -225,7 +226,15 @@ const Navigation = ({allproductslist, magasins, marques}) => {
         setClientsearchvalue('');
         dispatch(showMyproduct(id));
         dispatch(modalposition(e.pageY - e.clientY));  
-      }
+    }
+    
+    // panier
+    const mylink = useNavigate();
+    const goto = (id) => {
+        mylink(id);
+    }
+
+
 
     // afficher le résultat de recherche avec la liste des produits
     useEffect(() => {
@@ -233,33 +242,9 @@ const Navigation = ({allproductslist, magasins, marques}) => {
             const templist = allproductslist && allproductslist
                 .filter((product) => clientsearchvalue ? removeAccents(product.nomproduit.toLowerCase()).includes(clientsearchvalue)
                     // || removeAccents(product.courtdescript.toLowerCase()).includes(clientsearchvalue)
-                    : true)
-                
-                    .map((product, index) => (    
-                        <div className="productbox" key={product.id || index}>
-                            <div className="elementscontainer"> 
-                                <div className="imgsection">
-                                    <div className="productactions">
-                                        <button>Pour plus tard</button>
-                                        <button>Voir en détails</button>
-                                    </div>
-                                    <button onClick={(e) => showaproduct(e, product.id)}>
-                                        <span className="apercu" >Aperçu</span>
-                                        <img src={product.image01 ? 'http://localhost:8080/uploads/' + product.image01 : defaultimage} alt="" />
-                                    </button>
-                                </div>
-                                <div className="txtsection">
-                                    <a onClick={(e) => showaproduct(e, product.id)}><h3>{product.nomproduit}</h3></a>
-                                    <div className="otherdetails">
-                                        <span><b> {!isEmpty(product.marque) && searchinfo(marques, product.marque, 'marque')}</b></span>
-                                        <span>{!isEmpty(product.storeid) && searchinfo(magasins, product.storeid, 'nommagasin')}</span>
-                                    </div>
-                                    <div className="prixproduit">
-                                        <span>{product.prix} Ar</span>
-                                    </div>
-                                </div>        
-                            </div>
-                        </div>
+                    : true)      
+                    .map((product, index) => (  
+                        <Productbox key={product.id} product={product} index={index} goto={goto} showaproduct={showaproduct} searchinfo={searchinfo} marques={marques} magasins={magasins} isEmpty={isEmpty}/>
                         ) 
                     );             
           setFilteredproductlist(templist);
@@ -323,6 +308,16 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                     top: (myy) ? myy+'px' : ''
                 }} onClick={(e) => hideproductmodal(e)}>
                 <Showproductmodal myproductdetails={dispatchproductdetails} />
+            </div>
+
+            {/* // ---------------------- MODAL DE PREVISUALISATION - PANIER */}
+            {/* Modal de prévisualisation de produit */}
+            <div id="cartpreview" className="modal"
+                style={{
+                    display: productpreview && "flex",
+                    top: (myy) ? myy+'px' : ''
+                }} onClick={(e) => hideproductmodal(e)}>
+                {/* <Showproductmodal myproductdetails={dispatchproductdetails} /> */}
             </div>
 
             {/* // ---------------------- MODAL DE RESULTATS - RECHERCHE RAPIDE */}

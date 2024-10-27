@@ -5,7 +5,7 @@ import Slideshow from '../Modules/Slideshow';
 import { useDispatch, useSelector } from 'react-redux';
 import { isEmpty } from '../Assets/Utils';
 import { all } from 'axios';
-import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, magasinselect, rapidsearchmodal, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
+import { categorygen, filteredcategorygen, finalsouscatgen, findmaxprice, magasinselect, rapidsearchmodal, rayonchoice, rayongen, searchinfo, searchresult, souscatgen } from '../Assets/Functions';
 import Productslister from '../Modules/Productslister';
 import { positionReducer } from '../reducers/position.reducer';
 import { showMyproduct } from '../action/showproduct.action';
@@ -33,9 +33,6 @@ const Home = () => {
     const [chooseothstr, setChooseothstr] = useState(0);
     const stores = magasinselect(chooseothstr);
     const mylink = useNavigate();
-    // panier
-    const currentcart = useSelector((state) => state.sessionReducer.panier);
-    const [listid, setListid] = useState([]);
 
     // --------------------------------- Fonctions
     // créer et aller sur un lien
@@ -46,11 +43,12 @@ const Home = () => {
     const rayonlist = rayongen();
 
     // sélectionner un rayon
-    const rayonchoice = (e) => {
-        setRayonselect(e.target.value);
-        setCategorieselect(0);
-        setSouscategorieselect(0);
-    };
+    // const rayonchoice = (e) => {
+    //     setRayonselect(e.target.value);
+    //     setCategorieselect(0);
+    //     setSouscategorieselect(0);
+    // };
+    
 
 
     // obtenir une liste de catégories
@@ -90,17 +88,6 @@ const Home = () => {
     const gotostore = (id) => {
         goto('/boutique/' + id);
     } 
-
-    const checkcart = () => {
-        const templist = [];
-        currentcart && typeof (currentcart) == 'object' && currentcart.forEach((product) => {
-            templist.push(Number(product.productid)); 
-        });
-        setListid(templist);
-        console.log(templist);
-        console.log(listid);
-    }
-
     
     // --------------------------------- Logiques
     // Générer la liste de rayons disponibles
@@ -113,10 +100,6 @@ const Home = () => {
         setMaxprice(currentmaxprice);
     }, [currentmaxprice]);
 
-
-    useEffect(() => {
-        checkcart();
-    }, [currentcart]);
 
 
     return (
@@ -206,7 +189,7 @@ const Home = () => {
                             <span>{maxprice} Ar</span>
                             </div>
                         </div>
-                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} brandselect={0} idmagasin={0} currentcart={currentcart} listid={listid} setListid={setListid} />
+                        <Productslister rayonselect={rayonselect} categorieselect={categorieselect} souscategorieselect={souscategorieselect} keyword={keyword} maxprice={maxprice} brandselect={0} idmagasin={0} />
                     </div>
                 </div>
             </div>

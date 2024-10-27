@@ -100,11 +100,11 @@ const Allproducts = () => {
         setMaxprice(maxprice);
     }, [maxprice]);
 
-    useEffect(() => {
-        console.log(brands);
-        console.log(stores);
+    // useEffect(() => {
+    //     console.log(brands);
+    //     console.log(stores);
         
-    }, [rayonselect])
+    // }, [rayonselect]);
 
     return (
         <div className="container">
