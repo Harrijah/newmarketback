@@ -6,6 +6,7 @@ import draftToHtml from "draftjs-to-html";
 import { useNavigate } from "react-router-dom";
 import { addnumbtoprod, addtocart, removeformcart } from "../action/session.action";
 import Ajoutpanier from "../Components/Ajoutpanier";
+import Cartcontent from "../Components/Cartcontent";
 
 {
   /* *************************************************************************************************
@@ -908,11 +909,13 @@ export const cartfirstpart = () => {
   const marques = useSelector((state) => state.marqueReducer.marque);
   const [listedeproduits, setListedeproduits] = useState([]);
   const [totaldeprix, setTotaldeprix] = useState(0);
+  const [prodprice, setProdprice] = useState([]);
 
   // -------------------
   // --------- fonctions
   // -------------------
 
+  // séparateur de milliers
   const numStr = (a, b) => {
     a = '' + a;
     b = b || ' ';
@@ -927,22 +930,54 @@ export const cartfirstpart = () => {
     }
     return c;
   }
+  
+  // noms de variables
+  const setprices = () => {
+    let templist = [];
+    for (let i = 0; i < currentcart.length; i++){
+      templist.push(Number(searchinfo(allproductslist, currentcart[i].productid, 'prix')));
+    }
+    setProdprice(templist);
+  }
 
+  
+  const [quantity, setQuantity] = useState([]);
+  const [currentprice, setCurrentprice] = useState();
+
+  // contenu du panier
   const cartcontent = () => {
-    const templist = currentcart && currentcart.map((product, index) => {
-      setTotaldeprix(totaldeprix + ((Number(product.number) * Number(searchinfo(allproductslist, product.productid, 'prix')))));
+    let tempttl = 0;
+    let tempqtt = [];
+    const templist = allproductslist && currentcart && currentcart.map((product, index) => {
 
+      tempqtt.push(Number(product.number));
+      let productprice = (tempqtt[index] * searchinfo(allproductslist, product.productid, 'prix'));
+      tempttl += productprice;
+      
+      
       return(
         <tr key={product.productid}>
           <td>N° 0{index}</td>
+
+          {/* ********* Nom du produit ********* */}
           <td>{searchinfo(allproductslist, product.productid, 'nomproduit')}</td>
-          <td>{Number(product.number)}</td>
+
+          {/* ********* Quantité de produits dans le panier ********* */}
+          <Cartcontent quantity={tempqtt[index]} id={product.productid} index={index} />
+
+          {/* ********* Prix du produit ********* */}
           <td style={{ textAlign: 'right' }}>{numStr(searchinfo(allproductslist, product.productid, 'prix'))} Ar</td>
-          <td style={{ textAlign: 'right' }}>{numStr(Number(product.number) * Number(searchinfo(allproductslist, product.productid, 'prix')))} Ar</td>
+          
+          {/* ********* Total de prix par ligne ********* */}
+          <td style={{ textAlign: 'right' }}>{numStr(productprice)} Ar</td>
+          
+          {/* ********* Enlever le produit du panier ********* */}
           <button onClick={() => dispatch(removeformcart(product.productid))} className="myfontawesome"><i className="fa fa-trash-alt"></i></button>
         </tr>
       )
     });
+    setQuantity(tempqtt);
+    setTotaldeprix(tempttl);
     setListedeproduits(templist);
 
   }
@@ -951,26 +986,32 @@ export const cartfirstpart = () => {
   // -------------------
   // ---------- logiques
   // -------------------
+  // afficher le contenu du cart
   useEffect(() => {
     cartcontent();
+    setprices ();
   }, [currentcart]);
 
   return(
     <table>
-      <thead style={{fontWeight: 'bold', textAlign: 'center'}}>
-        <td>Numéro</td>
-        <td>Désignation</td>
-        <td>Quantité</td>
-        <td>Prix unitaire</td>
-        <td>Total</td>
+      <thead style={{ fontWeight: 'bold', textAlign: 'center' }}>
+        <tr>
+          <th>Numéro</th>
+          <th>Désignation</th>
+          <th>Quantité</th>
+          <th>Prix unitaire</th>
+          <th>Total</th>
+        </tr>
       </thead>
       <tbody>
         {listedeproduits}
-        <td></td>
-        <td></td>
-        <td></td>
-        <td>Total</td>
-        <td style={{fontWeight: 'bold', textAlign: 'center'}}>{ numStr(totaldeprix) } Ar</td>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Total</td>
+          <td style={{fontWeight: 'bold', textAlign: 'center'}}>{ numStr(totaldeprix) } Ar</td>
+        </tr>
       </tbody>
     </table>
   )

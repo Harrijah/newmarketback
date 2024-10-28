@@ -220,10 +220,26 @@ body{
     padding: 0;
   }
 
-  table, thead, tbody, th, tr, td{
-    border: solid 1px $mylight;
-    margin: 0;
-    padding: 0;
+  table{
+    background-color: $white;
+    border-collapse: collapse;
+    thead, tbody, tr, td{
+      border: solid 1px $mylight;
+      margin: 0;
+      padding: $defaultvalue02;
+    }
+    // tr:nth-child(even){
+    //   background-color: $mylight;
+    // }
+    td{
+      min-width: 75px;
+      button, input{
+        width: 10px !important;
+      }
+      input[type=number]{
+        appearance: textfield;
+      }
+    }
   }
 
   .wishbutton, input{

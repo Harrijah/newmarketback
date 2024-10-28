@@ -10,6 +10,7 @@ import { isEmpty } from '../Assets/Utils';
 import { modalposition } from '../action/position.action';
 import { rapidsearchmodal, searchinfo, addproduct, searchresult } from '../Assets/Functions';
 import Productbox from '../Components/Productbox';
+import Paniermodal from '../Modules/Paniermodal';
 
 
 // CSS : template-parts/_navigation.scss
@@ -161,6 +162,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     
     // ------------------------------------------  Montrer modal produit
     const [productpreview, setProductpreview] = useState(false);
+    const [cartpreview, setCartpreview] = useState(false);
     const producttoshow = useSelector((state) => state.showproductReducer.producttoshow);
     const [dispatchproductdetails, setDispatchproductdetails] = useState(null);
     const productdetails = useSelector((state) => state.productReducer.myproduct);
@@ -171,45 +173,13 @@ const Navigation = ({allproductslist, magasins, marques}) => {
     const hideproductmodal = (e) => {
         e.target.className == "modal" && dispatch(showMyproduct(0));
     }    
+
+    // Modal panier
+    const currentcart = useSelector((state) => state.sessionReducer.panier);
+    const hidecartmodal = (e) => {
+        e.target.className == 'modal' && setCartpreview(false);
+    }
     
-
-    useEffect(() => {
-        setMyy(modaly);
-    }, [modaly]);
-
-    // mettre le modal en pleine page
-    useEffect(() => {
-        if(connectmyuser){
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }, [connectmyuser])
-    
-    useEffect(() => {
-        if (producttoshow) {
-            if (productdetails) {
-                setDispatchproductdetails(productdetails);
-                setProductpreview(true);
-            } else {
-                dispatch(getOneproduct(producttoshow));
-            }
-        } else {
-            if (productdetails) {
-                setProductpreview(false);
-                dispatch(getOneproduct(0));
-                dispatch(showMyproduct(0));
-                setDispatchproductdetails("");
-                document.body.style.overflow = 'auto';
-            } else {
-                setProductpreview(false);
-                dispatch(showMyproduct(0));
-                setDispatchproductdetails("");
-                document.body.style.overflow = 'auto';
-            }
-        }
-    }, [producttoshow, productdetails]);
-
     // variables
     const [filteredproductlist, setFilteredproductlist] = useState([]);
     const defaultimage = './image/imageicon.png';
@@ -221,6 +191,11 @@ const Navigation = ({allproductslist, magasins, marques}) => {
       return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     };
 
+    // ------------------------------------------- fonctions
+    const toppanier = (e) => {
+        document.body.style.overflow = 'hidden';
+        setCartpreview(true);
+    }
     // communiquer la position-Y pour le modal
     const showaproduct = (e, id) => {
         setClientsearchvalue('');
@@ -255,10 +230,56 @@ const Navigation = ({allproductslist, magasins, marques}) => {
 
     // ------------------------------------ logiques
     useEffect(() => {
+        setMyy(modaly);
+    }, [modaly]);
+
+    useEffect(() => {
         if (productpreview) {
             document.body.style.overflow = 'hidden';
         }
-    }, [productpreview])
+    }, [productpreview]);
+
+    // mettre le modal en pleine page
+    useEffect(() => {
+        if (connectmyuser) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [connectmyuser]);
+    
+    // mettre le modal - CART - en pleine page
+    useEffect(() => {
+        if (cartpreview) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [connectmyuser]);
+    
+    useEffect(() => {
+        if (producttoshow) {
+            if (productdetails) {
+                setDispatchproductdetails(productdetails);
+                setProductpreview(true);
+            } else {
+                dispatch(getOneproduct(producttoshow));
+            }
+        } else {
+            if (productdetails) {
+                setProductpreview(false);
+                dispatch(getOneproduct(0));
+                dispatch(showMyproduct(0));
+                setDispatchproductdetails("");
+                document.body.style.overflow = 'auto';
+            } else {
+                setProductpreview(false);
+                dispatch(showMyproduct(0));
+                setDispatchproductdetails("");
+                document.body.style.overflow = 'auto';
+            }
+        }
+    }, [producttoshow, productdetails]);
 
     // /* --------------------------------------------------------------------------------------
     // ------------------------------------------ JSX ------------------------------------------
@@ -282,7 +303,9 @@ const Navigation = ({allproductslist, magasins, marques}) => {
                     <NavLink to='/boutiques'>Boutiques</NavLink>
 
                     {/* // ---------------------- COMPTE */}
-                    { isConnected && <NavLink to='/moncompte'>Moncompte</NavLink> } 
+                    {isConnected && <NavLink to='/moncompte'>Moncompte</NavLink>} 
+                    {currentcart && currentcart.length > 0 && <button onClick={(e) => toppanier(e)}><i className='fa fa-cart-plus'></i></button> }
+                    
                     {!isConnected ? <button onClick={connectuser}><i className='fa fa-power-off'></i></button> : <button onClick={closeSession}><i className='fa fa-share-square'></i></button>} 
                 </div>
             </div>
@@ -311,13 +334,13 @@ const Navigation = ({allproductslist, magasins, marques}) => {
             </div>
 
             {/* // ---------------------- MODAL DE PREVISUALISATION - PANIER */}
-            {/* Modal de prévisualisation de produit */}
+            {/* Modal de prévisualisation de panier */}
             <div id="cartpreview" className="modal"
                 style={{
-                    display: productpreview && "flex",
+                    display: cartpreview && "flex",
                     top: (myy) ? myy+'px' : ''
-                }} onClick={(e) => hideproductmodal(e)}>
-                {/* <Showproductmodal myproductdetails={dispatchproductdetails} /> */}
+                }} onClick={(e) => hidecartmodal(e)}>
+                <Paniermodal />
             </div>
 
             {/* // ---------------------- MODAL DE RESULTATS - RECHERCHE RAPIDE */}

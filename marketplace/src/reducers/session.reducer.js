@@ -1,4 +1,4 @@
-import { ADD_NUMB, ADDTO_MYCART, DELETE_NUMB } from "../action/session.action";
+import { ADD_NUMB, ADDTO_MYCART, DELETE_NUMB, ITEM_QUANT } from "../action/session.action";
 
 
 const initialState = { panier:  sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : '' };
@@ -24,6 +24,15 @@ export default function sessionReducer(state = initialState, action) {
             const updatedproduct = { productid: action.payload.id, number: action.payload.number };
             tempcart.splice(prodind, 1, updatedproduct);
             sessionStorage.setItem('panier', JSON.stringify(tempcart));
+
+            return {
+                panier: JSON.parse(sessionStorage.getItem('panier'))
+            }
+        
+        case ITEM_QUANT:
+            const tempcart03 = JSON.parse(sessionStorage.getItem('panier'));
+            tempcart03[action.payload.index]['number'] = action.payload.quantity;
+            sessionStorage.setItem('panier', JSON.stringify(tempcart03));
 
             return {
                 panier: JSON.parse(sessionStorage.getItem('panier'))
