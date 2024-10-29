@@ -22,7 +22,7 @@ const Ajoutpanier = ({product}) => {
         <div className="quantityproduit">
             <form ref={formref} onSubmit={(e) => clickonadd(e, product.id)} style={{display: 'flex'}}>
                 <input type="number" className="quantityinput" min={1} onChange={(e) => setNumber(e.target.value)} value={number} style={{maxWidth: '50px'}} />
-                <input  type="submit" value='Ajouter au panier' />
+                <input  type="submit" value='Ajouter au panier'/>
             </form>
         </div>
     )
