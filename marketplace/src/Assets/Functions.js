@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { addnumbtoprod, addtocart, removeformcart } from "../action/session.action";
 import Ajoutpanier from "../Components/Ajoutpanier";
 import Cartcontent from "../Components/Cartcontent";
+import { addittowish } from "../action/whishlist.action";
 
 {
   /* *************************************************************************************************
@@ -877,6 +878,7 @@ export const addproduct = (productinfo) => {
       // }
     }
   }
+ 
 
   // -------------------
   // ---------- logiques
@@ -884,7 +886,7 @@ export const addproduct = (productinfo) => {
   // charger le panier
   useEffect(() => {
     checkcart();
-    console.log(currentcart);
+    id && console.log(currentcart);
   }, [currentcart]);
 
   useEffect(() => {
@@ -893,6 +895,57 @@ export const addproduct = (productinfo) => {
 
   // return;
 };
+
+
+{
+  /* *************************************************************************************************
+   ******************************       Ajouter Wishlist         *****************************
+   *************************************************************************************************** */
+}
+
+
+export const addtowishlist = (id) => {
+  // variables
+  const dispatch = useDispatch();
+  const [listofwish, setListofwish] = useState([]);
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const currentwishlist = useSelector((state) => state.mywishlist.wishlist);
+  const currentwish = currentwishlist && currentwishlist.find((wish) => wish.id == id);
+
+  // fonctions
+  const checkwishlist = () => {
+    const templist = currentwishlist && currentwishlist.map((_, i) => (
+      currentwishlist[i].id
+    ));
+    setListofwish(templist);
+  }
+
+  const addawish = (id) => {
+    const templist = [];
+    if (id && listofwish.length > 0) {
+      if (listofwish.includes(Number(id))) {
+        console.log('efa ato');
+      } else {
+        dispatch(addittowish(id));
+      }
+    } else {
+      dispatch(addittowish(id));
+    }
+    setListofwish(templist);
+  }
+ 
+  // variables
+  useEffect(() => {
+    checkwishlist(id);
+    id && console.log(listofwish);
+  }, [currentwishlist]);
+
+  useEffect(() => {
+    addawish(id);
+  }, [id]);
+
+  // alert(id);
+}
 {
   /* *************************************************************************************************
    ******************************       First display - Panier           *****************************

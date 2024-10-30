@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addproduct } from "../Assets/Functions";
 import Ajoutpanier from "./Ajoutpanier";
+import Addtowish from "./Addtowish";
 
 
 const Productbox = ({ product, index, goto, showaproduct, searchinfo, marques, magasins, isEmpty }) => {
@@ -12,7 +13,7 @@ const Productbox = ({ product, index, goto, showaproduct, searchinfo, marques, m
             <div className="elementscontainer">
                 <div className="imgsection">
                     <div className="productactions">
-                        <button>Pour plus tard</button>
+                        <Addtowish product={product} />
                         <button onClick={() => goto('/product/' + product.id)} >Voir en détails</button>
                     </div>
                     <button onClick={(e) => showaproduct(e, product.id)}>
