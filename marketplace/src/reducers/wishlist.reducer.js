@@ -1,6 +1,6 @@
 import { ADDTO_MYWHISH, DEL_MYWHISH } from "../action/whishlist.action";
 // const initialState = { panier:  sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : '' };
-const initialState = { wishlist: sessionStorage.getItem('wishlist') ? JSON.parse(sessionStorage.getItem('wishlist')) : '' };
+const initialState = { wishlist: sessionStorage.getItem('wishlist') ? JSON.parse(sessionStorage.getItem('wishlist')) : [] };
 
 export default function mywishlist(state = initialState, action) {
     switch (action.type) {

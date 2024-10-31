@@ -910,38 +910,49 @@ export const addtowishlist = (id) => {
   const [listofwish, setListofwish] = useState([]);
   const allproductslist = useSelector((state) => state.productReducer.products);
   const currentwishlist = useSelector((state) => state.mywishlist.wishlist);
-  const currentwish = currentwishlist && currentwishlist.find((wish) => wish.id == id);
+  // const currentwish = currentwishlist && currentwishlist.find((wish) => wish.id == id);
 
   // fonctions
   const checkwishlist = () => {
     const templist = currentwishlist && currentwishlist.map((_, i) => (
-      currentwishlist[i].id
+      Number(currentwishlist[i].id)
     ));
     setListofwish(templist);
   }
 
-  const addawish = (id) => {
+  const addit = (id) => {
+    const myproduct = !isNaN(id) && id != 0 && allproductslist && allproductslist.find((product => product.id == id));
+    const data = {id : Number(myproduct.id), quantity : 1}
+    dispatch(addittowish(data));
+    console.log(myproduct.nomproduit + " a été ajouté dans la wishlist");
+  }
+
+  const addawish = () => {
     const templist = [];
-    if (id && listofwish.length > 0) {
-      if (listofwish.includes(Number(id))) {
-        console.log('efa ato');
-      } else {
-        dispatch(addittowish(id));
-      }
+    console.log(listofwish);
+    
+    if (!isNaN(id) && id != 0 && listofwish && listofwish.length > 0) {
+      // if (listofwish.includes(id)) {
+      //   console.log('efa ato');
+      //   console.log(listofwish);
+      // } else {
+      //   addit(id);
+      //   console.log('izay vao tafiditra');
+      // }
+    console.log(listofwish);
     } else {
-      dispatch(addittowish(id));
+      id != 0 ? addit(id) : 'still no id' ;
     }
     setListofwish(templist);
   }
  
   // variables
   useEffect(() => {
-    checkwishlist(id);
-    id && console.log(listofwish);
+    checkwishlist();
   }, [currentwishlist]);
 
   useEffect(() => {
-    addawish(id);
+    addawish();
   }, [id]);
 
   // alert(id);

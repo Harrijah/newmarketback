@@ -6,10 +6,11 @@ import { addtowishlist } from "../Assets/Functions";
 
 const Addtowish = ({ product }) => {
     // variables
-    const [newwish, setNewwish] = useState(null);
+    const [newwish, setNewwish] = useState('');
     
     // fonctions
     const addingwish = addtowishlist(newwish);
+
     const addmetowish = (e, id) => {
         setNewwish(id);
     }
