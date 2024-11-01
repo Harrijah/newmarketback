@@ -6,7 +6,7 @@ import { addtowishlist } from "../Assets/Functions";
 
 const Addtowish = ({ product }) => {
     // variables
-    const [newwish, setNewwish] = useState('');
+    const [newwish, setNewwish] = useState(0);
     
     // fonctions
     const addingwish = addtowishlist(newwish);
@@ -18,6 +18,8 @@ const Addtowish = ({ product }) => {
     // logiques
     useEffect(() => {
         addingwish;
+        console.log(newwish);
+        setNewwish(0);
     }, [newwish]);
     
     return <button onClick={(e) => addmetowish(e, product.id)}>Plus tard</button>

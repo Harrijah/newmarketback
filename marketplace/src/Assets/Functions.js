@@ -4,7 +4,11 @@ import { isEmpty } from "./Utils";
 import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import { useNavigate } from "react-router-dom";
-import { addnumbtoprod, addtocart, removeformcart } from "../action/session.action";
+import {
+  addnumbtoprod,
+  addtocart,
+  removeformcart,
+} from "../action/session.action";
 import Ajoutpanier from "../Components/Ajoutpanier";
 import Cartcontent from "../Components/Cartcontent";
 import { addittowish } from "../action/whishlist.action";
@@ -598,9 +602,11 @@ export const productfirstban = (id) => {
               </p>
             )}
         </div>
-        <div className="modaldescript" style={{display: 'flex'}}>
-          <Ajoutpanier product={myproductdetails} style={{width: '50%'}} />
-          <button className="wishbutton"  style={{width: '50%'}}>Acheter plus tard</button>
+        <div className="modaldescript" style={{ display: "flex" }}>
+          <Ajoutpanier product={myproductdetails} style={{ width: "50%" }} />
+          <button className="wishbutton" style={{ width: "50%" }}>
+            Acheter plus tard
+          </button>
         </div>
       </div>
     </div>
@@ -824,28 +830,36 @@ export const addproduct = (productinfo) => {
   const [listid, setListid] = useState([]);
   const id = productinfo[0];
   const number = productinfo[1];
-  
+
   // -------------------
   // --------- fonctions
   // -------------------
-  // checker les produits dans panier et monter "listid" 
+  // checker les produits dans panier et monter "listid"
   const checkcart = () => {
     let templist = [];
-    templist = currentcart && currentcart.map((_, i) => Number(currentcart[i].productid));
+    templist =
+      currentcart &&
+      currentcart.map((_, i) => Number(currentcart[i].productid));
     // console.log('bref');
     setListid(templist);
-  }
-  
-  // chercher le produit et ajouter dans panier 
+  };
+
+  // chercher le produit et ajouter dans panier
   const addit = (id, number) => {
-    const oneproduct = !isNaN(id) && id !== 0 && allproductslist && allproductslist.find((product) => product.id == id);
+    const oneproduct =
+      !isNaN(id) &&
+      id !== 0 &&
+      allproductslist &&
+      allproductslist.find((product) => product.id == id);
     const data = { productid: oneproduct.id, number: number };
     dispatch(addtocart(data));
     console.log("article ajouté");
   };
 
   const getnewnumb = (id, number) => {
-    const myproduct = currentcart && currentcart.find((product) => Number(product.productid) == Number(id));
+    const myproduct =
+      currentcart &&
+      currentcart.find((product) => Number(product.productid) == Number(id));
     const oldnumber = Number(myproduct.number);
     const newnumber = oldnumber + Number(number);
     console.log(newnumber);
@@ -857,28 +871,39 @@ export const addproduct = (productinfo) => {
     dispatch(addnumbtoprod(data));
     console.log("panier mis à jour");
   };
-  
+
   const finaladd = () => {
-    if (!isNaN(id) && id !== 0 && Array.from(listid) && (listid != '') && listid.length > 0) {
+    if (
+      !isNaN(id) &&
+      id !== 0 &&
+      Array.from(listid) &&
+      listid != "" &&
+      listid.length > 0
+    ) {
       if (listid.includes(Number(id))) {
         const newnumber = getnewnumb(id, number);
         updatecart(id, newnumber);
-        console.log('MAJ : ' + id + ', la nouvelle quantité est : ' + newnumber);
+        console.log(
+          "MAJ : " + id + ", la nouvelle quantité est : " + newnumber
+        );
       } else {
         addit(id, number);
-        console.log('id est : ' + id + ' et number est : ' + number);
+        console.log("id est : " + id + " et number est : " + number);
       }
     } else {
       // if (!isNaN(id) && id !== 0) {
-        !isNaN(id) && id !== 0 && addit(id, number);
-        !isNaN(id) && id !== 0 && console.log('PREMIER AJOUT // id est : ' + id + ' et number est : ' + number);
+      !isNaN(id) && id !== 0 && addit(id, number);
+      !isNaN(id) &&
+        id !== 0 &&
+        console.log(
+          "PREMIER AJOUT // id est : " + id + " et number est : " + number
+        );
       // } else {
       //   console.log("ato ô");
       //   return;
       // }
     }
-  }
- 
+  };
 
   // -------------------
   // ---------- logiques
@@ -896,15 +921,13 @@ export const addproduct = (productinfo) => {
   // return;
 };
 
-
 {
   /* *************************************************************************************************
    ******************************       Ajouter Wishlist         *****************************
    *************************************************************************************************** */
 }
 
-
-export const addtowishlist = (id) => {
+export const addtowishlist = (id, number) => {
   // variables
   const dispatch = useDispatch();
   const [listofwish, setListofwish] = useState([]);
@@ -914,38 +937,41 @@ export const addtowishlist = (id) => {
 
   // fonctions
   const checkwishlist = () => {
-    const templist = currentwishlist && currentwishlist.map((_, i) => (
-      Number(currentwishlist[i].id)
-    ));
+    const templist =
+      currentwishlist &&
+      currentwishlist.map((_, i) => Number(currentwishlist[i].id));
     setListofwish(templist);
-  }
+  };
 
-  const addit = (id) => {
-    const myproduct = !isNaN(id) && id != 0 && allproductslist && allproductslist.find((product => product.id == id));
-    const data = {id : Number(myproduct.id), quantity : 1}
-    dispatch(addittowish(data));
+  const addit = () => {
+    const myproduct =
+      !isNaN(id) &&
+      id != 0 &&
+      allproductslist &&
+      allproductslist.find((product) => product.id == id);
+    if (!number) {
+      const data = { id: Number(myproduct.id), quantity: 1 };
+      dispatch(addittowish(data));
+    } else {
+      quantity = number;
+      const data = { id: Number(myproduct.id), quantity };
+      dispatch(addittowish(data));
+    }
     console.log(myproduct.nomproduit + " a été ajouté dans la wishlist");
-  }
+  };
 
   const addawish = () => {
-    const templist = [];
-    console.log(listofwish);
-    
     if (!isNaN(id) && id != 0 && listofwish && listofwish.length > 0) {
-      // if (listofwish.includes(id)) {
-      //   console.log('efa ato');
-      //   console.log(listofwish);
-      // } else {
-      //   addit(id);
-      //   console.log('izay vao tafiditra');
-      // }
-    console.log(listofwish);
+      if (listofwish.includes(Number(id))) {
+        console.log("efa ato");
+      } else {
+        addit(id);
+      }
     } else {
-      id != 0 ? addit(id) : 'still no id' ;
+      id != 0 ? addit(id) : "still no id";
     }
-    setListofwish(templist);
-  }
- 
+  };
+
   // variables
   useEffect(() => {
     checkwishlist();
@@ -954,9 +980,8 @@ export const addtowishlist = (id) => {
   useEffect(() => {
     addawish();
   }, [id]);
+};
 
-  // alert(id);
-}
 {
   /* *************************************************************************************************
    ******************************       First display - Panier           *****************************
@@ -981,30 +1006,31 @@ export const cartfirstpart = () => {
 
   // séparateur de milliers
   const numStr = (a, b) => {
-    a = '' + a;
-    b = b || ' ';
-    var c = '',
-        d = 0;
+    a = "" + a;
+    b = b || " ";
+    var c = "",
+      d = 0;
     while (a.match(/^0[0-9]/)) {
       a = a.substr(1);
     }
-    for (var i = a.length-1; i >= 0; i--) {
-      c = (d != 0 && d % 3 == 0) ? a[i] + b + c : a[i] + c;
+    for (var i = a.length - 1; i >= 0; i--) {
+      c = d != 0 && d % 3 == 0 ? a[i] + b + c : a[i] + c;
       d++;
     }
     return c;
-  }
-  
+  };
+
   // noms de variables
   const setprices = () => {
     let templist = [];
-    for (let i = 0; i < currentcart.length; i++){
-      templist.push(Number(searchinfo(allproductslist, currentcart[i].productid, 'prix')));
+    for (let i = 0; i < currentcart.length; i++) {
+      templist.push(
+        Number(searchinfo(allproductslist, currentcart[i].productid, "prix"))
+      );
     }
     setProdprice(templist);
-  }
+  };
 
-  
   const [quantity, setQuantity] = useState([]);
   const [currentprice, setCurrentprice] = useState();
 
@@ -1012,40 +1038,55 @@ export const cartfirstpart = () => {
   const cartcontent = () => {
     let tempttl = 0;
     let tempqtt = [];
-    const templist = allproductslist && currentcart && currentcart.map((product, index) => {
+    const templist =
+      allproductslist &&
+      currentcart &&
+      currentcart.map((product, index) => {
+        tempqtt.push(Number(product.number));
+        let productprice =
+          tempqtt[index] *
+          searchinfo(allproductslist, product.productid, "prix");
+        tempttl += productprice;
 
-      tempqtt.push(Number(product.number));
-      let productprice = (tempqtt[index] * searchinfo(allproductslist, product.productid, 'prix'));
-      tempttl += productprice;
-      
-      
-      return(
-        <tr key={product.productid}>
-          <td>N° 0{index}</td>
+        return (
+          <tr key={product.productid}>
+            <td>N° 0{index}</td>
 
-          {/* ********* Nom du produit ********* */}
-          <td>{searchinfo(allproductslist, product.productid, 'nomproduit')}</td>
+            {/* ********* Nom du produit ********* */}
+            <td>
+              {searchinfo(allproductslist, product.productid, "nomproduit")}
+            </td>
 
-          {/* ********* Quantité de produits dans le panier ********* */}
-          <Cartcontent quantity={tempqtt[index]} id={product.productid} index={index} />
+            {/* ********* Quantité de produits dans le panier ********* */}
+            <Cartcontent
+              quantity={tempqtt[index]}
+              id={product.productid}
+              index={index}
+            />
 
-          {/* ********* Prix du produit ********* */}
-          <td style={{ textAlign: 'right' }}>{numStr(searchinfo(allproductslist, product.productid, 'prix'))} Ar</td>
-          
-          {/* ********* Total de prix par ligne ********* */}
-          <td style={{ textAlign: 'right' }}>{numStr(productprice)} Ar</td>
-          
-          {/* ********* Enlever le produit du panier ********* */}
-          <button onClick={() => dispatch(removeformcart(product.productid))} className="myfontawesome"><i className="fa fa-trash-alt"></i></button>
-        </tr>
-      )
-    });
+            {/* ********* Prix du produit ********* */}
+            <td style={{ textAlign: "right" }}>
+              {numStr(searchinfo(allproductslist, product.productid, "prix"))}{" "}
+              Ar
+            </td>
+
+            {/* ********* Total de prix par ligne ********* */}
+            <td style={{ textAlign: "right" }}>{numStr(productprice)} Ar</td>
+
+            {/* ********* Enlever le produit du panier ********* */}
+            <button
+              onClick={() => dispatch(removeformcart(product.productid))}
+              className="myfontawesome"
+            >
+              <i className="fa fa-trash-alt"></i>
+            </button>
+          </tr>
+        );
+      });
     setQuantity(tempqtt);
     setTotaldeprix(tempttl);
     setListedeproduits(templist);
-
-  }
-
+  };
 
   // -------------------
   // ---------- logiques
@@ -1053,12 +1094,12 @@ export const cartfirstpart = () => {
   // afficher le contenu du cart
   useEffect(() => {
     cartcontent();
-    setprices ();
+    setprices();
   }, [currentcart]);
 
-  return(
+  return (
     <table>
-      <thead style={{ fontWeight: 'bold', textAlign: 'center' }}>
+      <thead style={{ fontWeight: "bold", textAlign: "center" }}>
         <tr>
           <th>Numéro</th>
           <th>Désignation</th>
@@ -1074,11 +1115,73 @@ export const cartfirstpart = () => {
           <td></td>
           <td></td>
           <td>Total</td>
-          <td style={{fontWeight: 'bold', textAlign: 'center'}}>{ numStr(totaldeprix) } Ar</td>
+          <td style={{ fontWeight: "bold", textAlign: "center" }}>
+            {numStr(totaldeprix)} Ar
+          </td>
         </tr>
       </tbody>
     </table>
-  )
+  );
+};
 
+{
+  /* *************************************************************************************************
+   *****************************       First display - Wishlist           ****************************
+   *************************************************************************************************** */
 }
+export const wishlistfirstpart = () => {
+  // --------------
+  // variables
+  // --------------
+  const allproductslist = useSelector((state) => state.productReducer.products);
+  const currentwish = useSelector((state) => state.mywishlist.wishlist);
+  const [wishcontent, setWishcontent] = useState([]);
+  const [onerow, setOnerrow] = useState([]);
 
+  // --------------
+  // fonctions
+  // --------------
+  const managerow = (id) => {
+    setOnerrow(currentwish && currentwish.find(product => Number(product.id) == id));
+    return onerow;
+  };
+  const showthewishes = () => {
+    if (currentwish && typeof(currentwish) == "object") {
+      const templist = [];
+
+      currentwish.forEach(wish => { 
+        const mywish = managerow(Number(wish.id));
+
+        templist.push(
+          <tr key={wish.id}>
+            <td>{mywish.id}</td>
+            <td>{mywish.quantity}</td>
+            <td><button><i className="fa fa-cart-arrow-down"></i></button></td>
+            <td><button><i className="fa fa-trash-alt"></i></button></td>   
+          </tr>
+        )
+      }
+    );
+    setWishcontent(templist);
+    }
+  };
+
+  // ---------------
+  // logiques
+  // ---------------
+  useEffect(() => {
+    showthewishes();
+  }, [currentwish]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Quantité</th>
+        </tr>
+      </thead>
+      <tbody>{wishcontent}</tbody>
+    </table>
+  );
+};

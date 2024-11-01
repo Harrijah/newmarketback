@@ -11,7 +11,7 @@ const Cartcontent = ({ quantity, id, index }) => {
             quantity: qtty,
             index,
         }
-        console.log(data);
+        // console.log(data);
         dispatch(setitemquantity(data));
     }
     useEffect(() => {      
