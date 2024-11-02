@@ -1,0 +1,36 @@
+.commandteplate{
+    @include stdparams;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    h2{
+        text-align: center;
+        margin: $defaultvalue03 auto;
+    }
+}
+.commandcontent, .paypartone{
+    @include stdparams;
+    width: 80%;
+    margin: auto;
+    .tablcontent{
+        @include stdparams;
+        width: 100%;
+        margin: auto;
+    }
+}
+.paypartone{
+    .paybutt{
+        .mobmon{
+            display: block;
+            margin: $defaultvalue03 auto;
+            width: 50%;
+            height: 50px;
+            box-shadow: $defaultshadow02;
+            background-color: $coolgreen;
+        }
+    }
+    .paypal{
+        margin: auto;
+    }
+}

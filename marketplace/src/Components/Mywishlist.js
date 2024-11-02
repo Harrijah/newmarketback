@@ -10,7 +10,6 @@ const Mywishlist = () => {
                 <h2>Ma liste de souhaits</h2>
                 {thewishes}
             </div>
-
         </div>
     )
 }

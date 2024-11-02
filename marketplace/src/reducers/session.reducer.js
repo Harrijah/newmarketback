@@ -1,7 +1,7 @@
 import { ADD_NUMB, ADDTO_MYCART, DELETE_NUMB, ITEM_QUANT } from "../action/session.action";
 
 
-const initialState = { panier:  sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : '' };
+const initialState = { panier:  sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : [] };
 
 export default function sessionReducer(state = initialState, action) {
     switch (action.type) {

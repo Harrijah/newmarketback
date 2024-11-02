@@ -30,6 +30,22 @@ const Backoffice = () => {
     ******************************************** */
     const [myprodlist, setMyprodlist] = useState([]);
     const premyproducts = [];
+    
+    // les boutons du leftcol
+    const bobutton = [
+        {
+            button: 'magasin',
+            text: 'A propos du magasin'
+        },
+        {
+            button: 'products',
+            text: 'Produits'
+        },
+        {
+            button: 'commands',
+            text: 'Commandes'
+        },
+    ];
 
     const myproducts = () => {
         if (!isEmpty(Products)) {
@@ -86,7 +102,7 @@ const Backoffice = () => {
         <div className="container">
             <Navigation allproductslist={allproductslist} magasins={magasins} marques={marques} />
             <Boban />
-            <Leftlateralcolumn leftColumnRef={leftColumnRef} button={ <Bocol setMychoice={setMychoice} mychoice={mychoice} /> } />
+            <Leftlateralcolumn leftColumnRef={leftColumnRef} button={ <Bocol setMychoice={setMychoice} mychoice={mychoice} bobutton={bobutton} /> } />
             <Rightmaincontent rightContentRef={rightContentRef}  content={content}/>
             <Footer />
         </div>

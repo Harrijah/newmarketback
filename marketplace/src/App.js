@@ -7,6 +7,7 @@ import Magasin from "./pages/Magasin";
 import Boutique from "./pages/Boutique";
 import Productpage from "./pages/Productpage";
 import Allproducts from "./pages/Allproducts";
+import Commande from "./pages/Commande";
 
 const App = () => {
   return (
@@ -18,7 +19,9 @@ const App = () => {
         <Route path="/boutiques" element={<Magasin />}></Route>
         <Route path="/boutique/:id" element={<Boutique />}></Route>
         <Route path="/product/:id" element={<Productpage />}></Route>
-        <Route path="/allproducts" element={<Allproducts/>}></Route>
+        <Route path="/allproducts" element={<Allproducts />}></Route>
+        <Route path="/commandes" element={<Commande />}></Route>
+        <Route path="*" element={<Home />}></Route>
       </Routes>
     </BrowserRouter>
   );

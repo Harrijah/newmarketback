@@ -20,7 +20,7 @@ const Cartcontent = ({ quantity, id, index }) => {
     return (
         <td style={{display: 'flex'}}>
             <button onClick={() => setTempquantity((tempquantity > 1) && tempquantity - 1)} >-</button>
-            <input type="number" style={{textAlign: 'right'}} value={tempquantity} min={1} readOnly />
+            <input className="addoncart" type="number" style={{textAlign: 'right'}} value={tempquantity} min={1} readOnly />
             <button onClick={() =>  setTempquantity(tempquantity + 1)} >+</button>
         </td>
     )

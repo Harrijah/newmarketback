@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { isEmpty } from "./Utils";
+import { isEmpty, numStr } from "./Utils";
 import { convertFromRaw, convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ import {
 } from "../action/session.action";
 import Ajoutpanier from "../Components/Ajoutpanier";
 import Cartcontent from "../Components/Cartcontent";
-import { addittowish } from "../action/whishlist.action";
+import { addittowish, deletemywish, updateWish } from "../action/whishlist.action";
 
 {
   /* *************************************************************************************************
@@ -257,7 +257,7 @@ export const souscatgen = (
   rayonlist,
   categorielist,
   categorieselect
-) => {
+  ) => {
   const souscategorie = useSelector((state) => state.souscatReducer.souscat);
   const [souscatlist, setSouscatlist] = useState([]);
 
@@ -412,10 +412,9 @@ export const magasinselect = (rayonselect) => {
 
 {
   /* *************************************************************************************************
-   ***********************************                               ***********************************
+   *************************** chercher le prix le plus élevé dans une sélection *********************
    *************************************************************************************************** */
 }
-// chercher le prix le plus élevé dans une sélection
 export const findmaxprice = () => {
   const [pricearray, setPricearray] = useState([]);
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -615,10 +614,9 @@ export const productfirstban = (id) => {
 
 {
   /* *************************************************************************************************
-   ***********************************                               ***********************************
+   ****************************** deuxième bannière de la page produit *******************************
    *************************************************************************************************** */
 }
-// deuxième bannière de la page produit
 export const productsecondban = (id) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -654,10 +652,10 @@ export const productsecondban = (id) => {
 
 {
   /* *************************************************************************************************
-   ***********************************                               ***********************************
+   ******************************* page produit : PRODUITS SIMILAIRES ********************************
    *************************************************************************************************** */
 }
-// page produit : PRODUITS SIMILAIRES
+
 export const similarproducts = (id) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -721,10 +719,9 @@ export const similarproducts = (id) => {
 
 {
   /* *************************************************************************************************
-   ***********************************                               ***********************************
+   ****************************** Afficher un seul produit (PROMO ??) ********************************
    *************************************************************************************************** */
 }
-// Afficher un seul produit (PROMO ??)
 export const showpromo = (id, type) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -779,10 +776,10 @@ export const showpromo = (id, type) => {
 
 {
   /* *************************************************************************************************
-   ***********************************                               ***********************************
+   *************************  Objet - détails de produit mis en avant  *******************************
    *************************************************************************************************** */
 }
-// Objet - détails de produit mis en avant
+
 export const showpromotext = (id) => {
   // ---------------------- variables
   const allproductslist = useSelector((state) => state.productReducer.products);
@@ -1003,23 +1000,6 @@ export const cartfirstpart = () => {
   // -------------------
   // --------- fonctions
   // -------------------
-
-  // séparateur de milliers
-  const numStr = (a, b) => {
-    a = "" + a;
-    b = b || " ";
-    var c = "",
-      d = 0;
-    while (a.match(/^0[0-9]/)) {
-      a = a.substr(1);
-    }
-    for (var i = a.length - 1; i >= 0; i--) {
-      c = d != 0 && d % 3 == 0 ? a[i] + b + c : a[i] + c;
-      d++;
-    }
-    return c;
-  };
-
   // noms de variables
   const setprices = () => {
     let templist = [];
@@ -1099,7 +1079,7 @@ export const cartfirstpart = () => {
 
   return (
     <table>
-      <thead style={{ fontWeight: "bold", textAlign: "center" }}>
+      {listedeproduits != '' ? <thead style={{ fontWeight: "bold", textAlign: "center" }}>
         <tr>
           <th>Numéro</th>
           <th>Désignation</th>
@@ -1107,8 +1087,8 @@ export const cartfirstpart = () => {
           <th>Prix unitaire</th>
           <th>Total</th>
         </tr>
-      </thead>
-      <tbody>
+      </thead> : "Pas d'\articles dans votre panier"}
+      {listedeproduits != '' && <tbody>
         {listedeproduits}
         <tr>
           <td></td>
@@ -1119,7 +1099,7 @@ export const cartfirstpart = () => {
             {numStr(totaldeprix)} Ar
           </td>
         </tr>
-      </tbody>
+      </tbody>}
     </table>
   );
 };
@@ -1137,32 +1117,45 @@ export const wishlistfirstpart = () => {
   const currentwish = useSelector((state) => state.mywishlist.wishlist);
   const [wishcontent, setWishcontent] = useState([]);
   const [onerow, setOnerrow] = useState([]);
+  const dispatch = useDispatch();
 
   // --------------
   // fonctions
   // --------------
-  const managerow = (id) => {
-    setOnerrow(currentwish && currentwish.find(product => Number(product.id) == id));
-    return onerow;
-  };
+  // mettre à jour la quantité d'un article dans la wishlist
+  const updatewish = (index, quant) => {
+    const data = {
+      index,
+      quantity: quant,
+    };
+    dispatch(updateWish(data));
+  }
+
+  // supprimer une wishlist
+  const delawish = (id) => {
+    dispatch(deletemywish(id));
+  }
+
+  // passer une wishlist dans le panier
+  const [wishdata, setWishdata] = useState([]);
+  const passitnow = addproduct(wishdata);
+
+  // afficher la liste de wishlist
   const showthewishes = () => {
     if (currentwish && typeof(currentwish) == "object") {
-      const templist = [];
-
-      currentwish.forEach(wish => { 
-        const mywish = managerow(Number(wish.id));
-
-        templist.push(
-          <tr key={wish.id}>
-            <td>{mywish.id}</td>
-            <td>{mywish.quantity}</td>
-            <td><button><i className="fa fa-cart-arrow-down"></i></button></td>
-            <td><button><i className="fa fa-trash-alt"></i></button></td>   
-          </tr>
-        )
-      }
-    );
-    setWishcontent(templist);
+      let templist = [];
+      templist = currentwish.map((wish, index) => 
+        <tr key={wish.id}>
+          <td>{searchinfo(allproductslist, wish.id, 'nomproduit')}</td>
+          <td><input onChange={(e) => updatewish(index, Number(e.target.value))} type="number" defaultValue={wish.quantity} min={1} /></td>
+          <td><button onClick={() => {
+            setWishdata([Number(wish.id), Number(wish.quantity)]);
+            delawish(wish.id);
+          }}><i className="fa fa-cart-plus"></i> </button></td>
+          <td><button onClick={() => delawish(wish.id)}><i className="fa fa-trash-alt"></i></button></td>   
+        </tr>
+      );
+      setWishcontent(templist);
     }
   };
 
@@ -1173,13 +1166,18 @@ export const wishlistfirstpart = () => {
     showthewishes();
   }, [currentwish]);
 
+  useEffect(() => {
+    passitnow;
+    console.log(wishdata)
+  }, [wishdata]);
+
   return (
     <table>
       <thead>
-        <tr>
+        {wishcontent != '' ? <tr>
           <th>Nom</th>
           <th>Quantité</th>
-        </tr>
+        </tr> : <p>Pas d'articles dans votre liste de souhaits</p>}
       </thead>
       <tbody>{wishcontent}</tbody>
     </table>

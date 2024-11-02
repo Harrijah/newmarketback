@@ -114,7 +114,8 @@ const Allproducts = () => {
                 [<Boutiquecol key={0} rayonchoice={rayonchoice} rayonlist={rayonlist} categorychoice={categorychoice} filteredcategory={filteredcategory} souscategorychoice={souscategorychoice} souscatlist02={souscatlist02} maxprice={maxprice} changeprice={changeprice} currentmaxprice={currentmaxprice} />, <Otherfilters key={1} rayonselect={rayonselect} brands={brands} brandchoice={brandchoice} magasinchoice={magasinchoice} listofstore={stores} />]
             } />
             <Rightmaincontent content={
-                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect}  maxprice={maxprice} marque={0} idmagasin={storeselect} brandselect={brandselect} />} rightContentRef={rightContentRef} />
+                <Productslister rayonlist={rayonlist} filteredcategory={filteredcategory} souscatlist02={souscatlist02} rayonchoice={rayonchoice} rayonselect={rayonselect} categorychoice={categorychoice} categorieselect={categorieselect} souscategorychoice={souscategorychoice} souscategorieselect={souscategorieselect} maxprice={maxprice} marque={0} idmagasin={storeselect} brandselect={brandselect} />} rightContentRef={rightContentRef} />
+            <Footer />
         </div>
     );
 }
