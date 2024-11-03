@@ -1,1 +1,33 @@
 INFO - 2024-11-03 03:35:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-03 19:37:17 --> ErrorException: Undefined variable $response
+[Method: POST, Route: addcommand]
+in APPPATH\Controllers\Command.php on line 30.
+ 1 APPPATH\Controllers\Command.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $response', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Command.php', 30)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->addcommand()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-03 19:47:32 --> ErrorException: Array to string conversion
+[Method: POST, Route: addcommand]
+in SYSTEMPATH\Database\Query.php on line 331.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'Z:\\CodeIgniter\\newmarketplace\\system\\Database\\Query.php', 331)
+ 2 SYSTEMPATH\Database\Query.php(331): implode(',', [...])
+ 3 SYSTEMPATH\Database\Query.php(312): CodeIgniter\Database\Query->matchNamedBinds('INSERT INTO `commandes` (`id`, `payref`, `clientid`, `products`, `datecommande`, `status`, `datelivraison`, `lieulivraison`, `aboutcustomer`, `totalprix`) VALUES (:id:, :payref:, :clientid:, :products:, :datecommande:, :status:, :datelivraison:, :lieulivraison:, :aboutcustomer:, :totalprix:)', [...])
+ 4 SYSTEMPATH\Database\Query.php(163): CodeIgniter\Database\Query->compileBinds()
+ 5 SYSTEMPATH\Database\BaseConnection.php(636): CodeIgniter\Database\Query->getQuery()
+ 6 SYSTEMPATH\Database\BaseBuilder.php(2325): CodeIgniter\Database\BaseConnection->query('INSERT INTO `commandes` (`id`, `payref`, `clientid`, `products`, `datecommande`, `status`, `datelivraison`, `lieulivraison`, `aboutcustomer`, `totalprix`) VALUES (:id:, :payref:, :clientid:, :products:, :datecommande:, :status:, :datelivraison:, :lieulivraison:, :aboutcustomer:, :totalprix:)', [...], false)
+ 7 SYSTEMPATH\Model.php(383): CodeIgniter\Database\BaseBuilder->insert()
+ 8 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 9 SYSTEMPATH\Model.php(791): CodeIgniter\BaseModel->insert([...], true)
+10 APPPATH\Models\CommandModel.php(26): CodeIgniter\Model->insert([...])
+11 APPPATH\Controllers\Command.php(22): App\Models\CommandModel->addcommand()
+12 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->addcommand()
+13 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+14 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+15 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+16 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+17 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+18 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')

@@ -4,6 +4,7 @@ import { numStr } from "../Assets/Utils";
 import Paypal from "../Modules/Paypal";
 import { useDispatch, useSelector } from "react-redux";
 import { modalposition } from "../action/position.action";
+import { addCommand } from "../action/session.action";
 
 const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgeneral, setTtlgeneral, aboutUser }) => {
     
@@ -13,7 +14,9 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     const modaly = useSelector((state) => state.positionReducer.position);
     const [listofproducts, setListofproducts] = useState([]);
     const [content, setContent] = useState('');
-    const dateref 
+    const [commanddate, setCommanddate] = useState('');
+    const [nextnumber, setNextnumber] = useState(101);
+    const [commandref, setCommandref] = useState(nextnumber);
 
     // pour l'acheteur
     const [buyerinfos, setBuyerinfos] = useState({});
@@ -22,7 +25,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
 
     // validation panier
     const [paymodal, setPaymodal] = useState(false);
-    const payref = useRef();
+    const mypayref = useRef();
 
     const dispatch = useDispatch();
     let provttl = 0;
@@ -31,6 +34,19 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     // -------------------
     // --------- fonctions
     // -------------------
+
+    // calculer la date de la commande
+    const dateref = () => {
+        let mydate = new Date().toLocaleDateString('fr-FR', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric'
+        });
+        return setCommanddate(mydate);
+        // console.log(commanddate);
+    }
     // simple liste de produits
     const productslist = () => {
         let templist = [];
@@ -121,8 +137,20 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
 
     // valider le paiement via mobile money
     const validatepay = (e) => {
+        const data = {
+            id: commandref,
+            payref: mypayref.current[0].value,
+            clientid: aboutUser.id || buyerinfos.telephone,
+            products: { currentcart },
+            datecommande: commanddate,
+            status: 1,
+            datelivraison: '',
+            lieulivraison: buyerinfos.adresse + buyerinfos.ville,
+            aboutcustomer: { buyerinfos },
+            totalprix: ttlgeneral,
+        }
         e.preventDefault();
-        console.log('ok');
+        dispatch(addCommand(data));
         setPaymodal(false);    
     }
 
@@ -136,6 +164,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
         displaytable();
         productslist();
         setbuyerdata();
+        dateref();
     }, [currentcart]);
 
     // gestion modal info-utilisateur
@@ -155,6 +184,11 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
             document.body.style.overflow = 'auto';
         }
     }, [paymodal]);
+
+    // MAJ numéro de commande
+    useEffect(() => {
+        setCommandref(buyerinfos.telephone + 'X' + nextnumber);
+    }, [buyerinfos])
     
 
     return (
@@ -193,10 +227,10 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
                                 <li>ou via Orange Money au 032 04 254 41 </li>
                                 <li>ou via Airtel Money au 032 04 254 41 </li>
                             </ul>
-                           <p>avec comme référence : " {buyerinfos.telephone}-": </p>
+                        <p>avec comme motif : " <b>{commandref}</b></p>
                         <p>Ensuite, entrez ici la référence de votre paiement reçu par SMS, puis cliquez sur "Envoyer" </p>
 
-                        <form ref={payref} onSubmit={(e) => validatepay(e)}>
+                        <form ref={mypayref} onSubmit={(e) => validatepay(e)}>
                             <input type="text"/>
                             <input type="submit" value="Envoyer" />
                         </form>
@@ -250,7 +284,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
             <div className="paypartone">
                 <h2>Procéder au paiement</h2>
                 <div className="paybutt">
-                    <button className="mobmon" onClick={(e) => showpay(e)}>Payer via mVola :  {numStr(ttlgeneral)} Ar</button>
+                    <button className="mobmon" onClick={(e) => showpay(e)}>Payer avec Mobile Money</button>
                     <Paypal className='paypal' listofproducts={listofproducts} buyerinfos={buyerinfos} />
                 </div>
             </div>

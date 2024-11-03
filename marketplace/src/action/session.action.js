@@ -1,8 +1,10 @@
+import axios from "axios";
 
 export const ADDTO_MYCART = 'ADDTO_MYCART';
 export const ADD_NUMB = 'ADD_NUMB';
 export const DELETE_NUMB = 'DELETE_NUMB';
 export const ITEM_QUANT = 'ITEM_QUANT';
+export const ADD_COMMAND = 'ADD_COMMAND';
 
 export const addtocart = (data) => {
     return (dispatch) => {
@@ -25,6 +27,14 @@ export const setitemquantity = (data) => {
 export const removeformcart = (id) => {
     return (dispatch) => {
         return dispatch({ type: DELETE_NUMB, payload: id });
+    }
+}
+
+export const addCommand = (data) => {
+    return (dispatch) => {
+        return axios.post('http://localhost:8080/addcommand', data).then((res) => {
+            dispatch({ type: ADD_COMMAND, payload: res.data });
+        })
     }
 }
 
