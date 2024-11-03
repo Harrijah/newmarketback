@@ -46,11 +46,11 @@ const Commande = () => {
       content = <Aboutme aboutUser={user} />
       break;
     case 'commandpage':
-      content = <Commandpage allproductslist={allproductslist} marques={marques} magasins={magasins} currentcart={currentcart} ttlgeneral={ttlgeneral} setTtlgeneral={setTtlgeneral} />
+      content = <Commandpage allproductslist={allproductslist} marques={marques} magasins={magasins} currentcart={currentcart} ttlgeneral={ttlgeneral} setTtlgeneral={setTtlgeneral}  aboutUser={user} />
       break;
     
     default:
-      content = <Commandpage allproductslist={allproductslist} marques={marques} magasins={magasins} currentcart={currentcart} ttlgeneral={ttlgeneral} setTtlgeneral={setTtlgeneral} />
+      content = <Commandpage allproductslist={allproductslist} marques={marques} magasins={magasins} currentcart={currentcart} ttlgeneral={ttlgeneral} setTtlgeneral={setTtlgeneral}  aboutUser={user} />
   }
 
     

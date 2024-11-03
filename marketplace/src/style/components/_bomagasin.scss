@@ -1,67 +1,6 @@
 .monmagasin{
     display: block;
     position: static;
-    .infoblock{
-        @include withtxtparams;
-        ul{
-            @include cleanmyul;
-            li{
-                display: flex;
-                align-items: center;
-                border-bottom: solid 1px $mylight;
-                .item{
-                    display: block;
-                    width: 30%;
-                }
-                .response{
-                    display: block;
-                    width: 60%;
-                    .responseform{
-                        display: flex;
-                        width: 100%;
-                        input:nth-child(1){
-                            display: block;
-                            width: 90%;
-                        }
-                        input:nth-child(2){
-                            display: block;
-                            width: 10%;
-                        }
-                    }
-                }
-                .responseform{
-                    display: block;
-                    width: 60%
-                }
-                button{
-                    @include backofficebtn01;
-                    width: 10%;
-                }
-                .modifyprod{
-                    width: 90%;
-                    .nomproduit{
-                        width: 100%;
-                        text-align: left;
-                        background-color: $white;
-                        border: none;
-                        box-shadow: none;
-                    }
-                }
-            }
-        }
-        .addproductclass{
-            position: relative;
-            width: fit-content;
-            display: flex;
-            .productclass{
-                position: relative;
-                min-width: 300px;
-                padding: 0 $defaultvalue;
-                display: flex;
-                flex-direction: column;
-            }
-        }
-    }
     button{
         @include backofficebtn01;
     }

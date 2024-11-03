@@ -16,8 +16,8 @@ export default function Paypal({listofproducts}) {
             body: JSON.stringify({
                 cart: listofproducts,
                 // flow: "checkout",
-                // amount: "10.0",
-                // currency: "USD",
+                amount: "10.0",
+                currency: "USD",
                 // intent: "capture",
             }),
         })
@@ -48,8 +48,8 @@ export default function Paypal({listofproducts}) {
     return (
         <PayPalScriptProvider options={{ clientId: "ARclgTf_H2nEr36scJRPNixO21TB5WLqA65EKCZozkiemG79YELU3hTkFd0txqchaWY6sRTKt687NKpz" }}>
             <PayPalButtons
-                createOrder={createOrder}
-                onApprove={onApprove}
+                // createOrder={createOrder}
+                // onApprove={onApprove}
             />
         </PayPalScriptProvider>
     );

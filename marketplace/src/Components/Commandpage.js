@@ -1,21 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { searchinfo } from "../Assets/Functions";
 import { numStr } from "../Assets/Utils";
 import Paypal from "../Modules/Paypal";
+import { useDispatch, useSelector } from "react-redux";
+import { modalposition } from "../action/position.action";
 
-const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgeneral, setTtlgeneral }) => {
+const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgeneral, setTtlgeneral, aboutUser }) => {
     
     // -------------------
     // --------- variables
     // -------------------
-    const [content, setContent] = useState('');
+    const modaly = useSelector((state) => state.positionReducer.position);
     const [listofproducts, setListofproducts] = useState([]);
+    const [content, setContent] = useState('');
+    const dateref 
+
+    // pour l'acheteur
+    const [buyerinfos, setBuyerinfos] = useState({});
+    const [buyermodal, setBuyermodal] = useState(false);
+    const buyerref = useRef();
+
+    // validation panier
+    const [paymodal, setPaymodal] = useState(false);
+    const payref = useRef();
+
+    const dispatch = useDispatch();
     let provttl = 0;
     
     
     // -------------------
     // --------- fonctions
     // -------------------
+    // simple liste de produits
     const productslist = () => {
         let templist = [];
         for (let i = 0; i < currentcart.length; i++){
@@ -28,6 +44,8 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
         }
         setListofproducts(templist);
     }
+
+    // liste des produits dans la commande
     const displaytable = () => {
         setContent(currentcart && currentcart.map((product, index) => {
             let num = index + 1;
@@ -49,17 +67,144 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
         setTtlgeneral(provttl);
     }
 
+    // afficher le modal pour le changement des infos utilisateurs
+    const showbuyermodal = (e) => {
+        dispatch(modalposition(e.pageY - e.clientY));
+        setBuyermodal(true);
+    }
+
+    // cacher le modal du buyer info
+    const managebuyermodal = (e) => {
+        if (e.target.className == 'modal') {
+            setBuyermodal(false);
+        }
+    }   
+
+    // infos par défaut sur l'acheteur
+    const setbuyerdata = () => {
+        const data = {
+            nom: aboutUser.nom,
+            prenom: aboutUser.prenom,
+            adresse: aboutUser.adresse,
+            ville: aboutUser.ville + ' ' + aboutUser.codepostal + ' ' + aboutUser.pays,
+            telephone: aboutUser.telephone,
+            mail: aboutUser.email
+        }
+        setBuyerinfos(data);
+    }
+    // changer temporairement les infos de l'acheteur
+    const savebuyerinfo = (e) => {
+        e.preventDefault();
+        const data = {
+            nom: buyerref.current[0].value,
+            prenom: buyerref.current[1].value,
+            telephone: buyerref.current[2].value,
+            mail: buyerref.current[3].value,
+            adresse: buyerref.current[4].value,
+            ville: buyerref.current[6].value + ' ' + buyerref.current[5].value + ' ' + buyerref.current[7].value,
+        }
+        setBuyerinfos(data);
+        setBuyermodal(false);
+    }
+
+    // cacher le modal pay
+    const hidepay = (e) => {
+        e.target.className == 'modal' && setPaymodal(false);
+    }
+
+    // afficher le modalpay
+    const showpay = (e) => {
+        document.body.style.overflow = 'hidden';
+        dispatch(modalposition(e.pageY - e.clientY));
+        setPaymodal(true);
+    }
+
+    // valider le paiement via mobile money
+    const validatepay = (e) => {
+        e.preventDefault();
+        console.log('ok');
+        setPaymodal(false);    
+    }
+
+
     // -------------------
     // ---------- logiques
     // -------------------
+
+    // affichage de départ
     useEffect(() => {
         displaytable();
-        productslist();        
-    }, [currentcart])
+        productslist();
+        setbuyerdata();
+    }, [currentcart]);
+
+    // gestion modal info-utilisateur
+    useEffect((e) => { 
+        if (buyermodal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [buyermodal]);
+
+    // gestion modal pay
+    useEffect(() => {
+        if (paymodal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [paymodal]);
     
 
     return (
-        <div className="commandteplate">
+        <div className="commandtemplate">
+            {/* Modal pour changer les infos de livraison */}
+            <div className="modal" id="buyermodal" style={{top: modaly && modaly+'px', display: buyermodal && 'flex', zIndex:101}} onClick={(e) => managebuyermodal(e)}>
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h3>Renseignez vos informations pour cette livraison</h3>
+                    </div>
+                    <div className="modal-body">
+                        <form ref={buyerref} onSubmit={(e) => savebuyerinfo(e)}>
+                            <input type="text" name="" id="" placeholder="Votre nom" />
+                            <input type="text" name="" id="" placeholder="Votre prénom" />
+                            <input type="text" name="" id="" placeholder="Votre téléphone" />
+                            <input type="email" name="" id="" placeholder="Votre email" />
+                            <input type="text" name="" id="" placeholder="Votre adresse" />
+                            <input type="number" name="" id="" placeholder="Code Postal, Ex : 105" />
+                            <input type="text" name="" id="" placeholder="Ville, Ex : Antananarivo" />
+                            <input type="text" name="" id="" placeholder="Pays" defaultValue={'Madagascar'} />
+                            <input type="submit" value="Valider" />
+                        </form>
+                    </div>
+                    <div className="modal-footer">
+                        <button onClick={(e) => setBuyermodal(false)}>Annuler</button>
+                    </div>
+                </div>
+            </div>
+            <div className="modal" id="mobilepaymodal" style={{top: modaly && modaly+'px', display: paymodal && 'flex', zIndex: 101}} onClick={(e) => hidepay(e)} >
+                <div className="modal-content" style={{textAlign: 'left'}}>
+                    <div className="modal-header"><h3>Payer avec Mobile Money</h3></div>
+                    <div className="modal-body">
+                        <p>Veuiller envoyer <b>{numStr(ttlgeneral)} Ar</b> : </p>
+                            <ul>
+                                <li>via mVola au 034 04 254 41 </li>
+                                <li>ou via Orange Money au 032 04 254 41 </li>
+                                <li>ou via Airtel Money au 032 04 254 41 </li>
+                            </ul>
+                           <p>avec comme référence : " {buyerinfos.telephone}-": </p>
+                        <p>Ensuite, entrez ici la référence de votre paiement reçu par SMS, puis cliquez sur "Envoyer" </p>
+
+                        <form ref={payref} onSubmit={(e) => validatepay(e)}>
+                            <input type="text"/>
+                            <input type="submit" value="Envoyer" />
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            {/* Tableau résumant les articles à commander */}
             <div className="commandcontent">
                 <h2>Résumé de votre commande</h2>
                 <div className="tablcontent">
@@ -84,11 +229,29 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
                     </table>
                 </div>
             </div>
+            {/* Tableau résumant les infos de l'acheteur */}
+            <div className="commandcontent">
+                <h2>Vos informations de livraison</h2>
+                <div className="infoblock">
+                    {/* <p>Civilité :</p> */}
+                    {aboutUser ? <p><span style={{textDecoration: 'underline'}}>Nom</span> : <span>{buyerinfos.nom}</span> </p> : ''}
+                    {aboutUser ? <p><span style={{textDecoration: 'underline'}}>Prénom</span> :{buyerinfos.prenom} </p> : ''}
+                    {aboutUser ? <p><span style={{textDecoration: 'underline'}}>Adresse</span> : {buyerinfos.adresse} </p> : ''}
+                    {aboutUser ? <p><span style={{textDecoration: 'underline'}}>Ville</span> : {buyerinfos.ville}</p> : ''}
+                    {aboutUser ? <p><span style={{textDecoration: 'underline'}}>Téléphone</span> : {buyerinfos.telephone} </p> : ''}
+                    {aboutUser ? <p><span style={{textDecoration: 'underline'}}>Mail</span> : {buyerinfos.mail} </p> : ''}
+                    {aboutUser ?
+                        <button className="lastbutton" onClick={(e) => showbuyermodal(e)}>Changer temporairement</button> :
+                        <button>Compléter mes informations</button>
+                    }
+                </div>
+            </div>
+            {/* Options de paiement*/}
             <div className="paypartone">
                 <h2>Procéder au paiement</h2>
                 <div className="paybutt">
-                    <button className="mobmon">Payer via mVola :  {numStr(ttlgeneral)} Ar</button>
-                    <Paypal className='paypal' listofproducts={listofproducts} />
+                    <button className="mobmon" onClick={(e) => showpay(e)}>Payer via mVola :  {numStr(ttlgeneral)} Ar</button>
+                    <Paypal className='paypal' listofproducts={listofproducts} buyerinfos={buyerinfos} />
                 </div>
             </div>
         </div>

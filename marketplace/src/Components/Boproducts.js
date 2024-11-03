@@ -155,7 +155,7 @@ const Boproducts = ({ userdata, storedata, productslist }) => {
           ***************************************************************** */}
       <div className="infoblock">
         <h2>Ajouter un produit</h2>
-        <button className="todeleteme" onClick={() => showproductmodal(0)}>Nouveau produit</button>
+        <button className="todeleteme" onClick={(e) => showproductmodal(e, 0)}>Nouveau produit</button>
       </div>
 
       {/* *****************************************************************

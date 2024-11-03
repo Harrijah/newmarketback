@@ -1,12 +1,17 @@
-.commandteplate{
+.commandtemplate{
     @include stdparams;
     display: flex;
     flex-direction: column;
+    display: block;
+    position: static;
     width: 100%;
     margin: auto;
     h2{
         text-align: center;
         margin: $defaultvalue03 auto;
+    }
+    button{
+        @include backofficebtn01;
     }
 }
 .commandcontent, .paypartone{
@@ -32,5 +37,6 @@
     }
     .paypal{
         margin: auto;
+        z-index: 0;
     }
 }
