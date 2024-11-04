@@ -36,3 +36,4 @@ $routes->delete('/deleteproduct/(:num)', 'Produit::deleteproduct/$1');
 $routes->post('/modifyProduct', 'Produit::modifyProduct');
 
 $routes->post('/addcommand', 'Command::addcommand');
+$routes->get('/getcommand/(:num)', 'Command::getcommand/$1');

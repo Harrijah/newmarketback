@@ -1,7 +1,11 @@
-import { ADD_COMMAND, ADD_NUMB, ADDTO_MYCART, DELETE_NUMB, ITEM_QUANT } from "../action/session.action";
+import { ADD_COMMAND, ADD_NUMB, ADDTO_MYCART, DELETE_NUMB, GET_COMMAND, ITEM_QUANT } from "../action/session.action";
 
 
-const initialState = { panier:  sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : [] };
+const initialState = {
+    panier: sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : [],
+    commandes: sessionStorage.getItem('commandes') ? JSON.parse(sessionStorage.getItem('commandes')) : [],
+    
+ };
 
 export default function sessionReducer(state = initialState, action) {
     switch (action.type) {
@@ -52,7 +56,14 @@ export default function sessionReducer(state = initialState, action) {
         case ADD_COMMAND:
             sessionStorage.setItem('panier', []);
             console.log(action.payload)
-            return {panier: []}
+            return { panier: [] }
+        
+        case GET_COMMAND:
+            sessionStorage.setItem('commandes', JSON.stringify(action.payload));
+
+            return {
+                commandes: JSON.parse(sessionStorage.getItem('commandes'))
+            }
         
         default:
             return state;

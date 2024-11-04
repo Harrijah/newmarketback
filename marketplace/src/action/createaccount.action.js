@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { getCommand } from './session.action';
 
 export const CREATE_USER = 'CREATE_USER';
 export const CONNEXION_STATUS = 'CONNEXION_STATUS';

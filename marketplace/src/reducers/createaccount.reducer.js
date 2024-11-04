@@ -25,6 +25,7 @@ export default function createaccountReducer(state = initialState, action) {
       return {
         isConnected: sessionStorage.getItem("isConnected"),
         user: JSON.parse(sessionStorage.getItem("user")),
+        commandes: JSON.parse(sessionStorage.getItem('commandes'))
       };
 
     case DISCONNECT_USER:

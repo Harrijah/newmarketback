@@ -46,6 +46,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
 
     // Création d'un nouveau compte
     const connectuserform = useRef();
+    
     // Future validation de formulaire de connexion
     const connectme = (e) => {
         e.preventDefault();
@@ -211,28 +212,14 @@ const Navigation = ({allproductslist, magasins, marques}) => {
 
 
 
-    // afficher le résultat de recherche avec la liste des produits
-    useEffect(() => {
-        if (typeof(allproductslist) == 'object') {
-            const templist = allproductslist && allproductslist
-                .filter((product) => clientsearchvalue ? removeAccents(product.nomproduit.toLowerCase()).includes(clientsearchvalue)
-                    // || removeAccents(product.courtdescript.toLowerCase()).includes(clientsearchvalue)
-                    : true)      
-                    .map((product, index) => (  
-                        <Productbox key={product.id} product={product} index={index} goto={goto} showaproduct={showaproduct} searchinfo={searchinfo} marques={marques} magasins={magasins} isEmpty={isEmpty}/>
-                        ) 
-                    );             
-          setFilteredproductlist(templist);
-        }
-        rapidsearchmodal(clientsearchvalue, setRapidsearch);
-    }, [allproductslist, clientsearchvalue]);
-
 
     // ------------------------------------ logiques
+    // mettre à jour "modaly"
     useEffect(() => {
         setMyy(modaly);
     }, [modaly]);
 
+    // mettre le modal en pleine page
     useEffect(() => {
         if (productpreview) {
             document.body.style.overflow = 'hidden';
@@ -257,6 +244,7 @@ const Navigation = ({allproductslist, magasins, marques}) => {
         }
     }, [connectmyuser]);
     
+    // affichage 1 produit - product to show - product details
     useEffect(() => {
         if (producttoshow) {
             if (productdetails) {
@@ -280,6 +268,23 @@ const Navigation = ({allproductslist, magasins, marques}) => {
             }
         }
     }, [producttoshow, productdetails]);
+
+    // afficher le résultat de recherche avec la liste des produits
+    useEffect(() => {
+        if (typeof(allproductslist) == 'object') {
+            const templist = allproductslist && allproductslist
+                .filter((product) => clientsearchvalue ? removeAccents(product.nomproduit.toLowerCase()).includes(clientsearchvalue)
+                    // || removeAccents(product.courtdescript.toLowerCase()).includes(clientsearchvalue)
+                    : true)      
+                    .map((product, index) => (  
+                        <Productbox key={product.id} product={product} index={index} goto={goto} showaproduct={showaproduct} searchinfo={searchinfo} marques={marques} magasins={magasins} isEmpty={isEmpty}/>
+                        ) 
+                    );             
+          setFilteredproductlist(templist);
+        }
+        rapidsearchmodal(clientsearchvalue, setRapidsearch);
+    }, [allproductslist, clientsearchvalue]);
+
 
     // /* --------------------------------------------------------------------------------------
     // ------------------------------------------ JSX ------------------------------------------

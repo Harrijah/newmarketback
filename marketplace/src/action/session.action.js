@@ -5,6 +5,7 @@ export const ADD_NUMB = 'ADD_NUMB';
 export const DELETE_NUMB = 'DELETE_NUMB';
 export const ITEM_QUANT = 'ITEM_QUANT';
 export const ADD_COMMAND = 'ADD_COMMAND';
+export const GET_COMMAND = 'GET_COMMAND';
 
 export const addtocart = (data) => {
     return (dispatch) => {
@@ -32,9 +33,17 @@ export const removeformcart = (id) => {
 
 export const addCommand = (data) => {
     return (dispatch) => {
-        return axios.post('http://localhost:8080/addcommand', data).then((res) => {
-            dispatch({ type: ADD_COMMAND, payload: res.data });
-        })
+        return axios.post('http://localhost:8080/addcommand', data).then((res) => (
+            dispatch({ type: ADD_COMMAND, payload: res.data })
+        ));
+    }
+}
+
+export const getCommand = (id) => {
+    return (dispatch) => {
+        return axios.get('http://localhost:8080/getcommand/' + id).then((res) => (
+            dispatch({ type: GET_COMMAND, payload: res.data })
+        ));
     }
 }
 

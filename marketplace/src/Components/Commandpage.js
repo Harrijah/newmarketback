@@ -15,7 +15,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     const [listofproducts, setListofproducts] = useState([]);
     const [content, setContent] = useState('');
     const [commanddate, setCommanddate] = useState('');
-    const [nextnumber, setNextnumber] = useState(101);
+    const [nextnumber, setNextnumber] = useState(102);
     const [commandref, setCommandref] = useState(nextnumber);
 
     // pour l'acheteur
@@ -71,7 +71,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
             let pt = quant * pu;
             provttl += pt;
              return(
-                <tr key={product.id}>
+                <tr key={Number(product.id) + index}>
                     <td>0{num}</td>
                     <td>{nom}</td>
                     <td>{product.number}</td>
@@ -141,16 +141,18 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
             id: commandref,
             payref: mypayref.current[0].value,
             clientid: aboutUser.id || buyerinfos.telephone,
-            products: { currentcart },
+            products: JSON.stringify(currentcart) ,
             datecommande: commanddate,
             status: 1,
             datelivraison: '',
-            lieulivraison: buyerinfos.adresse + buyerinfos.ville,
-            aboutcustomer: { buyerinfos },
+            lieulivraison: buyerinfos.adresse + ' ' + buyerinfos.ville,
+            aboutcustomer: JSON.stringify(buyerinfos),
             totalprix: ttlgeneral,
         }
         e.preventDefault();
         dispatch(addCommand(data));
+        console.log(data);
+        
         setPaymodal(false);    
     }
 

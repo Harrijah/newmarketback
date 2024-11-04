@@ -23,6 +23,13 @@
                 'aboutcustomer' => $jsondata['aboutcustomer'],
                 'totalprix' => $jsondata['totalprix'],
             ];
+            var_dump($data);
             return $this->insert($data);
+        }
+
+        public function getcommand($clientid)
+        {
+            $this->where('clientid', $clientid);
+            return $this->findAll();
         }
     }

@@ -11,6 +11,7 @@ import Rightmaincontent from "../Components/Rightmaincontent";
 import Bocol from "../Components/Bocol";
 import Leftlateralcolumn from "../Components/Leftlateralcolumn";
 import { isEmpty } from "../Assets/Utils";
+import { getstoredata } from "../action/store.action";
 
 
 // CSS : pages/_backoffice.scss
@@ -24,6 +25,7 @@ const Backoffice = () => {
     const allproductslist = useSelector((state) => state.productReducer.products);
     const magasins = useSelector((state) => state.storeReducer.allstore);
     const marques = useSelector((state) => state.marqueReducer.marques);
+    const User = useSelector((state) => state.createaccountReducer.user);
 
     /* ********************************************
     **** Afficher les produits dans Backoffice ****
@@ -60,6 +62,14 @@ const Backoffice = () => {
         setMyprodlist(premyproducts);
         // return myprodlist; // Retourner la liste filtrée}
     }
+    // Si n'est pas connecté, alors renvoie à la page d'accueil <= MBOLA TSY MANDEHA
+    useEffect(() => {
+        !isConnected && navigate('/');
+        !isEmpty(User) ? dispatch(getstoredata(User.id)) : '';
+        // sessionStorage.getItem('user');
+
+    }, [isConnected, navigate, User]);
+
     useEffect(() => { 
         if (!isEmpty(Products)) {
             myproducts();
