@@ -2,7 +2,6 @@
     Namespace App\Controllers;
 
     Use App\Models\UserModel;
-    Use App\Models\CommandModel;
     helper(['form', 'session']);
 
     class User extends BaseController
@@ -73,9 +72,7 @@
         public function connectme()
         {
             $usermodel = model(UserModel::class);
-            $commandmodel = model(CommandModel:: class);
             $user = $usermodel->connectme();
-            $commands = $commandmodel->getcommand();
 
             $validationRules = [
                 'email' => 'required|min_length[7]|max_length[100]|valid_email',
@@ -90,7 +87,7 @@
             if($this->validate($validationRules, $errors)){
 
                 $this->setUserSession($user);
-                return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON([$user, $commands]);
+                return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($user);
 
             } else {
                 //

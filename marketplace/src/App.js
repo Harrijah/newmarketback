@@ -8,6 +8,7 @@ import Boutique from "./pages/Boutique";
 import Productpage from "./pages/Productpage";
 import Allproducts from "./pages/Allproducts";
 import Commande from "./pages/Commande";
+import Testrender from "./pages/Testrender";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/allproducts" element={<Allproducts />}></Route>
         <Route path="/commandes" element={<Commande />}></Route>
         <Route path="*" element={<Home />}></Route>
+        <Route path="/testrender" element={<Testrender />}></Route>
       </Routes>
     </BrowserRouter>
   );

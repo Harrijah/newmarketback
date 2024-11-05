@@ -55,14 +55,16 @@ export default function sessionReducer(state = initialState, action) {
         
         case ADD_COMMAND:
             sessionStorage.setItem('panier', []);
-            console.log(action.payload)
             return { panier: [] }
         
         case GET_COMMAND:
+            const tempcart04 = sessionStorage.getItem('panier') ? JSON.parse(sessionStorage.getItem('panier')) : [];
             sessionStorage.setItem('commandes', JSON.stringify(action.payload));
+            sessionStorage.setItem('panier', JSON.stringify(tempcart04));
 
             return {
-                commandes: JSON.parse(sessionStorage.getItem('commandes'))
+                panier: JSON.parse(sessionStorage.getItem('panier')),
+                commandes: JSON.parse(sessionStorage.getItem('commandes')),
             }
         
         default:

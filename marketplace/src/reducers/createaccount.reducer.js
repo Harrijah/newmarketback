@@ -21,11 +21,12 @@ export default function createaccountReducer(state = initialState, action) {
 
     case CONNEXION_STATUS:
       sessionStorage.setItem("user", JSON.stringify(action.payload));
+      // sessionStorage.setItem("commandes", JSON.stringify(action.payload[1]));
       sessionStorage.setItem("isConnected", true);
       return {
         isConnected: sessionStorage.getItem("isConnected"),
         user: JSON.parse(sessionStorage.getItem("user")),
-        commandes: JSON.parse(sessionStorage.getItem('commandes'))
+        // commandes: JSON.parse(sessionStorage.getItem('commandes'))
       };
 
     case DISCONNECT_USER:

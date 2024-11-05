@@ -11,10 +11,14 @@ import { modalposition } from '../action/position.action';
 import { rapidsearchmodal, searchinfo, addproduct, searchresult } from '../Assets/Functions';
 import Productbox from '../Components/Productbox';
 import Paniermodal from '../Modules/Paniermodal';
+import { getCommand } from '../action/session.action';
 
 
 // CSS : template-parts/_navigation.scss
-const Navigation = ({allproductslist, magasins, marques}) => {
+const Navigation = ({ allproductslist, magasins, marques }) => {
+    
+    // récupérer les infos de l'User
+    const user = useSelector((state) => state.createaccountReducer.user);
     
     // Redux => Session connectée ou non
     const isConnected = useSelector((state) => state.createaccountReducer.isConnected);
@@ -284,6 +288,11 @@ const Navigation = ({allproductslist, magasins, marques}) => {
         }
         rapidsearchmodal(clientsearchvalue, setRapidsearch);
     }, [allproductslist, clientsearchvalue]);
+
+    // récupérer l'historique des commandes
+    useEffect(() => {
+        user && dispatch(getCommand(user.id));
+     }, [isConnected]);
 
 
     // /* --------------------------------------------------------------------------------------

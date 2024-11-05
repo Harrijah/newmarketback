@@ -1,0 +1,179 @@
+CRITICAL - 2024-11-05 05:29:03 --> ArgumentCountError: Too few arguments to function App\Models\CommandModel::getcommand(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\User.php on line 78 and exactly 1 expected
+[Method: POST, Route: connectme]
+in APPPATH\Models\CommandModel.php on line 30.
+ 1 APPPATH\Controllers\User.php(78): App\Models\CommandModel->getcommand()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 05:29:39 --> ArgumentCountError: Too few arguments to function App\Models\CommandModel::getcommand(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\User.php on line 78 and exactly 1 expected
+[Method: POST, Route: connectme]
+in APPPATH\Models\CommandModel.php on line 30.
+ 1 APPPATH\Controllers\User.php(78): App\Models\CommandModel->getcommand()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 05:29:53 --> ArgumentCountError: Too few arguments to function App\Models\CommandModel::getcommand(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\User.php on line 78 and exactly 1 expected
+[Method: POST, Route: connectme]
+in APPPATH\Models\CommandModel.php on line 30.
+ 1 APPPATH\Controllers\User.php(78): App\Models\CommandModel->getcommand()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 05:31:18 --> ArgumentCountError: Too few arguments to function App\Models\CommandModel::getcommand(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\User.php on line 78 and exactly 1 expected
+[Method: POST, Route: connectme]
+in APPPATH\Models\CommandModel.php on line 30.
+ 1 APPPATH\Controllers\User.php(78): App\Models\CommandModel->getcommand()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 05:32:25 --> ArgumentCountError: Too few arguments to function App\Models\CommandModel::getcommand(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\User.php on line 78 and exactly 1 expected
+[Method: POST, Route: connectme]
+in APPPATH\Models\CommandModel.php on line 30.
+ 1 APPPATH\Controllers\User.php(78): App\Models\CommandModel->getcommand()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 05:33:21 --> ArgumentCountError: Too few arguments to function App\Models\CommandModel::getcommand(), 0 passed in Z:\CodeIgniter\newmarketplace\app\Controllers\User.php on line 78 and exactly 1 expected
+[Method: POST, Route: connectme]
+in APPPATH\Models\CommandModel.php on line 30.
+ 1 APPPATH\Controllers\User.php(78): App\Models\CommandModel->getcommand()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 05:35:10 --> ErrorException: Attempt to read property "id" on array
+[Method: POST, Route: connectme]
+in APPPATH\Controllers\User.php on line 78.
+ 1 APPPATH\Controllers\User.php(78): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\User.php', 78)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User->connectme()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-11-05 05:36:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:38:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:40:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:40:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:43:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:45:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:47:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:47:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:49:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:49:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:50:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:51:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:53:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:56:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 05:56:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 06:08:50 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: getcommand/28]
+in APPPATH\Models\CommandModel.php on line 15.
+ 1 APPPATH\Models\CommandModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\CommandModel.php', 15)
+ 2 APPPATH\Controllers\Command.php(29): App\Models\CommandModel->addcommand()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->getcommand('28')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 06:08:53 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: getcommand/28]
+in APPPATH\Models\CommandModel.php on line 15.
+ 1 APPPATH\Models\CommandModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\CommandModel.php', 15)
+ 2 APPPATH\Controllers\Command.php(29): App\Models\CommandModel->addcommand()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->getcommand('28')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+CRITICAL - 2024-11-05 06:09:04 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: getcommand/28]
+in APPPATH\Models\CommandModel.php on line 15.
+ 1 APPPATH\Models\CommandModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\CommandModel.php', 15)
+ 2 APPPATH\Controllers\Command.php(29): App\Models\CommandModel->addcommand()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->getcommand('28')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-11-05 06:11:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 06:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 06:11:14 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: getcommand/28]
+in APPPATH\Models\CommandModel.php on line 15.
+ 1 APPPATH\Models\CommandModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\CommandModel.php', 15)
+ 2 APPPATH\Controllers\Command.php(29): App\Models\CommandModel->addcommand()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->getcommand('28')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-11-05 06:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 06:16:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 06:16:41 --> ErrorException: Trying to access array offset on value of type null
+[Method: GET, Route: getcommand/28]
+in APPPATH\Models\CommandModel.php on line 15.
+ 1 APPPATH\Models\CommandModel.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'Z:\\CodeIgniter\\newmarketplace\\app\\Models\\CommandModel.php', 15)
+ 2 APPPATH\Controllers\Command.php(29): App\Models\CommandModel->addcommand()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Command->getcommand('28')
+ 4 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Command))
+ 5 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-11-05 06:18:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 06:25:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-11-05 13:34:48 --> ErrorException: Undefined array key "HTTP_ORIGIN"
+[Method: GET, Route: getmarque]
+in APPPATH\Controllers\Marque.php on line 9.
+ 1 APPPATH\Controllers\Marque.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "HTTP_ORIGIN"', 'Z:\\CodeIgniter\\newmarketplace\\app\\Controllers\\Marque.php', 9)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Marque->getmarque()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Marque))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(65): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketplace\\public\\index.php')
+INFO - 2024-11-05 16:12:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:18:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-11-05 16:19:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

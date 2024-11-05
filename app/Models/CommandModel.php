@@ -23,7 +23,6 @@
                 'aboutcustomer' => $jsondata['aboutcustomer'],
                 'totalprix' => $jsondata['totalprix'],
             ];
-            var_dump($data);
             return $this->insert($data);
         }
 
