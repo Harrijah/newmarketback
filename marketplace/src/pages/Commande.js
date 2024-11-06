@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navigation from "../template-parts/Navigation";
 import { useSelector } from "react-redux";
 import Footer from "../template-parts/Footer";
@@ -8,6 +8,7 @@ import Boban from "../Components/Boban";
 import Commandpage from "../Components/Commandpage";
 import Aboutme from "../Components/Aboutme";
 import Bocol from "../Components/Bocol";
+import { useNavigate } from "react-router-dom";
 
 // css : './pages/_commandpage.scss'
 const Commande = () => {
@@ -22,6 +23,7 @@ const Commande = () => {
   const currentcart = useSelector((state) => state.sessionReducer.panier);
   const [ttlgeneral, setTtlgeneral] = useState(0);
   const [mychoice, setMychoice] = useState('commande');
+  const navigate = useNavigate();
   const [commandmenu, setCommandmenu] = useState('');
   let content;
   // les boutons du leftcol
@@ -33,6 +35,10 @@ const Commande = () => {
       {
           button: 'commande',
           text: 'Ma commande'
+      },
+      {
+          button: 'moncompte',
+          text: 'Retour à mon compte'
       },
   ];
 
@@ -58,7 +64,7 @@ const Commande = () => {
   // -------------------
   // ---------- logiques
   // -------------------
-    
+  useEffect(() => {(mychoice == 'moncompte') && navigate('/moncompte') }, [mychoice]);
 
 
     return (

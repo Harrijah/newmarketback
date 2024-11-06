@@ -13,6 +13,7 @@ import { getsouscat } from './action/souscat.action';
 import { getMarque } from './action/marque.action';
 import { getallstore, getstoredata } from './action/store.action';
 import { getProduct } from './action/produit.action';
+import { getStatus } from './action/session.action';
 
 // ------------- Session Storage ------------
 // sessionStorage.setItem('user', '');
@@ -28,6 +29,7 @@ store.dispatch(getsouscat());
 store.dispatch(getMarque());
 store.dispatch(getProduct());
 store.dispatch(getallstore());
+store.dispatch(getStatus());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

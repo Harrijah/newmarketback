@@ -4,7 +4,7 @@ import Boproducts from "../Components/Boproducts";
 import Bocommands from "../Components/Bocommands";
 import Navigation from "../template-parts/Navigation";
 import Footer from "../template-parts/Footer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Boban from "../Components/Boban";
 import Rightmaincontent from "../Components/Rightmaincontent";
@@ -12,6 +12,7 @@ import Bocol from "../Components/Bocol";
 import Leftlateralcolumn from "../Components/Leftlateralcolumn";
 import { isEmpty } from "../Assets/Utils";
 import { getstoredata } from "../action/store.action";
+import Moncompte from "./Moncompte";
 
 
 // CSS : pages/_backoffice.scss
@@ -26,6 +27,7 @@ const Backoffice = () => {
     const magasins = useSelector((state) => state.storeReducer.allstore);
     const marques = useSelector((state) => state.marqueReducer.marques);
     const User = useSelector((state) => state.createaccountReducer.user);
+    const dispatch = useDispatch();
 
     /* ********************************************
     **** Afficher les produits dans Backoffice ****
@@ -47,6 +49,10 @@ const Backoffice = () => {
             button: 'commands',
             text: 'Commandes'
         },
+        {
+            button: 'moncompte',
+            text: 'Retour à mon compte'
+        }
     ];
 
     const myproducts = () => {
@@ -106,7 +112,12 @@ const Backoffice = () => {
     useEffect(() => {
         const leftColumnHeight = rightContentRef.current.getBoundingClientRect().height;
         leftColumnRef.current.style.minHeight = `${leftColumnHeight}px`;
-    }, [mychoice])
+        if (mychoice == 'moncompte') {
+            navigate('/moncompte');
+        }
+
+    }, [mychoice]);
+    
 
     return (
         <div className="container">

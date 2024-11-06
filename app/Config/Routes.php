@@ -37,3 +37,4 @@ $routes->post('/modifyProduct', 'Produit::modifyProduct');
 
 $routes->post('/addcommand', 'Command::addcommand');
 $routes->get('/getcommand/(:num)', 'Command::getcommand/$1');
+$routes->get('/getstatus', 'Status::getstatus');

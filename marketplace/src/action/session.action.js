@@ -6,6 +6,7 @@ export const DELETE_NUMB = 'DELETE_NUMB';
 export const ITEM_QUANT = 'ITEM_QUANT';
 export const ADD_COMMAND = 'ADD_COMMAND';
 export const GET_COMMAND = 'GET_COMMAND';
+export const GET_STATUS = 'GET_STATUS';
 
 export const addtocart = (data) => {
     return (dispatch) => {
@@ -43,6 +44,14 @@ export const getCommand = (id) => {
     return (dispatch) => {
         return axios.get('http://localhost:8080/getcommand/' + id).then((res) => (
             dispatch({ type: GET_COMMAND, payload: res.data })
+        ));
+    }
+}
+
+export const getStatus = () => {
+    return (dispatch) => {
+        return axios.get('http://localhost:8080/getstatus').then((res) => (
+            dispatch({ type: GET_STATUS, payload: res.data })
         ));
     }
 }

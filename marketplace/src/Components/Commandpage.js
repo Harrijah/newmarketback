@@ -70,15 +70,15 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
             let pu = Number(searchinfo(allproductslist, product.productid, 'prix'));
             let pt = quant * pu;
             provttl += pt;
-            //  return(
-            //     <tr key={Number(product.id) + index}>
-            //         <td>0{num}</td>
-            //         <td>{nom}</td>
-            //         <td>{product.number}</td>
-            //         <td>{numStr(pu)}Ar</td>
-            //         <td>{numStr(pt)}Ar</td>
-            //     </tr>
-            //  )
+             return(
+                <tr key={Number(product.id) + index}>
+                    <td>0{num}</td>
+                    <td>{nom}</td>
+                    <td>{product.number}</td>
+                    <td>{numStr(pu)}Ar</td>
+                    <td>{numStr(pt)}Ar</td>
+                </tr>
+             )
         }));
         setTtlgeneral(provttl);
     }

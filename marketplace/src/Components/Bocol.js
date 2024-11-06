@@ -12,7 +12,7 @@ export default function Bocol({ mychoice, setMychoice, bobutton }) {
     return (
         <> 
             {allbutton}
-            <button style={{backgroundColor : (mychoice == 'moncompte') && '#f0ad4e'}} onClick={() => navigate('/moncompte')}>Retour à Mon compte</button>
+            {/* <button style={{backgroundColor : (mychoice == 'moncompte') && '#f0ad4e'}} onClick={() => navigate('/moncompte')}>Retour à Mon compte</button> */}
         </>
     )
 }
