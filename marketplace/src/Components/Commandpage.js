@@ -15,7 +15,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     const [listofproducts, setListofproducts] = useState([]);
     const [content, setContent] = useState('');
     const [commanddate, setCommanddate] = useState('');
-    const [nextnumber, setNextnumber] = useState(107);
+    const [nextnumber, setNextnumber] = useState(101);
     const [commandref, setCommandref] = useState(nextnumber);
 
     // pour l'acheteur
