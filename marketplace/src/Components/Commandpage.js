@@ -15,8 +15,11 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     const [listofproducts, setListofproducts] = useState([]);
     const [content, setContent] = useState('');
     const [commanddate, setCommanddate] = useState('');
-    const [nextnumber, setNextnumber] = useState(101);
+    const [nextnumber, setNextnumber] = useState(100);
     const [commandref, setCommandref] = useState(nextnumber);
+    const commands = useSelector((state) => state.sessionReducer.commandes);
+    const status = useSelector((state) => state.sessionReducer.commandstatus);
+    const [lastcommand, setLastcommand] = useState(commands && commands[commands.length - 1]);
 
     // pour l'acheteur
     const [buyerinfos, setBuyerinfos] = useState({});
@@ -34,6 +37,23 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     // -------------------
     // --------- fonctions
     // -------------------
+    // calculer le dernier numéro de commande
+    const getlastnumber = () => {
+        let lastnumber = '';
+        if (lastcommand) {
+            lastnumber = Number(lastcommand.id.split('X')[1]);
+        }
+        setNextnumber(lastnumber + 1);
+
+    }
+
+    useEffect(() => {
+        setLastcommand(commands[commands.length]);
+    }, [commands])
+    useEffect(() => { 
+        getlastnumber();
+    }, [lastcommand]);
+
 
     // calculer la date de la commande
     const dateref = () => {

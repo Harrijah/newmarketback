@@ -22,6 +22,7 @@ const Mesachats = () => {
     // -------------------------
     // --------------- fonctions
     //--------------------------
+    // afficher l'hitorique des achats
     const mycommand = () => {
         let templist = [];
         templist = commands && commands.map((product) => (
