@@ -15,7 +15,7 @@ const Commandpage = ({ allproductslist, marques, magasins, currentcart, ttlgener
     const [listofproducts, setListofproducts] = useState([]);
     const [content, setContent] = useState('');
     const [commanddate, setCommanddate] = useState('');
-    const [nextnumber, setNextnumber] = useState(100);
+    const [nextnumber, setNextnumber] = useState(101);
     const [commandref, setCommandref] = useState(nextnumber);
     const commands = useSelector((state) => state.sessionReducer.commandes);
     const status = useSelector((state) => state.sessionReducer.commandstatus);
