@@ -1,9 +1,0 @@
-.createshop{
-    select{
-        @include myinput;
-    }
-    textarea{
-        @include myinput;
-        resize: vertical;
-    }
-}
