@@ -4,6 +4,6 @@ RewriteRule (.*) public/$1 [L]
 
 
 # Header set Access-Control-Allow-Origin "http://localhost:3000"
-Header set Access-Control-Allow-Origin "https://trade.axel.mg"
+# Header set Access-Control-Allow-Origin "https://trade.axel.mg"
 Header set Access-Control-Allow-Methods "POST, OPTIONS, GET, PUT, DELETE"
 Header set Access-Control-Allow-Headers "Content-Type"
