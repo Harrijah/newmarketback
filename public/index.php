@@ -2,7 +2,8 @@
 
 // --------------------- CORS : indispensable 14/05/24 ---------------------
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    header('Access-Control-Allow-Origin: http://localhost:3000');
+    // header('Access-Control-Allow-Origin: http://localhost:3000');
+    header('Access-Control-Allow-Origin: https://trade.axel.mg');
     header('Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type');
     // http_response_code(200);
