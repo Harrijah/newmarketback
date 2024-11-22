@@ -9,7 +9,8 @@
             $model = model(MarqueModel::class);
             $response = $model->getmarque();
 
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
         }
 
         public function addmarque()
@@ -17,7 +18,8 @@
             $model = model(MarqueModel::class);
             $response = $model->addmarque();
 
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
         }
 
     }

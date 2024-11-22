@@ -13,7 +13,8 @@
             $model = model(CategorieModel::class);
             $response = $model->getcategorie();
             
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
         }
 
         public function addcategorie()
@@ -21,7 +22,8 @@
             $model = model(CategorieModel::class);
             $response = $model->addcategorie();
 
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
         }
 
     }

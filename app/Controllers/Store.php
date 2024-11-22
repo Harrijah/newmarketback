@@ -42,14 +42,16 @@
 
             $data = $model->getstore($id);
             // var_dump($data);
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($data);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($data);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($data);
         }
         public function getallstore()
         {
             $model = model(StoreModel::class);
             $data = $model->getallstore();
 
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($data);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($data);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($data);
         }
 
         public function updatestoreinfo()

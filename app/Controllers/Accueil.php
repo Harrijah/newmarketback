@@ -5,7 +5,7 @@
     {
         public function index()
         {
-            return redirect()->to('http://localhost:3000');
+            return redirect()->to('https://trade.axel.mg');
         }
 
     }

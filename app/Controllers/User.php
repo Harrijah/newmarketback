@@ -87,7 +87,8 @@
             if($this->validate($validationRules, $errors)){
 
                 $this->setUserSession($user);
-                return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($user);
+                // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($user);
+                return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($user);
 
             } else {
                 //
@@ -99,7 +100,8 @@
         {
             $session = session();
             $session->destroy();
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON(['isConnected' => false]);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON(['isConnected' => false]);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON(['isConnected' => false]);
         }
 
         public function updateinfo()
