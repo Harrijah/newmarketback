@@ -47,8 +47,8 @@ class Others extends BaseController
 
         // Renvoyer la réponse JSON au frontend
         return $this->response->setStatusCode(ResponseInterface::HTTP_OK)
-                            // ->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
-                            ->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')
+                            ->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+                            // ->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')
                             ->setJSON(json_decode($response->getBody()));
     }
 }

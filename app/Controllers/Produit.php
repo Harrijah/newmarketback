@@ -61,8 +61,8 @@ class Produit extends BaseController
 
         if($success){
             $response = $model->getproduct();
-            // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
-            return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
+            return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+            // return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
         } else {
             $response = ['message' => 'ça n\'a pas marché !!'];
         }
@@ -140,8 +140,8 @@ class Produit extends BaseController
 
     if($success){
         $response = $model->getproduct();
-        // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
-        return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
+        return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+        // return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
     } else {
         $response = ['message' => 'ça n\'a pas marché !!'];
         return $this->response->setJSON($response);
@@ -154,8 +154,8 @@ class Produit extends BaseController
         $model = model(ProduitModel::class);
         $response = $model->getproduct();
 
-        // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
-        return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
+        return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+        // return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
     }
 
     public function getoneproduct($id)
