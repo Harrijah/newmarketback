@@ -163,8 +163,8 @@ class Produit extends BaseController
         $model = model(ProduitModel::class);
         $response = $model->getoneproduct($id);
 
-        // return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
-        return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
+        return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+        // return $this->response->setHeader('Access-Control-Allow-Origin', 'https://trade.axel.mg')->setJSON($response);
     }
 
     public function deleteproduct($id)
