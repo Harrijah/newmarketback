@@ -40,4 +40,4 @@ $routes->get('/getcommand/(:num)', 'Command::getcommand/$1');
 $routes->get('/getstatus', 'Status::getstatus');
 
 
-$routes->get('/getduration', 'Others::getDuration');
+$routes->get('/getDuration', 'Others::getDuration');

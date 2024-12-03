@@ -1,0 +1,28 @@
+CRITICAL - 2024-12-03 10:26:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=279+Avenue+Pasteur+13330+Pelissanne&destinations=104+Rue+Perrin+Solliers+Marseille&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=279+Avenue+Pasteur+13330+Pelissanne&destinations=104+Rue+Perrin+Solliers+Marseille&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 10:26:33 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=279+Avenue+Pasteur+13330+Pelissanne&destinations=1+Chem.+de+l%27ancienne+Voie+Ferr%C3%A9e+Paradou&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=279+Avenue+Pasteur+13330+Pelissanne&destinations=1+Chem.+de+l%27ancienne+Voie+Ferr%C3%A9e+Paradou&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
