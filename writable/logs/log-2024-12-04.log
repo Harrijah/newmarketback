@@ -1,0 +1,406 @@
+CRITICAL - 2024-12-04 06:18:43 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=50+Boulevard+Victor+Hugo+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=50+Boulevard+Victor+Hugo+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:18:53 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=Natura+-+1200+Av.+Maurice+Donat+Mougins&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=Natura+-+1200+Av.+Maurice+Donat+Mougins&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:19:04 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+Rue+Fourmilli%C3%A8re+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+Rue+Fourmilli%C3%A8re+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:19:14 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+Rue+Andr%C3%A9+Cane+Beaulieu-Sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+Rue+Andr%C3%A9+Cane+Beaulieu-Sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:19:24 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=29+Rue+Pierre+Loti+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=29+Rue+Pierre+Loti+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:19:35 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=6+All.+des+Orangers+Cap-d%27Ail&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=6+All.+des+Orangers+Cap-d%27Ail&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:19:45 --> CodeIgniter\HTTP\Exceptions\HTTPException: 56 : OpenSSL SSL_read: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('56', 'OpenSSL SSL_read: error:0A000126:SSL routines::unexpected eof while reading, errno 0')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=2+Rue+Massena+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=2+Rue+Massena+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:19:55 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=4+Rue+Montaigne+Cannes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=4+Rue+Montaigne+Cannes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:20:06 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=5+Rue+Moli%C3%A8re+Cannes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=5+Rue+Moli%C3%A8re+Cannes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:20:16 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=23+Promenade+Des+Anglais+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=23+Promenade+Des+Anglais+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:20:26 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=408+Promenade+Du+Soleil+28+Avenue+G%C3%A9n%C3%A9ral+De+Gaulle+Menton&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=408+Promenade+Du+Soleil+28+Avenue+G%C3%A9n%C3%A9ral+De+Gaulle+Menton&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:20:37 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=32+Rue+De+L%27H%C3%B4tel+Des+Postes+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=32+Rue+De+L%27H%C3%B4tel+Des+Postes+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:20:47 --> CodeIgniter\HTTP\Exceptions\HTTPException: 56 : OpenSSL SSL_read: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('56', 'OpenSSL SSL_read: error:0A000126:SSL routines::unexpected eof while reading, errno 0')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=41+Boulevard+Mar%C3%A9chal+Juin+Cagnes-Sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=41+Boulevard+Mar%C3%A9chal+Juin+Cagnes-Sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:20:58 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=11+Chemin+Des+Ch%C3%A8vrefeuilles+Peymeinade&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=11+Chemin+Des+Ch%C3%A8vrefeuilles+Peymeinade&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:21:08 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=12+Pl.+de+la+R%C3%A9publique+Tende&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=12+Pl.+de+la+R%C3%A9publique+Tende&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:21:18 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=15+Avenue+Carnot+Menton&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=15+Avenue+Carnot+Menton&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:21:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=2+Rue+Simiane+Le+Cannet&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=2+Rue+Simiane+Le+Cannet&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:22:24 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=7+avenue+joseph+giordan+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=7+avenue+joseph+giordan+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:22:57 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+rue+du+lazaret+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+rue+du+lazaret+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:23:07 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+rue+du+lazaret+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=1+rue+du+lazaret+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:23:17 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=2+bis+rue+pierre+loti+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=2+bis+rue+pierre+loti+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:23:28 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=12+rue+du+malonat+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=12+rue+du+malonat+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:23:38 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : error:0A000126:SSL routines::unexpected eof while reading
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'error:0A000126:SSL routines::unexpected eof while reading')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=17+rue+jean+canavese+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=17+rue+jean+canavese+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:23:48 --> CodeIgniter\HTTP\Exceptions\HTTPException: 56 : OpenSSL SSL_read: error:0A000126:SSL routines::unexpected eof while reading, errno 0
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('56', 'OpenSSL SSL_read: error:0A000126:SSL routines::unexpected eof while reading, errno 0')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=14+rue+catherine+s%C3%A9gurane+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=14+rue+catherine+s%C3%A9gurane+Nice&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:24:40 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=991chemin+des+espinets+Saint+Paul+De+Vence&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=991chemin+des+espinets+Saint+Paul+De+Vence&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:24:40 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=338+bd+pierre+delmas+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+r+Jacqueline+Auriol+35136+Saint+Jacques+de+la+Lande&destinations=338+bd+pierre+delmas+Antibes&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:28:12 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 400
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 400')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+RUE+JACQUELINE+AURIOL+Saint-jacques-de-la-lande+35136+Ille-et-Vilaine&destinations=2+allee+des+journaliers+Saint-Aubin-D%C2%92Aubign%C3%A9&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+RUE+JACQUELINE+AURIOL+Saint-jacques-de-la-lande+35136+Ille-et-Vilaine&destinations=2+allee+des+journaliers+Saint-Aubin-D%C2%92Aubign%C3%A9&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 06:50:31 --> CodeIgniter\HTTP\Exceptions\HTTPException: 35 : OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('35', 'OpenSSL SSL_connect: Connection was reset in connection to maps.googleapis.com:443 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+RUE+JACQUELINE+AURIOL+Saint-jacques-de-la-lande+35136+Ille-et-Vilaine&destinations=6+Av.+Saint-Vincent+Saint-Gr%C3%A9goire&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=3+RUE+JACQUELINE+AURIOL+Saint-jacques-de-la-lande+35136+Ille-et-Vilaine&destinations=6+Av.+Saint-Vincent+Saint-Gr%C3%A9goire&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-04 07:40:49 --> CodeIgniter\HTTP\Exceptions\HTTPException: 22 : The requested URL returned error: 400
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 400')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seynod+Annecy&destinations=102+Rue+De+L%27%C3%83%C2%89cole+Abondance&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seynod+Annecy&destinations=102+Rue+De+L%27%C3%83%C2%89cole+Abondance&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')

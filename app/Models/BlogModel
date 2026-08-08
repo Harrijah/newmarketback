@@ -1,0 +1,40 @@
+<?php
+	Namespace App\Models;
+	Use CodeIgniter\Model;
+
+	class BlogModel extends Model
+	{
+		protected $table = ['blog'];
+		protected $allowedFields = ['userid', 'storeid', 'title', 'categorie', 'content', 'couverture', 'datecrea', 'datemodif'];
+
+		public function validateData($data)
+		{
+			if(empty($data['title'])){
+				return false; 
+			} 
+			return true;
+		}
+
+		public function addblog(array $data)
+		{
+			if($this->validateData($data)){
+				return $this->insert($data);
+			} else {
+				return false;
+			}
+
+		}
+
+		public function getblog()
+		{
+			return $this->findAll();
+		}
+
+
+
+
+
+
+
+	}
+

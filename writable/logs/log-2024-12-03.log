@@ -26,3 +26,367 @@ in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
  9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:27 --> CodeIgniter\HTTP\Exceptions\HTTPException: 56 : OpenSSL SSL_read: Connection was reset, errno 10054
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('56', 'OpenSSL SSL_read: Connection was reset, errno 10054')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=Chem.+des+Jeannets+Le+Val&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=Chem.+des+Jeannets+Le+Val&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:28 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=Quai+Baptistin+Pins+Le+Lavandou&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=Quai+Baptistin+Pins+Le+Lavandou&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:28 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=107+Bd+Mar%C3%A9chal+Joffre+Toulon&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=107+Bd+Mar%C3%A9chal+Joffre+Toulon&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:28 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=73+Chem.+des+Sangliers+Saint-Rapha%C3%ABl&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=73+Chem.+des+Sangliers+Saint-Rapha%C3%ABl&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=2+Rte+de+la+Madrague+Saint-Cyr-sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=2+Rte+de+la+Madrague+Saint-Cyr-sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=Chem.+le+Cognet+Trans-en-Provence&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=Chem.+le+Cognet+Trans-en-Provence&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=2750+Route+De+La+Garde+Freinet+Grimaud&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=2750+Route+De+La+Garde+Freinet+Grimaud&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=69+Imp.+Corot+Fr%C3%A9jus&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=69+Imp.+Corot+Fr%C3%A9jus&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=34+Bd+de+la+Baleine+Le+Lavandou&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=34+Bd+de+la+Baleine+Le+Lavandou&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=4205+Rte+de+Giens+Hy%C3%A8res&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=4205+Rte+de+Giens+Hy%C3%A8res&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=23+Dom.+du+Val+de+Mer+La+Croix+Valmer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=23+Dom.+du+Val+de+Mer+La+Croix+Valmer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=25+Bd+Louis+Lumi%C3%A8re+Bandol&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=25+Bd+Louis+Lumi%C3%A8re+Bandol&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=86+Chem.+des+Moulins+de+Paillas+Ramatuelle&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=86+Chem.+des+Moulins+de+Paillas+Ramatuelle&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=29+Av.+M%C3%A9diterran%C3%A9e+Hy%C3%A8res&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=29+Av.+M%C3%A9diterran%C3%A9e+Hy%C3%A8res&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=1031+Avenue+de+St+Rapha%C3%ABl+La+Croix+Valmer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=1031+Avenue+de+St+Rapha%C3%ABl+La+Croix+Valmer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=6693+Rte+du+Dom+Bormes-les-Mimosas&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=6693+Rte+du+Dom+Bormes-les-Mimosas&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=24+Espace+Du+25+Mai+1944+Carnoules&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=24+Espace+Du+25+Mai+1944+Carnoules&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=925+Chem.+de+la+Canolle+Sanary-sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=925+Chem.+de+la+Canolle+Sanary-sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=36+Av.+M%C3%A9diterran%C3%A9e+Hy%C3%A8res&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=36+Av.+M%C3%A9diterran%C3%A9e+Hy%C3%A8res&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=149+Prom.+Ren%C3%A9+Coty+Saint-Rapha%C3%ABl&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=149+Prom.+Ren%C3%A9+Coty+Saint-Rapha%C3%ABl&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=1700+Rte+de+Saint-Paul+Ginasservis&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=1700+Rte+de+Saint-Paul+Ginasservis&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=13+Rue+Gabriel+P%C3%A9ri+Sanary-sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=13+Rue+Gabriel+P%C3%A9ri+Sanary-sur-Mer&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=12+Rue+De+La+Ferme+Hyeres&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=12+Rue+De+La+Ferme+Hyeres&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=165+Av.+des+Girelles+Bormes-les-Mimosas&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=165+Av.+des+Girelles+Bormes-les-Mimosas&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:30 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=8+Av.+du+Rivalet+Gassin&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=8+Av.+du+Rivalet+Gassin&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')
+CRITICAL - 2024-12-03 19:19:31 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: maps.googleapis.com
+[Method: GET, Route: getDuration]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 693.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(693): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: maps.googleapis.com')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(383): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(152): CodeIgniter\HTTP\CURLRequest->send('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=22+Bd+F%C3%A9lix+Martin+Saint-Rapha%C3%ABl&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving')
+ 4 APPPATH\Controllers\Others.php(38): CodeIgniter\HTTP\CURLRequest->request('GET', 'https://maps.googleapis.com/maps/api/distancematrix/json?origins=1348+Chemin+du+Gabron+83480+Puget-sur-Argens&destinations=22+Bd+F%C3%A9lix+Martin+Saint-Rapha%C3%ABl&key=AIzaSyCGCcE2Xk-MhhaV9-hb8KoexuZoEupGo1I&mode=driving', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Others->getDuration()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Others))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(312): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(66): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\Commands\Server\rewrite.php(49): require_once('Z:\\CodeIgniter\\newmarketback\\public\\index.php')

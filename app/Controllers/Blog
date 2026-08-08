@@ -1,0 +1,51 @@
+<?php
+	Namespace App\Controllers;
+	Use App\Models\BlogModel;
+
+
+	class Blog extends BaseController
+	{
+		public function addblog()
+		{
+			$blog = model(BlogModel::class);
+
+			$couverture = $this->request->getFile('couverture');
+
+
+			$data = [
+				$userid = $this->requets->getPost('userid');
+				$storeid = $this->request->getPost('storeid');
+				$title = $this->request->getPost('title');
+				$categorie = $this->request->getPost('categorie');
+				$content = $this->request->getPost('content');
+			];
+
+
+			// Validation et Upload d'image
+			if($couverture && $couverture->isValid() && !$couverture->hasMoved()){
+				$couverture->move(WRITEPATH . '../public/uploads');
+				$data['couverture'] = $couverture->getName();
+			}
+
+			$success = $blog->addblog();
+
+			if($success){
+				$reponse = $blog->getblog();
+				return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+			} else {
+				$response = ['message' => 'ça n\'a pas marché'];
+				return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
+			}
+
+		}
+
+		public function getblog()
+			$blog = model(BlogModel::class);
+
+			$success = $blog->getblog();
+
+			if($success){
+				return $this->response->setHeader('Access-Controll-Allow-Origin', 'http://localhost:3000');
+			}
+
+	}

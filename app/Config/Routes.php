@@ -41,3 +41,7 @@ $routes->get('/getstatus', 'Status::getstatus');
 
 
 $routes->get('/getDuration', 'Others::getDuration');
+$routes->post('/processExcel', 'Others::processExcel');
+
+$routes->get('/getblog', 'Blog::getblog');
+$routes->post('/addblog', 'Blog::addblog');
