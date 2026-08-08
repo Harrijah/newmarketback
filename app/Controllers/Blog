@@ -13,11 +13,11 @@
 
 
 			$data = [
-				$userid = $this->requets->getPost('userid');
-				$storeid = $this->request->getPost('storeid');
-				$title = $this->request->getPost('title');
-				$categorie = $this->request->getPost('categorie');
-				$content = $this->request->getPost('content');
+				'userid' => $this->request->getPost('userid'),
+				'storeid' => $this->request->getPost('storeid'),
+				'title' => $this->request->getPost('title'),
+				'categorie' => $this->request->getPost('categorie'),
+				'content' => $this->request->getPost('content'),
 			];
 
 
@@ -27,10 +27,10 @@
 				$data['couverture'] = $couverture->getName();
 			}
 
-			$success = $blog->addblog();
+			$success = $blog->addblog($data);
 
 			if($success){
-				$reponse = $blog->getblog();
+				$response = $blog->getblog($success);
 				return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')->setJSON($response);
 			} else {
 				$response = ['message' => 'ça n\'a pas marché'];
@@ -40,12 +40,14 @@
 		}
 
 		public function getblog()
+		{
 			$blog = model(BlogModel::class);
 
 			$success = $blog->getblog();
 
 			if($success){
-				return $this->response->setHeader('Access-Controll-Allow-Origin', 'http://localhost:3000');
+				return $this->response->setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 			}
-
+			
+		}
 	}
